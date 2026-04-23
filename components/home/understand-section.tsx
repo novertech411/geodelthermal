@@ -2,29 +2,29 @@ import { Layers } from "lucide-react"
 
 export function UnderstandSection() {
   return (
-    <section className="py-24 relative overflow-hidden">
+    <section className="py-16 sm:py-24 relative overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Text Content */}
-          <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 mb-6">
+          <div className="order-2 lg:order-1">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 mb-4 sm:mb-6">
               <Layers className="h-4 w-4 text-primary" />
               <span className="text-sm text-primary font-medium">Deep Understanding</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground text-balance">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground text-balance">
               Understand the Subsurface
             </h2>
-            <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
+            <p className="mt-4 sm:mt-6 text-base sm:text-lg text-muted-foreground leading-relaxed">
               The subsurface is complex. Traditional methods leave gaps in understanding, leading to uncertain decisions and missed opportunities. Geodel brings clarity to what lies beneath.
             </p>
-            <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
+            <p className="mt-3 sm:mt-4 text-base sm:text-lg text-muted-foreground leading-relaxed">
               Our platform integrates diverse data sources, builds robust geological models, and delivers actionable intelligence that helps you make confident decisions.
             </p>
           </div>
 
           {/* Visual - Layered Geological Model */}
-          <div className="relative">
-            <div className="aspect-square relative rounded-2xl overflow-hidden glass border border-border/50 glow-purple">
+          <div className="relative order-1 lg:order-2">
+            <div className="aspect-square max-w-md mx-auto lg:max-w-none relative rounded-2xl overflow-hidden glass border border-border/50 glow-purple">
               {/* Animated Layers */}
               <svg viewBox="0 0 400 400" className="w-full h-full">
                 <defs>

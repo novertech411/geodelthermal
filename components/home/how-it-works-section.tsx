@@ -33,13 +33,13 @@ const timelineSteps = [
 
 export function HowItWorksSection() {
   return (
-    <section className="py-24 relative">
+    <section className="py-16 sm:py-24 relative">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground">
+        <div className="text-center mb-10 sm:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground text-balance">
             How It Works
           </h2>
-          <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="mt-4 text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
             A proven methodology that guides your project from inception to actionable results.
           </p>
         </div>
@@ -49,11 +49,11 @@ export function HowItWorksSection() {
           {/* Center Line */}
           <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary via-accent to-primary/30" />
 
-          <div className="space-y-12">
+          <div className="space-y-8 sm:space-y-12">
             {timelineSteps.map((item, index) => (
               <div
                 key={item.step}
-                className={`relative flex items-start gap-8 ${
+                className={`relative flex items-start gap-4 sm:gap-8 ${
                   index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
                 }`}
               >
@@ -64,16 +64,16 @@ export function HowItWorksSection() {
 
                 {/* Content */}
                 <div
-                  className={`ml-16 md:ml-0 md:w-1/2 ${
+                  className={`ml-14 sm:ml-16 md:ml-0 md:w-1/2 ${
                     index % 2 === 0 ? "md:pr-16 md:text-right" : "md:pl-16"
                   }`}
                 >
-                  <div className="p-6 rounded-2xl glass border border-border/50 hover:border-primary/30 transition-colors">
-                    <div className={`flex items-center gap-3 mb-3 ${index % 2 === 0 ? "md:justify-end" : ""}`}>
-                      <span className="text-2xl font-bold text-primary">{item.step}</span>
-                      <h3 className="text-lg font-semibold text-foreground">{item.title}</h3>
+                  <div className="p-4 sm:p-6 rounded-2xl glass border border-border/50 hover:border-primary/30 transition-colors">
+                    <div className={`flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3 ${index % 2 === 0 ? "md:justify-end" : ""}`}>
+                      <span className="text-xl sm:text-2xl font-bold text-primary">{item.step}</span>
+                      <h3 className="text-base sm:text-lg font-semibold text-foreground">{item.title}</h3>
                     </div>
-                    <p className="text-muted-foreground leading-relaxed">
+                    <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                       {item.description}
                     </p>
                   </div>
