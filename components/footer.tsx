@@ -17,24 +17,27 @@ const socialLinks = [
 export function Footer() {
   return (
     <footer className="border-t border-border/50 bg-background">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+        <div className="flex flex-col items-center gap-8 md:flex-row md:justify-between">
           {/* Logo and Tagline */}
           <div className="flex flex-col items-center md:items-start gap-2">
-            <Image
-              src="/images/logo.jpeg"
-              alt="Geodel Logo"
-              width={140}
-              height={50}
-              className="h-10 w-auto"
-            />
-            <p className="text-sm text-muted-foreground">
+            <div className="flex items-center gap-2">
+              <Image
+                src="/images/logo.jpeg"
+                alt="Geodel Logo"
+                width={40}
+                height={40}
+                className="h-10 w-10 rounded-lg"
+              />
+              <span className="font-bold text-xl text-foreground">Geodel</span>
+            </div>
+            <p className="text-sm text-muted-foreground text-center md:text-left">
               Subsurface Intelligence for Energy
             </p>
           </div>
 
           {/* Navigation Links */}
-          <nav className="flex flex-wrap items-center justify-center gap-6">
+          <nav className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -62,8 +65,8 @@ export function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="mt-8 pt-8 border-t border-border/50 text-center">
-          <p className="text-sm text-muted-foreground">
+        <div className="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-border/50 text-center">
+          <p className="text-xs sm:text-sm text-muted-foreground">
             &copy; {new Date().getFullYear()} Geodel Inc. All rights reserved.
           </p>
         </div>

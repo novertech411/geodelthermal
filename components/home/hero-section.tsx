@@ -9,8 +9,8 @@ export function HeroSection() {
       <div className="absolute inset-0 grid-background opacity-40" />
       
       {/* Gradient Orbs */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse-slow" />
-      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent/20 rounded-full blur-3xl animate-pulse-slow delay-1000" />
+      <div className="absolute top-1/4 left-1/4 w-48 sm:w-72 md:w-96 h-48 sm:h-72 md:h-96 bg-primary/20 rounded-full blur-3xl animate-pulse-slow" />
+      <div className="absolute bottom-1/4 right-1/4 w-40 sm:w-60 md:w-80 h-40 sm:h-60 md:h-80 bg-accent/20 rounded-full blur-3xl animate-pulse-slow delay-1000" />
       
       {/* Abstract Terrain Visualization */}
       <div className="absolute bottom-0 left-0 right-0 h-64 overflow-hidden opacity-60">
@@ -47,24 +47,24 @@ export function HeroSection() {
 
       {/* Content */}
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight">
           <span className="gradient-text text-balance">Subsurface Intelligence</span>
           <br />
           <span className="text-foreground">for Energy</span>
         </h1>
         
-        <p className="mt-6 text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">
+        <p className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto text-pretty px-2">
           Geodel turns subsurface data into clear decisions. Advanced geospatial intelligence for exploration, development, and site assessment.
         </p>
 
-        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Button asChild size="lg" className="bg-primary hover:bg-primary/90 glow-purple text-lg px-8">
+        <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 px-4">
+          <Button asChild size="lg" className="bg-primary hover:bg-primary/90 glow-purple text-base sm:text-lg px-6 sm:px-8 w-full sm:w-auto">
             <Link href="/contact">
               Start a Project
-              <ArrowRight className="ml-2 h-5 w-5" />
+              <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
             </Link>
           </Button>
-          <Button asChild variant="outline" size="lg" className="border-border hover:bg-secondary text-lg px-8">
+          <Button asChild variant="outline" size="lg" className="border-border hover:bg-secondary text-base sm:text-lg px-6 sm:px-8 w-full sm:w-auto">
             <Link href="/platform">
               Access Platform
             </Link>
