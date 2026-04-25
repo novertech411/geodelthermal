@@ -1,7 +1,11 @@
+"use client"
+
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import GlassCard from "@/components/GlassCard"
+import StatusBadge from "@/components/StatusBadge"
 import { 
   ArrowRight, 
   Flame, 
@@ -21,6 +25,7 @@ import {
 const solutions = [
   {
     id: "geothermal",
+    code: "GEOT-01",
     icon: Flame,
     title: "Geothermal Development",
     description: "Unlock the potential of geothermal energy with comprehensive subsurface characterization. From initial exploration to reservoir management, Geodel provides the intelligence needed for successful geothermal projects.",
@@ -31,9 +36,11 @@ const solutions = [
       { icon: BarChart3, text: "Production forecasting" },
     ],
     gradient: "from-orange-500/20 to-red-500/20",
+    glow: "shadow-[0_0_30px_rgba(239,68,68,0.15)]",
   },
   {
     id: "exploration",
+    code: "EXPL-02",
     icon: MapPin,
     title: "Subsurface Exploration",
     description: "Support mineral and resource exploration with advanced subsurface intelligence. Integrate geophysical, geological, and geochemical data to identify high-potential targets and reduce exploration risk.",
@@ -44,9 +51,11 @@ const solutions = [
       { icon: BarChart3, text: "Probability mapping" },
     ],
     gradient: "from-blue-500/20 to-cyan-500/20",
+    glow: "shadow-[0_0_30px_rgba(59,130,246,0.15)]",
   },
   {
     id: "site-assessment",
+    code: "SITE-03",
     icon: Building,
     title: "Site Assessment",
     description: "Evaluate subsurface conditions for infrastructure, construction, and environmental projects. Understand ground conditions, identify risks, and support informed site selection and design decisions.",
@@ -57,6 +66,7 @@ const solutions = [
       { icon: BarChart3, text: "Risk quantification" },
     ],
     gradient: "from-green-500/20 to-emerald-500/20",
+    glow: "shadow-[0_0_30_rgba(16,185,129,0.15)]",
   },
 ]
 
@@ -67,96 +77,91 @@ export default function SolutionsPage() {
       <main className="pt-16">
         {/* Hero Section */}
         <section className="py-24 relative overflow-hidden">
-          <div className="absolute inset-0 grid-background opacity-30" />
-          <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-primary/15 rounded-full blur-3xl" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,var(--primary)/0.03_0%,transparent_50%)]" />
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[120px]" />
           
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground">
-              Solutions
+            <StatusBadge label="Sector" value="Intelligence" className="justify-center mb-6" />
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight text-balance">
+              <span className="gradient-text">Solutions</span>
             </h1>
-            <p className="mt-6 text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="mt-8 text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               Specialized subsurface intelligence for the unique challenges of energy and resource development.
             </p>
           </div>
         </section>
 
         {/* Solutions Grid */}
-        <section className="py-20">
+        <section className="py-24 relative">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="space-y-24">
+            <div className="space-y-32">
               {solutions.map((solution, index) => (
                 <div
                   key={solution.id}
                   id={solution.id}
-                  className="scroll-mt-24"
+                  className="scroll-mt-32"
                 >
-                  <div className={`grid lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
+                  <div className={`grid lg:grid-cols-2 gap-20 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
                     {/* Content */}
                     <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
-                      <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 mb-6">
-                        <solution.icon className="h-4 w-4 text-primary" />
-                        <span className="text-sm text-primary font-medium">Solution</span>
+                      <div className="flex items-center gap-4 mb-6">
+                        <StatusBadge label="SERVICE" value="v2.0" />
+                        <StatusBadge label="ID" value={solution.code} />
                       </div>
                       
-                      <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
+                      <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground tracking-tight mb-8">
                         {solution.title}
                       </h2>
                       
-                      <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
+                      <p className="text-lg text-muted-foreground leading-relaxed mb-10">
                         {solution.description}
                       </p>
                       
-                      {/* Features */}
-                      <div className="mt-8 grid sm:grid-cols-2 gap-4">
+                      {/* Features Grid */}
+                      <div className="mt-10 grid sm:grid-cols-2 gap-6">
                         {solution.features.map((feature) => (
-                          <div key={feature.text} className="flex items-center gap-3">
-                            <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                              <feature.icon className="h-5 w-5 text-primary" />
+                          <div key={feature.text} className="flex items-center gap-4 group">
+                            <div className="w-10 h-10 rounded-lg bg-primary/5 flex items-center justify-center border border-primary/10 group-hover:border-primary/30 transition-all">
+                              <feature.icon className="h-5 w-5 text-primary/70 group-hover:text-primary transition-colors" />
                             </div>
-                            <span className="text-foreground">{feature.text}</span>
+                            <span className="text-foreground/80 group-hover:text-foreground transition-colors font-medium">{feature.text}</span>
                           </div>
                         ))}
                       </div>
                       
-                      <div className="mt-8">
-                        <Button asChild className="bg-primary hover:bg-primary/90">
-                          <Link href="/contact">
-                            Start a Project
-                            <ArrowRight className="ml-2 h-4 w-4" />
+                      <div className="mt-12 flex items-center gap-6">
+                        <Button asChild variant="neon" className="px-8 py-6 h-auto text-base">
+                          <Link href="/contact" className="flex items-center">
+                            Start System Project
+                            <ArrowRight className="ml-3 h-5 w-5" />
                           </Link>
                         </Button>
+                        <div className="hidden sm:flex flex-col">
+                          <span className="text-[10px] font-mono text-white/30 uppercase tracking-[0.2em] mb-1">Status</span>
+                          <span className="text-xs font-semibold text-primary">AVAILABLE</span>
+                        </div>
                       </div>
                     </div>
                     
                     {/* Visual */}
-                    <div className={index % 2 === 1 ? 'lg:order-1' : ''}>
-                      <div className={`aspect-square rounded-2xl glass border border-border/50 glow-purple p-8 relative overflow-hidden`}>
-                        <div className={`absolute inset-0 bg-gradient-to-br ${solution.gradient} opacity-50`} />
+                    <div className={`${index % 2 === 1 ? 'lg:order-1' : ''} relative`}>
+                      <GlassCard className={`aspect-square p-12 border-white/10 bg-black/40 overflow-hidden group ${solution.glow}`}>
+                        <div className={`absolute inset-0 bg-gradient-to-br ${solution.gradient} opacity-20`} />
                         
-                        {/* Abstract Visual */}
+                        {/* Abstract Visual Cluster */}
                         <div className="relative h-full flex items-center justify-center">
                           <div className="relative">
-                            <solution.icon className="h-32 w-32 text-primary/80 animate-float" />
-                            
-                            {/* Orbiting elements */}
-                            {[0, 1, 2, 3].map((i) => (
-                              <div
-                                key={i}
-                                className="absolute w-4 h-4 rounded-full bg-primary/60 animate-pulse-slow"
-                                style={{
-                                  top: `${50 + 45 * Math.sin((i * Math.PI) / 2)}%`,
-                                  left: `${50 + 45 * Math.cos((i * Math.PI) / 2)}%`,
-                                  transform: 'translate(-50%, -50%)',
-                                  animationDelay: `${i * 0.5}s`,
-                                }}
-                              />
-                            ))}
+                            <div className="absolute inset-0 bg-primary/20 blur-[60px] rounded-full scale-150 animate-pulse-slow" />
+                            <solution.icon className="h-40 w-40 text-primary/80 relative z-10" />
                           </div>
                         </div>
                         
                         {/* Grid overlay */}
-                        <div className="absolute inset-0 grid-background opacity-20" />
-                      </div>
+                        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" />
+                      </GlassCard>
+                      {/* Technical Frame Accents */}
+                      <div className="absolute -top-4 -left-4 w-12 h-12 border-t border-l border-primary/20" />
+                      <div className="absolute -bottom-4 -right-4 w-12 h-12 border-b border-r border-primary/20" />
                     </div>
                   </div>
                 </div>
@@ -166,58 +171,66 @@ export default function SolutionsPage() {
         </section>
 
         {/* Why Geodel Section */}
-        <section className="py-20 bg-secondary/30">
+        <section className="py-24 relative bg-black/40 border-y border-white/5">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
-                Why Choose Geodel
+            <div className="text-center mb-16">
+              <StatusBadge label="Benchmarking" value="Performance" className="justify-center mb-6" />
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground tracking-tight">
+                Why Choose <span className="gradient-text">Geodel</span>
               </h2>
-              <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+              <p className="mt-6 text-xl text-muted-foreground max-w-2xl mx-auto">
                 A partner that understands subsurface complexity.
               </p>
             </div>
             
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
-                { title: "Domain Expertise", desc: "Built by geoscientists for geoscientists" },
-                { title: "Proven Methods", desc: "Rigorous, validated approaches to subsurface analysis" },
-                { title: "Integrated Platform", desc: "One system from data to decision" },
-                { title: "Clear Outputs", desc: "Actionable intelligence, not just data" },
-                { title: "Rapid Delivery", desc: "Fast turnaround without compromising quality" },
-                { title: "Collaborative", desc: "We work alongside your team" },
+                { title: "Domain Expertise", desc: "Built by geoscientists for geoscientists", code: "DOM-01" },
+                { title: "Proven Methods", desc: "Rigorous, validated approaches to analysis", code: "PRV-02" },
+                { title: "Integrated Platform", desc: "One system from data to decision", code: "INT-03" },
+                { title: "Clear Outputs", desc: "Actionable intelligence, not just data", code: "OUT-04" },
+                { title: "Rapid Delivery", desc: "Fast turnaround without compromising quality", code: "RAP-05" },
+                { title: "Collaborative", desc: "We work alongside your team", code: "COL-06" },
               ].map((item) => (
-                <div key={item.title} className="flex items-start gap-4 p-6 rounded-2xl bg-card border border-border/50">
-                  <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
-                  <div>
-                    <h3 className="font-semibold text-foreground mb-1">{item.title}</h3>
-                    <p className="text-sm text-muted-foreground">{item.desc}</p>
+                <GlassCard key={item.title} className="group border-white/5 hover:border-primary/20 transition-all duration-500">
+                  <div className="flex flex-col h-full">
+                    <div className="flex justify-between items-start mb-6">
+                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center border border-primary/10">
+                        <CheckCircle className="h-5 w-5 text-primary" />
+                      </div>
+                      <StatusBadge label="REF" value={item.code} />
+                    </div>
+                    <h3 className="text-xl font-semibold text-foreground tracking-tight mb-3">{item.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
                   </div>
-                </div>
+                </GlassCard>
               ))}
             </div>
           </div>
         </section>
 
         {/* CTA */}
-        <section className="py-24 relative overflow-hidden">
-          <div className="absolute inset-0 grid-background opacity-20" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/10 rounded-full blur-3xl" />
+        <section className="py-32 relative overflow-hidden">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[160px] pointer-events-none" />
           
           <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
-              Ready to Get Started?
-            </h2>
-            <p className="mt-4 text-lg text-muted-foreground">
-              Tell us about your project and discover how Geodel can help.
-            </p>
-            <div className="mt-8">
-              <Button asChild size="lg" className="bg-primary hover:bg-primary/90 glow-purple">
-                <Link href="/contact">
-                  Contact Us
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-            </div>
+            <GlassCard className="py-20 border-white/5 bg-black/20">
+              <StatusBadge label="Engagement" value="System Ready" className="mb-8" />
+              <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold tracking-tight text-foreground mb-8">
+                Ready to <span className="gradient-text">Get Started?</span>
+              </h2>
+              <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-12">
+                Tell us about your project and discover how Geodel can help.
+              </p>
+              <div className="flex justify-center">
+                <Button asChild size="lg" variant="neon" className="px-10 py-7 h-auto text-lg">
+                  <Link href="/contact" className="flex items-center">
+                    Initiate System Contact
+                    <ArrowRight className="ml-3 h-5 w-5" />
+                  </Link>
+                </Button>
+              </div>
+            </GlassCard>
           </div>
         </section>
       </main>

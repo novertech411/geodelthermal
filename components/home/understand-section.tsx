@@ -1,32 +1,54 @@
-import { Layers } from "lucide-react"
+import { Layers, Activity } from "lucide-react"
+import GlassCard from "@/components/GlassCard"
+import StatusBadge from "@/components/StatusBadge"
 
 export function UnderstandSection() {
   return (
-    <section className="py-16 sm:py-24 relative overflow-hidden">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+    <section className="py-24 relative overflow-hidden bg-background">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Text Content */}
           <div className="order-2 lg:order-1">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 mb-4 sm:mb-6">
-              <Layers className="h-4 w-4 text-primary" />
-              <span className="text-sm text-primary font-medium">Deep Understanding</span>
-            </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground text-balance">
-              Understand the Subsurface
+            <StatusBadge label="Module" value="Intelligence Layer" className="mb-6" />
+            
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-balance">
+              <span className="text-foreground/90">Understand the</span>{" "}
+              <span className="gradient-text">Subsurface</span>
             </h2>
-            <p className="mt-4 sm:mt-6 text-base sm:text-lg text-muted-foreground leading-relaxed">
+            
+            <p className="mt-8 text-lg text-muted-foreground leading-relaxed">
               The subsurface is complex. Traditional methods leave gaps in understanding, leading to uncertain decisions and missed opportunities. Geodel brings clarity to what lies beneath.
             </p>
-            <p className="mt-3 sm:mt-4 text-base sm:text-lg text-muted-foreground leading-relaxed">
+            
+            <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
               Our platform integrates diverse data sources, builds robust geological models, and delivers actionable intelligence that helps you make confident decisions.
             </p>
+
+            <div className="mt-10 grid grid-cols-2 gap-4">
+              <div className="p-4 rounded-lg border border-white/5 bg-white/5">
+                <StatusBadge label="Processing" value="Real-time" />
+                <p className="text-sm text-foreground/70 mt-2 font-medium">Seismic Inversion</p>
+              </div>
+              <div className="p-4 rounded-lg border border-white/5 bg-white/5">
+                <StatusBadge label="Accuracy" value="99.2%" />
+                <p className="text-sm text-foreground/70 mt-2 font-medium">Predictive Modeling</p>
+              </div>
+            </div>
           </div>
 
           {/* Visual - Layered Geological Model */}
           <div className="relative order-1 lg:order-2">
-            <div className="aspect-square max-w-md mx-auto lg:max-w-none relative rounded-2xl overflow-hidden glass border border-border/50 glow-purple">
+            <GlassCard className="aspect-square max-w-md mx-auto lg:max-w-none relative border-white/10">
+              {/* Technical Overlay */}
+              <div className="absolute top-6 right-6 z-20">
+                <div className="flex items-center gap-2 bg-black/60 backdrop-blur-md border border-white/10 px-3 py-1.5 rounded-full">
+                  <Activity className="h-3 w-3 text-primary animate-pulse" />
+                  <span className="font-mono text-[10px] tracking-tighter text-white/80">LIVE MODELING...</span>
+                </div>
+              </div>
+
               {/* Animated Layers */}
-              <svg viewBox="0 0 400 400" className="w-full h-full">
+              <svg viewBox="0 0 400 400" className="w-full h-full relative z-10 opacity-80">
                 <defs>
                   <linearGradient id="layer1" x1="0%" y1="0%" x2="0%" y2="100%">
                     <stop offset="0%" stopColor="oklch(0.65 0.25 285 / 0.8)" />
@@ -76,23 +98,14 @@ export function UnderstandSection() {
                   className="animate-pulse-slow"
                   style={{ animationDelay: "1.5s" }}
                 />
-                
-                {/* Data Points */}
-                <circle cx="80" cy="120" r="4" fill="oklch(0.98 0 0)" className="animate-glow" />
-                <circle cx="200" cy="180" r="4" fill="oklch(0.98 0 0)" className="animate-glow" style={{ animationDelay: "0.3s" }} />
-                <circle cx="320" cy="250" r="4" fill="oklch(0.98 0 0)" className="animate-glow" style={{ animationDelay: "0.6s" }} />
-                <circle cx="150" cy="280" r="4" fill="oklch(0.98 0 0)" className="animate-glow" style={{ animationDelay: "0.9s" }} />
-                
-                {/* Connection Lines */}
-                <path
-                  d="M80,120 L200,180 L320,250 L150,280"
-                  stroke="oklch(0.65 0.25 285 / 0.5)"
-                  strokeWidth="1"
-                  fill="none"
-                  strokeDasharray="4 4"
-                />
               </svg>
-            </div>
+
+              {/* Technical scan line effect */}
+              <div className="absolute inset-x-0 top-0 h-[1px] bg-primary/20 animate-[scan_4s_linear_infinite] shadow-[0_0_10px_var(--primary)]" />
+            </GlassCard>
+            
+            {/* Background Glow */}
+            <div className="absolute -inset-10 bg-primary/5 blur-[80px] rounded-full -z-10 pointer-events-none" />
           </div>
         </div>
       </div>

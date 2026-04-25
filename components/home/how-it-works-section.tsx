@@ -1,3 +1,6 @@
+import GlassCard from "@/components/GlassCard"
+import StatusBadge from "@/components/StatusBadge"
+
 const timelineSteps = [
   {
     step: "01",
@@ -33,13 +36,15 @@ const timelineSteps = [
 
 export function HowItWorksSection() {
   return (
-    <section className="py-16 sm:py-24 relative">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-10 sm:mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground text-balance">
-            How It Works
+    <section className="py-24 relative bg-background">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="text-center mb-16">
+          <StatusBadge label="Process" value="Standard Methodology" className="justify-center mb-4" />
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-balance">
+            <span className="text-foreground/90">How It</span>{" "}
+            <span className="gradient-text">Works</span>
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
+          <p className="mt-6 text-lg text-muted-foreground max-w-2xl mx-auto px-4 leading-relaxed">
             A proven methodology that guides your project from inception to actionable results.
           </p>
         </div>
@@ -47,36 +52,43 @@ export function HowItWorksSection() {
         {/* Timeline */}
         <div className="relative">
           {/* Center Line */}
-          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary via-accent to-primary/30" />
+          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary via-accent to-primary/10 opacity-30" />
 
-          <div className="space-y-8 sm:space-y-12">
+          <div className="space-y-12">
             {timelineSteps.map((item, index) => (
               <div
                 key={item.step}
-                className={`relative flex items-start gap-4 sm:gap-8 ${
+                className={`relative flex items-start gap-8 ${
                   index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
                 }`}
               >
                 {/* Timeline Node */}
-                <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 rounded-full bg-primary border-4 border-background flex items-center justify-center z-10">
-                  <div className="w-2 h-2 rounded-full bg-primary-foreground" />
+                <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 rounded-full bg-black border border-white/20 flex items-center justify-center z-20 shadow-[0_0_15px_rgba(var(--primary-rgb),0.2)]">
+                  <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
                 </div>
 
                 {/* Content */}
                 <div
-                  className={`ml-14 sm:ml-16 md:ml-0 md:w-1/2 ${
+                  className={`ml-16 md:ml-0 md:w-1/2 ${
                     index % 2 === 0 ? "md:pr-16 md:text-right" : "md:pl-16"
                   }`}
                 >
-                  <div className="p-4 sm:p-6 rounded-2xl glass border border-border/50 hover:border-primary/30 transition-colors">
-                    <div className={`flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3 ${index % 2 === 0 ? "md:justify-end" : ""}`}>
-                      <span className="text-xl sm:text-2xl font-bold text-primary">{item.step}</span>
-                      <h3 className="text-base sm:text-lg font-semibold text-foreground">{item.title}</h3>
+                  <GlassCard className="group border-white/5 hover:border-primary/20 transition-all duration-500">
+                    <div className={`flex flex-col gap-2 mb-4 ${index % 2 === 0 ? "md:items-end" : ""}`}>
+                      <StatusBadge label="PHASE" value={item.step} />
+                      <h3 className="text-xl font-semibold text-foreground tracking-tight">{item.title}</h3>
                     </div>
-                    <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                    <p className="text-sm sm:text-base text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors">
                       {item.description}
                     </p>
-                  </div>
+                    
+                    <div className={`mt-4 pt-4 border-t border-white/5 flex ${index % 2 === 0 ? "md:justify-end" : ""}`}>
+                      <div className="flex items-center gap-1.5 opacity-40 group-hover:opacity-100 transition-opacity">
+                        <div className="w-1 h-3 bg-primary" />
+                        <span className="font-mono text-[9px] uppercase tracking-wider">Operational</span>
+                      </div>
+                    </div>
+                  </GlassCard>
                 </div>
               </div>
             ))}

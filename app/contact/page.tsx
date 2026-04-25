@@ -3,205 +3,178 @@
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
+import GlassCard from "@/components/GlassCard"
+import StatusBadge from "@/components/StatusBadge"
 import { 
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select"
-import { useState } from "react"
-import { Mail, Building, MapPin, Send, CheckCircle } from "lucide-react"
+  Mail, 
+  Phone, 
+  MapPin, 
+  Send,
+  Linkedin,
+  Twitter,
+  Globe,
+  Clock,
+  Settings,
+  Shield,
+  Zap
+} from "lucide-react"
 
 export default function ContactPage() {
-  const [isSubmitted, setIsSubmitted] = useState(false)
-  const [isSubmitting, setIsSubmitting] = useState(false)
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1500))
-    setIsSubmitting(false)
-    setIsSubmitted(true)
-  }
-
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
       <main className="pt-16">
         {/* Hero Section */}
         <section className="py-24 relative overflow-hidden">
-          <div className="absolute inset-0 grid-background opacity-30" />
-          <div className="absolute top-1/3 left-1/3 w-96 h-96 bg-primary/15 rounded-full blur-3xl" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,var(--primary)/0.03_0%,transparent_50%)]" />
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[120px]" />
           
-          <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground">
-                Get in Touch
-              </h1>
-              <p className="mt-6 text-xl text-muted-foreground max-w-2xl mx-auto">
-                Ready to transform your subsurface data into actionable intelligence? Tell us about your project.
-              </p>
-            </div>
+          <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
+            <StatusBadge label="Communication" value="System v1.0" className="justify-center mb-6" />
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight text-balance">
+              <span className="gradient-text">Contact Our Team</span>
+            </h1>
+            <p className="mt-8 text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              Connect with our experts to discuss your subsurface intelligence requirements and project objectives.
+            </p>
+          </div>
+        </section>
 
-            <div className="grid lg:grid-cols-2 gap-12 items-start">
-              {/* Contact Form */}
-              <div className="order-2 lg:order-1">
-                <div className="p-8 rounded-2xl glass border border-border/50 glow-purple">
-                  {isSubmitted ? (
-                    <div className="text-center py-12">
-                      <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-6">
-                        <CheckCircle className="h-8 w-8 text-primary" />
-                      </div>
-                      <h3 className="text-2xl font-semibold text-foreground mb-2">
-                        Thank You!
-                      </h3>
-                      <p className="text-muted-foreground">
-                        We&apos;ve received your request and will be in touch within 24 hours.
-                      </p>
-                    </div>
-                  ) : (
-                    <form onSubmit={handleSubmit} className="space-y-6">
-                      <div className="grid sm:grid-cols-2 gap-6">
-                        <div className="space-y-2">
-                          <Label htmlFor="name">Name</Label>
-                          <Input
-                            id="name"
-                            name="name"
-                            placeholder="Your name"
-                            required
-                            className="bg-background border-border focus:border-primary"
-                          />
+        <section className="py-24 relative">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="grid lg:grid-cols-2 gap-20">
+              {/* Contact Information */}
+              <div className="space-y-12">
+                <div>
+                  <h2 className="text-3xl font-bold text-foreground mb-8 tracking-tight">System Node Info</h2>
+                  <div className="grid gap-6">
+                    {[
+                      { icon: Mail, label: "Email Node", value: "info@geodel.io", code: "MAIL-SEC-01" },
+                      { icon: Phone, label: "Phone Node", value: "+1 (555) 000-0000", code: "PHO-SEC-02" },
+                      { icon: MapPin, label: "Geo Location", value: "San Francisco, CA", code: "GEO-SEC-03" },
+                    ].map((item) => (
+                      <GlassCard key={item.label} className="group border-white/5 hover:border-primary/20 transition-all duration-500">
+                        <div className="flex items-center gap-6">
+                          <div className="w-12 h-12 rounded-xl bg-primary/5 flex items-center justify-center border border-primary/10 group-hover:bg-primary/10 transition-colors">
+                            <item.icon className="h-6 w-6 text-primary" />
+                          </div>
+                          <div className="flex-1">
+                            <div className="flex justify-between items-center mb-1">
+                              <span className="text-[10px] font-mono text-white/30 uppercase tracking-widest">{item.label}</span>
+                              <StatusBadge label="NODE" value={item.code} />
+                            </div>
+                            <p className="text-lg font-semibold text-foreground tracking-tight">{item.value}</p>
+                          </div>
                         </div>
-                        <div className="space-y-2">
-                          <Label htmlFor="company">Company</Label>
-                          <Input
-                            id="company"
-                            name="company"
-                            placeholder="Your company"
-                            required
-                            className="bg-background border-border focus:border-primary"
-                          />
-                        </div>
-                      </div>
-
-                      <div className="space-y-2">
-                        <Label htmlFor="email">Email</Label>
-                        <Input
-                          id="email"
-                          name="email"
-                          type="email"
-                          placeholder="you@company.com"
-                          required
-                          className="bg-background border-border focus:border-primary"
-                        />
-                      </div>
-
-                      <div className="space-y-2">
-                        <Label htmlFor="projectType">Project Type</Label>
-                        <Select name="projectType" required>
-                          <SelectTrigger className="bg-background border-border focus:border-primary">
-                            <SelectValue placeholder="Select project type" />
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="geothermal">Geothermal Development</SelectItem>
-                            <SelectItem value="exploration">Subsurface Exploration</SelectItem>
-                            <SelectItem value="site-assessment">Site Assessment</SelectItem>
-                            <SelectItem value="other">Other</SelectItem>
-                          </SelectContent>
-                        </Select>
-                      </div>
-
-                      <div className="space-y-2">
-                        <Label htmlFor="message">Message</Label>
-                        <Textarea
-                          id="message"
-                          name="message"
-                          placeholder="Tell us about your project and how we can help..."
-                          rows={5}
-                          required
-                          className="bg-background border-border focus:border-primary resize-none"
-                        />
-                      </div>
-
-                      <Button
-                        type="submit"
-                        size="lg"
-                        className="w-full bg-primary hover:bg-primary/90 glow-purple"
-                        disabled={isSubmitting}
-                      >
-                        {isSubmitting ? (
-                          <>
-                            <span className="animate-pulse">Sending...</span>
-                          </>
-                        ) : (
-                          <>
-                            Submit Request
-                            <Send className="ml-2 h-5 w-5" />
-                          </>
-                        )}
-                      </Button>
-                    </form>
-                  )}
+                      </GlassCard>
+                    ))}
+                  </div>
                 </div>
+
+                <div>
+                  <h3 className="text-2xl font-bold text-foreground mb-6 tracking-tight">Digital Presence</h3>
+                  <div className="flex gap-4">
+                    {[
+                      { icon: Linkedin, label: "LinkedIn" },
+                      { icon: Twitter, label: "Twitter" },
+                      { icon: Globe, label: "Website" },
+                    ].map((platform) => (
+                      <Button key={platform.label} variant="outline" size="icon" className="w-12 h-12 rounded-xl border-white/10 hover:bg-primary/5 hover:border-primary/30 transition-all group">
+                        <platform.icon className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                      </Button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* System Specs Mock */}
+                <GlassCard className="bg-black/40 border-white/5 p-8">
+                  <div className="flex items-center gap-3 mb-6">
+                    <Zap className="h-5 w-5 text-primary" />
+                    <span className="font-bold text-foreground">Operational Status</span>
+                  </div>
+                  <div className="space-y-4">
+                    {[
+                      { icon: Clock, label: "Response Time", value: "< 24 Hours", status: "OK" },
+                      { icon: Settings, label: "Consultation", value: "Available", status: "ONLINE" },
+                      { icon: Shield, label: "Security", value: "End-to-End", status: "ACTIVE" },
+                    ].map((spec) => (
+                      <div key={spec.label} className="flex items-center justify-between py-3 border-b border-white/5 last:border-0">
+                        <div className="flex items-center gap-3">
+                          <spec.icon className="h-4 w-4 text-white/30" />
+                          <span className="text-sm text-foreground/70">{spec.label}</span>
+                        </div>
+                        <div className="flex items-center gap-4">
+                          <span className="text-sm font-semibold text-foreground">{spec.value}</span>
+                          <span className="text-[10px] font-mono text-primary bg-primary/10 px-2 py-0.5 rounded border border-primary/20">{spec.status}</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </GlassCard>
               </div>
 
-              {/* Contact Info */}
-              <div className="order-1 lg:order-2 space-y-8">
-                <div>
-                  <h2 className="text-2xl font-bold text-foreground mb-4">
-                    Let&apos;s Talk
-                  </h2>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Whether you&apos;re starting a new project, looking to optimize existing operations, or exploring how subsurface intelligence can benefit your organization, we&apos;re here to help.
-                  </p>
-                </div>
-
-                <div className="space-y-6">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <Mail className="h-6 w-6 text-primary" />
+              {/* Contact Form */}
+              <div className="relative">
+                <GlassCard className="bg-black/60 border-white/10 p-10 shadow-[0_0_50px_rgba(var(--primary-rgb),0.05)]">
+                  <div className="flex items-center gap-4 mb-10">
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center border border-primary/20">
+                      <Send className="h-6 w-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-foreground">Email</h3>
-                      <p className="text-muted-foreground">contact@geodel.io</p>
+                      <h2 className="text-2xl font-bold text-foreground tracking-tight">Initiate Contact</h2>
+                      <p className="text-xs font-mono text-white/30 uppercase tracking-widest mt-1">Ref: GEODEL-CONTACT-BETA</p>
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <Building className="h-6 w-6 text-primary" />
+                  <form className="space-y-6">
+                    <div className="grid sm:grid-cols-2 gap-6">
+                      <div className="space-y-2">
+                        <label className="text-xs font-mono text-white/40 uppercase tracking-widest ml-1">Identity/Name</label>
+                        <input
+                          type="text"
+                          className="w-full bg-white/[0.03] border border-white/10 focus:border-primary/50 focus:ring-1 focus:ring-primary/50 rounded-xl px-4 py-3 text-foreground transition-all outline-none"
+                          placeholder="Node Identifier"
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <label className="text-xs font-mono text-white/40 uppercase tracking-widest ml-1">Email Address</label>
+                        <input
+                          type="email"
+                          className="w-full bg-white/[0.03] border border-white/10 focus:border-primary/50 focus:ring-1 focus:ring-primary/50 rounded-xl px-4 py-3 text-foreground transition-all outline-none"
+                          placeholder="node@domain.io"
+                        />
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="font-semibold text-foreground">Office</h3>
-                      <p className="text-muted-foreground">Geodel Inc.</p>
+                    <div className="space-y-2">
+                      <label className="text-xs font-mono text-white/40 uppercase tracking-widest ml-1">Target Subject</label>
+                      <select className="w-full bg-white/[0.03] border border-white/10 focus:border-primary/50 focus:ring-1 focus:ring-primary/50 rounded-xl px-4 py-3 text-foreground transition-all outline-none appearance-none">
+                        <option className="bg-black">General Inquiry</option>
+                        <option className="bg-black">Platform Demo</option>
+                        <option className="bg-black">Technical Support</option>
+                        <option className="bg-black">Other</option>
+                      </select>
                     </div>
-                  </div>
-
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <MapPin className="h-6 w-6 text-primary" />
+                    <div className="space-y-2">
+                      <label className="text-xs font-mono text-white/40 uppercase tracking-widest ml-1">Intelligence / Message</label>
+                      <textarea
+                        rows={6}
+                        className="w-full bg-white/[0.03] border border-white/10 focus:border-primary/50 focus:ring-1 focus:ring-primary/50 rounded-xl px-4 py-3 text-foreground transition-all outline-none resize-none"
+                        placeholder="Transmission data..."
+                      />
                     </div>
-                    <div>
-                      <h3 className="font-semibold text-foreground">Location</h3>
-                      <p className="text-muted-foreground">Houston, Texas</p>
+                    <Button type="submit" variant="neon" className="w-full py-7 h-auto text-lg group">
+                      Transmit Signal
+                      <Send className="ml-3 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                    </Button>
+                    <div className="flex justify-center pt-4">
+                      <StatusBadge label="VERIFICATION" value="READY-TO-SEND" />
                     </div>
-                  </div>
-                </div>
-
-                {/* Response Time */}
-                <div className="p-6 rounded-2xl bg-card border border-border/50">
-                  <h3 className="font-semibold text-foreground mb-2">
-                    Quick Response
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    We typically respond to inquiries within 24 hours during business days. For urgent matters, please indicate in your message.
-                  </p>
-                </div>
+                  </form>
+                </GlassCard>
+                
+                {/* Visual Accent */}
+                <div className="absolute -top-6 -right-6 w-24 h-24 bg-primary/20 rounded-full blur-3xl pointer-events-none" />
+                <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-accent/20 rounded-full blur-3xl pointer-events-none" />
               </div>
             </div>
           </div>
