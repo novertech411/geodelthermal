@@ -2,9 +2,7 @@
 
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
-import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import GlassCard from "@/components/GlassCard"
 import StatusBadge from "@/components/StatusBadge"
 import { 
   ArrowRight, 
@@ -25,72 +23,74 @@ import {
 
 export default function PlatformPage() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-[#14101f]">
       <Navbar />
-      <main className="pt-16">
+      <main className="pt-20">
         {/* Hero Section */}
-        <section className="py-24 relative overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,var(--accent)/0.03_0%,transparent_50%)]" />
-          <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[120px]" />
+        <section className="py-32 relative overflow-hidden flex flex-col justify-center min-h-[70vh]">
+          {/* Background image & overlays */}
+          <div className="absolute inset-0 z-0">
+            <div className="absolute inset-0 bg-radial-gradient from-[rgba(139,108,255,0.15)] via-transparent to-transparent opacity-80" />
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#14101f]/30 to-[#14101f]" />
+          </div>
           
-          <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-            <StatusBadge label="Infrastructure" value="Enterprise-v4" className="justify-center mb-6" />
-            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight text-balance">
-              <span className="text-foreground/90">The</span>{" "}
-              <span className="gradient-text">Geodel Platform</span>
+          <div className="relative z-10 mx-auto max-w-7xl px-8 text-center flex flex-col items-center justify-center">
+            <StatusBadge label="Infrastructure" value="Enterprise-v4" className="justify-center mb-8" />
+            <h1 className="display text-white max-w-4xl mx-auto mb-8 text-balance">
+              The Geodel <em>Platform</em>
             </h1>
-            <p className="mt-8 text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            <p className="lede mt-6 max-w-3xl mx-auto text-white/70">
               A unified system for subsurface intelligence. From data integration to decision support, everything you need in one powerful environment.
             </p>
             <div className="mt-12">
-              <Button asChild size="lg" variant="neon" className="px-10 py-7 h-auto text-lg shadow-[0_0_30px_rgba(var(--primary-rgb),0.3)]">
-                <Link href="/contact" className="flex items-center">
-                  Request System Demo
-                  <ArrowRight className="ml-3 h-5 w-5" />
-                </Link>
-              </Button>
+              <Link 
+                href="/contact" 
+                className="rounded-[20px] bg-[#8B6CFF] hover:bg-[#7c5eff] text-white text-base font-semibold px-8 py-4 inline-flex items-center gap-2 transition-all duration-300 shadow-md"
+              >
+                Request system demo <span className="text-base">→</span>
+              </Link>
             </div>
           </div>
         </section>
 
         {/* One System Section */}
         <section className="py-24 relative border-t border-white/5">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl px-8">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div>
                 <StatusBadge label="Core" value="Unified Engine" className="mb-6" />
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground tracking-tight mb-6">
-                  One <span className="text-primary/80">System</span>
+                <h2 className="h2 text-white mb-6">
+                  One <em>System</em>
                 </h2>
-                <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+                <p className="text-base text-white/70 leading-relaxed mb-8">
                   Stop juggling multiple tools and fragmented workflows. Geodel brings together data management, modeling, analysis, and reporting into a single cohesive platform designed specifically for subsurface intelligence.
                 </p>
                 <div className="flex items-center gap-4 border-t border-white/5 pt-8">
                   <div className="flex flex-col">
                     <span className="text-[10px] font-mono text-white/30 uppercase tracking-[0.2em] mb-1">Architecture</span>
-                    <span className="text-sm font-semibold text-foreground/80">Cloud-Native HPC</span>
+                    <span className="text-sm font-semibold text-white/80">Cloud-Native HPC</span>
                   </div>
                   <div className="w-px h-8 bg-white/10" />
                   <div className="flex flex-col">
                     <span className="text-[10px] font-mono text-white/30 uppercase tracking-[0.2em] mb-1">Compliance</span>
-                    <span className="text-sm font-semibold text-foreground/80">SOC2 Type II</span>
+                    <span className="text-sm font-semibold text-white/80">SOC2 Type II</span>
                   </div>
                 </div>
               </div>
               <div className="relative">
-                <GlassCard className="aspect-video p-12 flex items-center justify-center border-white/10 bg-black/40">
+                <div className="card aspect-video p-12 flex items-center justify-center border-white/10 bg-black/40">
                   <div className="grid grid-cols-3 gap-6 w-full">
                     {[Database, Brain, BarChart3].map((Icon, i) => (
-                      <div key={i} className="aspect-square rounded-2xl bg-primary/5 flex items-center justify-center border border-primary/20 shadow-[inset_0_0_20px_rgba(var(--primary-rgb),0.1)]">
-                        <Icon className="h-12 w-12 text-primary/80" />
+                      <div key={i} className="aspect-square rounded-2xl bg-white/[0.02] flex items-center justify-center border border-white/10 shadow-[inset_0_0_20px_rgba(139,108,255,0.05)]">
+                        <Icon className="h-12 w-12 text-[#8B6CFF]" />
                       </div>
                     ))}
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent pointer-events-none" />
-                </GlassCard>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[rgba(139,108,255,0.05)] to-transparent pointer-events-none" />
+                </div>
                 {/* Decorative Accents */}
-                <div className="absolute -top-4 -left-4 w-12 h-12 border-t border-l border-primary/30" />
-                <div className="absolute -bottom-4 -right-4 w-12 h-12 border-b border-r border-primary/30" />
+                <div className="absolute -top-4 -left-4 w-12 h-12 border-t border-l border-white/10" />
+                <div className="absolute -bottom-4 -right-4 w-12 h-12 border-b border-r border-white/10" />
               </div>
             </div>
           </div>
@@ -98,22 +98,16 @@ export default function PlatformPage() {
 
         {/* Integrated Data Section */}
         <section className="py-24 relative bg-black/20 border-y border-white/5">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl px-8">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div className="order-2 lg:order-1 relative">
-                <GlassCard className="aspect-video overflow-hidden border-white/10 p-0 bg-black">
+                <div className="card aspect-video overflow-hidden border-white/10 p-0 bg-black">
                   <svg viewBox="0 0 400 225" className="w-full h-full opacity-80">
-                    <defs>
-                      <linearGradient id="data-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stopColor="var(--primary)" stopOpacity="0.6" />
-                        <stop offset="100%" stopColor="var(--accent)" stopOpacity="0.4" />
-                      </linearGradient>
-                    </defs>
                     {/* Technical Grid Overlay */}
-                    <pattern id="grid-pattern" width="20" height="20" patternUnits="userSpaceOnUse">
+                    <pattern id="grid-pattern-plat" width="20" height="20" patternUnits="userSpaceOnUse">
                       <path d="M 20 0 L 0 0 0 20" fill="none" stroke="white" strokeWidth="0.1" strokeOpacity="0.2"/>
                     </pattern>
-                    <rect width="100%" height="100%" fill="url(#grid-pattern)" />
+                    <rect width="100%" height="100%" fill="url(#grid-pattern-plat)" />
                     
                     {/* Data Layers Visualization */}
                     {[0, 1, 2, 3, 4].map((i) => (
@@ -124,35 +118,35 @@ export default function PlatformPage() {
                         width="300"
                         height="20"
                         rx="2"
-                        className="fill-primary/20 stroke-primary/30"
+                        className="fill-white/[0.03] stroke-white/10"
                         strokeWidth="1"
                       />
                     ))}
                     {/* Scan Line */}
-                    <rect x="50" y="40" width="300" height="1" className="fill-primary shadow-[0_0_10px_var(--primary)]">
+                    <rect x="50" y="40" width="300" height="1" className="fill-[#8B6CFF] shadow-[0_0_10px_#8B6CFF]">
                       <animate transform="translateY" attributeName="y" from="40" to="200" dur="4s" repeatCount="indefinite" />
                     </rect>
                   </svg>
                   <div className="absolute bottom-4 left-4">
                     <StatusBadge label="LINK" value="ACTIVE-STREAM" />
                   </div>
-                </GlassCard>
+                </div>
               </div>
               <div className="order-1 lg:order-2">
                 <StatusBadge label="Module-01" value="Data Engine" className="mb-6" />
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground tracking-tight mb-6">
-                  Integrated <span className="gradient-text">Data</span>
+                <h2 className="h2 text-white mb-6">
+                  Integrated <em>Data</em>
                 </h2>
-                <p className="text-lg text-muted-foreground leading-relaxed">
+                <p className="text-base text-white/70 leading-relaxed">
                   Combine geological surveys, well logs, seismic data, satellite imagery, and more. Our platform normalizes and integrates diverse data sources, creating a unified foundation for analysis.
                 </p>
                 <div className="mt-8 space-y-4">
                   <div className="flex items-center gap-3 text-sm font-mono text-white/50">
-                    <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#8B6CFF]" />
                     Multi-source Normalization
                   </div>
                   <div className="flex items-center gap-3 text-sm font-mono text-white/50">
-                    <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#8B6CFF]" />
                     Real-time Stream Integration
                   </div>
                 </div>
@@ -163,23 +157,23 @@ export default function PlatformPage() {
 
         {/* Reliable Models Section */}
         <section className="py-24 relative">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl px-8">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div>
                 <StatusBadge label="Module-02" value="Modeling Core" className="mb-6" />
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground tracking-tight mb-6">
-                  Reliable <span className="gradient-text">Models</span>
+                <h2 className="h2 text-white mb-6">
+                  Reliable <em>Models</em>
                 </h2>
-                <p className="text-lg text-muted-foreground leading-relaxed">
+                <p className="text-base text-white/70 leading-relaxed">
                   Generate robust subsurface models using a combination of machine learning, geostatistics, and physics-based algorithms. Our modeling engine is designed for accuracy, transparency, and uncertainty quantification.
                 </p>
               </div>
               <div className="relative">
-                <GlassCard className="aspect-video p-10 bg-black/60 border-white/10 relative overflow-hidden group">
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,var(--primary)/0.05_0%,transparent_100%)]" />
+                <div className="card aspect-video p-10 bg-black/60 border-white/10 relative overflow-hidden group">
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(139,108,255,0.05)_0%,transparent_100%)]" />
                   <div className="h-full flex flex-col gap-6 relative z-10">
-                    <div className="flex-1 rounded-2xl bg-white/[0.02] border border-white/5 flex items-center justify-center group-hover:bg-primary/[0.02] transition-colors">
-                      <Box className="h-20 w-20 text-primary/40 group-hover:text-primary/60 transition-colors" />
+                    <div className="flex-1 rounded-2xl bg-white/[0.02] border border-white/5 flex items-center justify-center group-hover:bg-white/[0.04] transition-colors">
+                      <Box className="h-20 w-20 text-[#8B6CFF]/40 group-hover:text-[#8B6CFF]/60 transition-colors" />
                     </div>
                     <div className="grid grid-cols-2 gap-6">
                       <div className="h-14 rounded-xl border border-white/5 bg-white/[0.02] flex items-center px-4">
@@ -190,8 +184,8 @@ export default function PlatformPage() {
                       </div>
                     </div>
                   </div>
-                </GlassCard>
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-primary/10 rounded-full blur-[100px] -z-10" />
+                </div>
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-[#8B6CFF]/10 rounded-full blur-[100px] -z-10" />
               </div>
             </div>
           </div>
@@ -199,13 +193,13 @@ export default function PlatformPage() {
 
         {/* Clear Outputs Section */}
         <section className="py-24 relative bg-black/20 border-y border-white/5">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl px-8">
             <div className="text-center mb-16">
               <StatusBadge label="Output" value="Deliverables" className="justify-center mb-6" />
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground tracking-tight">
-                Clear <span className="gradient-text">Outputs</span>
+              <h2 className="h2 text-white mb-6">
+                Clear <em>Outputs</em>
               </h2>
-              <p className="mt-6 text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+              <p className="mt-6 text-base text-white/70 max-w-2xl mx-auto leading-relaxed">
                 Transform complex analysis into actionable intelligence.
               </p>
             </div>
@@ -217,20 +211,20 @@ export default function PlatformPage() {
                 { icon: BarChart3, title: "Risk Assessments", desc: "Quantified uncertainty analysis", id: "RSK-03" },
                 { icon: Zap, title: "Action Plans", desc: "Clear recommendations for next steps", id: "ACT-04" },
               ].map((item) => (
-                <GlassCard key={item.title} className="group border-white/5 hover:border-primary/30 transition-all duration-500">
+                <div key={item.title} className="card group flex flex-col justify-between border-white/5 hover:border-[#8B6CFF]/30 transition-all duration-500">
                   <div className="flex flex-col h-full">
-                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6 border border-primary/20 group-hover:bg-primary/20 transition-all">
-                      <item.icon className="h-6 w-6 text-primary" />
+                    <div className="w-12 h-12 rounded-xl bg-[#8B6CFF]/10 flex items-center justify-center mb-6 border border-[#8B6CFF]/20 group-hover:bg-[#8B6CFF]/20 transition-all">
+                      <item.icon className="h-6 w-6 text-[#8B6CFF]" />
                     </div>
                     <div className="flex justify-between items-start mb-3">
-                      <h3 className="text-xl font-semibold text-foreground tracking-tight">{item.title}</h3>
+                      <h3 className="text-lg font-semibold text-white tracking-tight">{item.title}</h3>
                       <StatusBadge label="ID" value={item.id} />
                     </div>
-                    <p className="text-sm text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors">
+                    <p className="text-sm text-white/60 leading-relaxed group-hover:text-white/80 transition-colors">
                       {item.desc}
                     </p>
                   </div>
-                </GlassCard>
+                </div>
               ))}
             </div>
           </div>
@@ -238,13 +232,13 @@ export default function PlatformPage() {
 
         {/* Built to Expand Section */}
         <section className="py-24 relative overflow-hidden">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="mx-auto max-w-7xl px-8 relative z-10">
             <div className="text-center mb-16">
               <StatusBadge label="Scalability" value="Universal" className="justify-center mb-6" />
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground tracking-tight">
-                Built to <span className="gradient-text">Expand</span>
+              <h2 className="h2 text-white mb-6">
+                Built to <em>Expand</em>
               </h2>
-              <p className="mt-6 text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+              <p className="mt-6 text-base text-white/70 max-w-2xl mx-auto leading-relaxed">
                 A platform that grows with your needs and the evolving energy landscape.
               </p>
             </div>
@@ -258,55 +252,52 @@ export default function PlatformPage() {
                 { icon: Database, title: "Scalable Storage", desc: "Handle petabytes of subsurface data", tag: "PETABYTE" },
                 { icon: Brain, title: "AI Roadmap", desc: "Continuous model improvements", tag: "AI-DRIVEN" },
               ].map((item) => (
-                <GlassCard key={item.title} className="group border-white/10 hover:border-accent/40 transition-all duration-500">
+                <div key={item.title} className="card group border-white/10 hover:border-[#8B6CFF]/45 transition-all duration-500">
                   <div className="flex items-center gap-4 mb-6">
-                    <div className="w-12 h-12 rounded-xl bg-accent/5 flex items-center justify-center border border-accent/20 group-hover:bg-accent/10 transition-all">
-                      <item.icon className="h-6 w-6 text-accent" />
+                    <div className="w-12 h-12 rounded-xl bg-[#8B6CFF]/5 flex items-center justify-center border border-[#8B6CFF]/20 group-hover:bg-[#8B6CFF]/10 transition-all">
+                      <item.icon className="h-6 w-6 text-[#8B6CFF]" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-foreground tracking-tight">{item.title}</h3>
-                      <span className="font-mono text-[9px] uppercase tracking-widest text-accent/60">{item.tag}</span>
+                      <h3 className="text-base font-semibold text-white tracking-tight">{item.title}</h3>
+                      <span className="font-mono text-[9px] uppercase tracking-widest text-[#8B6CFF]/60">{item.tag}</span>
                     </div>
                   </div>
-                  <p className="text-sm text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors">
+                  <p className="text-sm text-white/60 leading-relaxed group-hover:text-white/80 transition-colors">
                     {item.desc}
                   </p>
-                </GlassCard>
+                </div>
               ))}
             </div>
           </div>
           {/* Depth Glow */}
-          <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[140px] -z-10 pointer-events-none" />
+          <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#8B6CFF]/5 rounded-full blur-[140px] -z-10 pointer-events-none" />
         </section>
 
-        {/* CTA */}
-        <section className="py-32 relative overflow-hidden bg-black/40 border-t border-white/5">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[160px] pointer-events-none" />
+        {/* CTA Section with Brand Wash & Grid */}
+        <section className="py-32 relative overflow-hidden border-t border-white/5">
+          <div className="absolute inset-0 bg-[#1c1730]" />
+          <div className="absolute inset-0 bg-radial-gradient from-[rgba(139,108,255,0.18)] via-transparent to-transparent opacity-85" />
+          <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-5" />
           
-          <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
-            <GlassCard className="py-20 border-white/5 relative overflow-hidden group">
+          <div className="relative mx-auto max-w-[1100px] px-6">
+            <div className="rounded-[24px] border border-white/18 bg-[rgba(255,255,255,0.04)] px-8 py-20 overflow-hidden text-center relative">
+              <div className="absolute inset-0 bg-radial-gradient from-[rgba(139,108,255,0.15)] via-transparent to-transparent opacity-80" />
               <div className="relative z-10 flex flex-col items-center">
                 <StatusBadge label="Next Step" value="SYSTEM ACCESS" className="mb-8" />
-                <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold tracking-tight text-balance mb-8">
-                  <span className="text-foreground/90">Experience the</span>{" "}
-                  <span className="gradient-text">Geodel Platform</span>
+                <h2 className="display text-white mb-8 max-w-3xl mx-auto">
+                  Experience the Geodel <em>Platform</em>
                 </h2>
-                <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-12">
+                <p className="lede max-w-2xl mx-auto mb-12 text-white/70">
                   See how Geodel can transform your subsurface workflows.
                 </p>
-                <Button asChild size="lg" variant="neon" className="px-10 py-7 h-auto text-lg shadow-[0_0_30px_rgba(var(--primary-rgb),0.3)]">
-                  <Link href="/contact" className="flex items-center">
-                    Schedule a System Demo
-                    <ArrowRight className="ml-3 h-5 w-5" />
-                  </Link>
-                </Button>
+                <Link 
+                  href="/contact" 
+                  className="rounded-[20px] bg-[#8B6CFF] hover:bg-[#7c5eff] text-white text-base font-semibold px-8 py-4 inline-flex items-center gap-2 transition-all duration-300 shadow-md"
+                >
+                  Schedule a System Demo <span className="text-base">→</span>
+                </Link>
               </div>
-              {/* Corner accents */}
-              <div className="absolute top-0 left-0 w-4 h-4 border-t border-l border-primary/40" />
-              <div className="absolute top-0 right-0 w-4 h-4 border-t border-r border-primary/40" />
-              <div className="absolute bottom-0 left-0 w-4 h-4 border-b border-l border-primary/40" />
-              <div className="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-primary/40" />
-            </GlassCard>
+            </div>
           </div>
         </section>
       </main>

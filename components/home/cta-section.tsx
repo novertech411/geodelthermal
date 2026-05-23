@@ -51,7 +51,7 @@ export function CTASection() {
           <div className="mt-16 flex items-center justify-center gap-12 border-t border-white/10 pt-8 w-full max-w-lg">
             <div className="flex flex-col items-center">
               <span className="text-[10px] font-mono text-white/30 uppercase tracking-[2px] mb-2">Response Time</span>
-              <span className="text-lg font-medium text-white tracking-[-0.03em]">{"< 24"} <em className="font-serif italic font-normal text-sm text-[#d6ccff]">Hours</em></span>
+              <span className="text-lg font-medium text-white tracking-[-0.03em]">{"< 24"} <em className="italic font-normal text-sm text-[#d6ccff]">Hours</em></span>
             </div>
             <div className="w-px h-8 bg-white/10" />
             <div className="flex flex-col items-center">

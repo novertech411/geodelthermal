@@ -45,7 +45,7 @@
 @theme inline {
   --font-sans: var(--font-sans), 'Inter', sans-serif;
   --font-mono: var(--font-mono), 'JetBrains Mono', monospace;
-  --font-serif: var(--font-serif), 'Instrument Serif', serif;
+  --font-serif: var(--font-sans), 'Inter', sans-serif;
 
   --color-background: var(--bg);
   --color-foreground: var(--ink);

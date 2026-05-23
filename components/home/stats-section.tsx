@@ -24,7 +24,7 @@ export function StatsSection() {
                 <h3 className="text-5xl sm:text-6xl font-medium tracking-[-0.04em] text-white">
                   {number}
                   {unit && (
-                    <em className="text-3xl ml-1 font-serif italic text-[#d6ccff] font-normal">
+                    <em className="text-3xl ml-1 italic text-[#d6ccff] font-normal">
                       {unit}
                     </em>
                   )}

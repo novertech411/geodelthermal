@@ -69,19 +69,18 @@ All tokens live as CSS custom properties on `:root` in `styles.css`.
 
 ## 3. Typography
 
-Three faces, in this priority:
+Two primary faces, in this priority:
 
 | Role | Family | Notes |
 |---|---|---|
-| UI / body | `Inter` | 400, 500, 600, 700. Default. |
-| Display italics | `Instrument Serif` (italic) | Used ONLY inside `<em>` inside display/h2/h3. This is the brand voice. |
+| UI / body / display | `Inter` | 400, 500, 600, 700, 800. Default and display font. |
 | Mono annotations | `JetBrains Mono` | 400/500. Labels, refs, coords, status. ALWAYS uppercase with `letter-spacing: 1.4–2.4px`. |
 
 ### Scale
 | Token / class | Size (clamp) | Weight | Tracking |
 |---|---|---|---|
-| `.display` | `clamp(54px, 8vw, 124px)` | 500 (italics 400) | `-0.04em` |
-| `.h2` | `clamp(40px, 5vw, 72px)` | 500 (italics 400) | `-0.035em` |
+| `.display` | `clamp(72px, 9.5vw, 144px)` | 800 (Extra Bold) | `-0.05em` |
+| `.h2` | `clamp(40px, 5vw, 72px)` | 500 (italics inherit) | `-0.035em` |
 | `.h3` | `clamp(28px, 3vw, 40px)` | 500 | `-0.025em` |
 | `.lede` | `clamp(17px, 1.4vw, 20px)` | 400 | normal |
 | body | `15px` | 400 | normal |
@@ -89,7 +88,7 @@ Three faces, in this priority:
 | `.eyebrow` | `12px` UPPERCASE | 400 | `2.4px`, `var(--accent-soft)` |
 
 ### The signature move
-Every display headline pairs **Inter regular** with **one italic Instrument Serif phrase** colored `--accent-soft`.
+Every display headline pairs **Inter bold** with **one bold italic Inter phrase** colored `--accent-soft` to preserve a serious scientific and geological business appearance.
 
 Example:
 ```html
@@ -107,7 +106,7 @@ Rules for the italic phrase:
 
 ### Type rules
 1. `text-wrap: balance` on all headlines. Always.
-2. Never use Inter italic. Italic = Instrument Serif, always.
+2. Always use Inter italic for scientific accents. Never use cursive/literary serif fonts (like Instrument Serif).
 3. Body copy max-width `~56ch`. Lede `~520px`. Don't let lines run to the page edge.
 4. Numbers in metrics use the same display weight (500, tracking `-0.04em`); units in italic (`em`).
 5. Mono text is always uppercase. Never use mono in mixed case.
@@ -123,9 +122,11 @@ Rules for the italic phrase:
 - **Grid**: 4 / 3 / 2 column responsive grids with `gap: 24px`.
 - **Border radii**:
   - Small inputs / specs: `10px`
-  - Cards / buttons: `12–16px` (`--radius`)
+  - Cards: `12–16px` (`--radius`)
+  - Buttons: `20px` (modern squircle)
   - Showcase / hero media / CTA: `24px` (`--radius-lg`)
-  - Navbar / tag pills / status: `999px`
+  - Navbar: transitions from `0px` (flat top) to `999px` (floating island capsule)
+  - Tag pills / status: `999px`
 
 ### The "coords strip"
 At the bottom of every hero, a horizontal mono strip with three groups: an index (`01 — …`), a list of meta facts (survey, depth, classification), and a scroll cue. This is a signature element — keep it on every hero.
@@ -134,12 +135,10 @@ At the bottom of every hero, a horizontal mono strip with three groups: an index
 
 ## 5. Components
 
-### Navbar — floating pill
-- Fixed, `top: 20px`, centered.
-- Width: `calc(100% - 32px)`, max `1320px`.
-- Background: `rgba(14,11,31,0.85)` + `backdrop-filter: blur(18px) saturate(180%)`.
-- 1px border at 8% white. Pill radius 999px. Height 60px.
-- "Get Started" button on the right uses a **solid white** fill with dark text — the only white-fill button on the page outside of buttons in the hero.
+### Navbar — scroll-transitioning capsule
+- **At top of image**: sits flat at `top-0` (full-width, `rounded-none`, height `80px`) with a simple bottom separator (`border-b border-white/10`) and transparent overlay.
+- **On scroll down**: animates smoothly into a floating capsule at `top-5` centered, with a width of `calc(100% - 32px)`, max `1320px`, height `64px`, `rounded-full`, and backdrop-filter blur/saturate adjustments.
+- **CTA Button**: Uses a sleek, high-tech dark gray fill (`bg-zinc-800 border border-white/10 hover:bg-zinc-700`) with white text.
 
 ### Buttons
 | Class | Use |
@@ -276,7 +275,7 @@ hero → split: contact-method cards + operational-status card | form (sticky) �
 2. **Don't generate SVG illustrations of the earth, charts, or drilling rigs.** Use real photos or a placeholder card.
 3. **Don't add testimonials.** This direction earns trust through tone, not quotes.
 4. **Don't introduce a second accent color.** One purple, one green for status. That's it.
-5. **Don't use Inter italic.** Always Instrument Serif for italic.
+5. **Don't use Instrument Serif.** Always use Inter bold italic to maintain a clean, technical layout.
 6. **Don't put icons in headlines or paragraphs.** Icons live only inside card heads.
 7. **Don't let any container have only a left-border accent + rounded corners.** This is the cheap SaaS card and we don't use it.
 8. **Don't use emoji.** Replace any with a mono code or icon.

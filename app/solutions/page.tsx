@@ -2,9 +2,7 @@
 
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
-import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import GlassCard from "@/components/GlassCard"
 import StatusBadge from "@/components/StatusBadge"
 import { 
   ArrowRight, 
@@ -36,7 +34,6 @@ const solutions = [
       { icon: BarChart3, text: "Production forecasting" },
     ],
     gradient: "from-orange-500/20 to-red-500/20",
-    glow: "shadow-[0_0_30px_rgba(239,68,68,0.15)]",
   },
   {
     id: "exploration",
@@ -51,7 +48,6 @@ const solutions = [
       { icon: BarChart3, text: "Probability mapping" },
     ],
     gradient: "from-blue-500/20 to-cyan-500/20",
-    glow: "shadow-[0_0_30px_rgba(59,130,246,0.15)]",
   },
   {
     id: "site-assessment",
@@ -66,26 +62,27 @@ const solutions = [
       { icon: BarChart3, text: "Risk quantification" },
     ],
     gradient: "from-green-500/20 to-emerald-500/20",
-    glow: "shadow-[0_0_30_rgba(16,185,129,0.15)]",
   },
 ]
 
 export default function SolutionsPage() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-[#14101f]">
       <Navbar />
-      <main className="pt-16">
+      <main className="pt-20">
         {/* Hero Section */}
-        <section className="py-24 relative overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,var(--primary)/0.03_0%,transparent_50%)]" />
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[120px]" />
+        <section className="py-32 relative overflow-hidden flex flex-col justify-center min-h-[60vh]">
+          <div className="absolute inset-0 z-0">
+            <div className="absolute inset-0 bg-radial-gradient from-[rgba(139,108,255,0.12)] via-transparent to-transparent opacity-80" />
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#14101f]/30 to-[#14101f]" />
+          </div>
           
-          <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-            <StatusBadge label="Sector" value="Intelligence" className="justify-center mb-6" />
-            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight text-balance">
-              <span className="gradient-text">Solutions</span>
+          <div className="relative z-10 mx-auto max-w-7xl px-8 text-center flex flex-col items-center justify-center">
+            <StatusBadge label="Sector" value="Intelligence" className="justify-center mb-8" />
+            <h1 className="display text-white max-w-4xl mx-auto mb-8 text-balance">
+              Our <em>Solutions</em>
             </h1>
-            <p className="mt-8 text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            <p className="lede mt-6 max-w-3xl mx-auto text-white/70">
               Specialized subsurface intelligence for the unique challenges of energy and resource development.
             </p>
           </div>
@@ -93,7 +90,7 @@ export default function SolutionsPage() {
 
         {/* Solutions Grid */}
         <section className="py-24 relative">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl px-8">
             <div className="space-y-32">
               {solutions.map((solution, index) => (
                 <div
@@ -109,11 +106,11 @@ export default function SolutionsPage() {
                         <StatusBadge label="ID" value={solution.code} />
                       </div>
                       
-                      <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground tracking-tight mb-8">
+                      <h2 className="h2 text-white mb-6">
                         {solution.title}
                       </h2>
                       
-                      <p className="text-lg text-muted-foreground leading-relaxed mb-10">
+                      <p className="text-base text-white/75 leading-relaxed mb-10">
                         {solution.description}
                       </p>
                       
@@ -121,47 +118,47 @@ export default function SolutionsPage() {
                       <div className="mt-10 grid sm:grid-cols-2 gap-6">
                         {solution.features.map((feature) => (
                           <div key={feature.text} className="flex items-center gap-4 group">
-                            <div className="w-10 h-10 rounded-lg bg-primary/5 flex items-center justify-center border border-primary/10 group-hover:border-primary/30 transition-all">
-                              <feature.icon className="h-5 w-5 text-primary/70 group-hover:text-primary transition-colors" />
+                            <div className="w-10 h-10 rounded-[12px] bg-[#8B6CFF]/5 flex items-center justify-center border border-[#8B6CFF]/10 group-hover:border-[#8B6CFF]/30 transition-all">
+                              <feature.icon className="h-5 w-5 text-[#8B6CFF]/70 group-hover:text-[#8B6CFF] transition-colors" />
                             </div>
-                            <span className="text-foreground/80 group-hover:text-foreground transition-colors font-medium">{feature.text}</span>
+                            <span className="text-white/70 group-hover:text-white transition-colors font-medium">{feature.text}</span>
                           </div>
                         ))}
                       </div>
                       
                       <div className="mt-12 flex items-center gap-6">
-                        <Button asChild variant="neon" className="px-8 py-6 h-auto text-base">
-                          <Link href="/contact" className="flex items-center">
-                            Start System Project
-                            <ArrowRight className="ml-3 h-5 w-5" />
-                          </Link>
-                        </Button>
+                        <Link 
+                          href="/contact" 
+                          className="rounded-[20px] bg-[#8B6CFF] hover:bg-[#7c5eff] text-white text-sm font-semibold px-6 py-3.5 inline-flex items-center gap-2 transition-all duration-300 shadow-md"
+                        >
+                          Start system project <span className="text-sm">→</span>
+                        </Link>
                         <div className="hidden sm:flex flex-col">
                           <span className="text-[10px] font-mono text-white/30 uppercase tracking-[0.2em] mb-1">Status</span>
-                          <span className="text-xs font-semibold text-primary">AVAILABLE</span>
+                          <span className="text-xs font-semibold text-[#8B6CFF]">AVAILABLE</span>
                         </div>
                       </div>
                     </div>
                     
-                    {/* Visual */}
+                    {/* Visual Card */}
                     <div className={`${index % 2 === 1 ? 'lg:order-1' : ''} relative`}>
-                      <GlassCard className={`aspect-square p-12 border-white/10 bg-black/40 overflow-hidden group ${solution.glow}`}>
-                        <div className={`absolute inset-0 bg-gradient-to-br ${solution.gradient} opacity-20`} />
+                      <div className="card aspect-square p-12 border-white/10 bg-black/40 overflow-hidden relative">
+                        <div className={`absolute inset-0 bg-gradient-to-br ${solution.gradient} opacity-10`} />
                         
                         {/* Abstract Visual Cluster */}
                         <div className="relative h-full flex items-center justify-center">
                           <div className="relative">
-                            <div className="absolute inset-0 bg-primary/20 blur-[60px] rounded-full scale-150 animate-pulse-slow" />
-                            <solution.icon className="h-40 w-40 text-primary/80 relative z-10" />
+                            <div className="absolute inset-0 bg-[#8B6CFF]/10 blur-[60px] rounded-full scale-150 animate-pulse-slow" />
+                            <solution.icon className="h-40 w-40 text-[#8B6CFF]/80 relative z-10" />
                           </div>
                         </div>
                         
                         {/* Grid overlay */}
-                        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" />
-                      </GlassCard>
+                        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-5" />
+                      </div>
                       {/* Technical Frame Accents */}
-                      <div className="absolute -top-4 -left-4 w-12 h-12 border-t border-l border-primary/20" />
-                      <div className="absolute -bottom-4 -right-4 w-12 h-12 border-b border-r border-primary/20" />
+                      <div className="absolute -top-4 -left-4 w-12 h-12 border-t border-l border-white/10" />
+                      <div className="absolute -bottom-4 -right-4 w-12 h-12 border-b border-r border-white/10" />
                     </div>
                   </div>
                 </div>
@@ -170,15 +167,15 @@ export default function SolutionsPage() {
           </div>
         </section>
 
-        {/* Why Geodel Section */}
+        {/* Why Choose Geodel Section */}
         <section className="py-24 relative bg-black/40 border-y border-white/5">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl px-8">
             <div className="text-center mb-16">
               <StatusBadge label="Benchmarking" value="Performance" className="justify-center mb-6" />
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground tracking-tight">
-                Why Choose <span className="gradient-text">Geodel</span>
+              <h2 className="h2 text-white mb-6">
+                Why Choose <em>Geodel</em>
               </h2>
-              <p className="mt-6 text-xl text-muted-foreground max-w-2xl mx-auto">
+              <p className="mt-6 text-base text-white/70 max-w-2xl mx-auto">
                 A partner that understands subsurface complexity.
               </p>
             </div>
@@ -192,45 +189,48 @@ export default function SolutionsPage() {
                 { title: "Rapid Delivery", desc: "Fast turnaround without compromising quality", code: "RAP-05" },
                 { title: "Collaborative", desc: "We work alongside your team", code: "COL-06" },
               ].map((item) => (
-                <GlassCard key={item.title} className="group border-white/5 hover:border-primary/20 transition-all duration-500">
+                <div key={item.title} className="card group border-white/5 hover:border-[#8B6CFF]/20 transition-all duration-500">
                   <div className="flex flex-col h-full">
                     <div className="flex justify-between items-start mb-6">
-                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center border border-primary/10">
-                        <CheckCircle className="h-5 w-5 text-primary" />
+                      <div className="w-10 h-10 rounded-[12px] bg-[#8B6CFF]/10 flex items-center justify-center border border-[#8B6CFF]/10">
+                        <CheckCircle className="h-5 w-5 text-[#8B6CFF]" />
                       </div>
                       <StatusBadge label="REF" value={item.code} />
                     </div>
-                    <h3 className="text-xl font-semibold text-foreground tracking-tight mb-3">{item.title}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+                    <h3 className="text-lg font-semibold text-white tracking-tight mb-3">{item.title}</h3>
+                    <p className="text-sm text-white/60 leading-relaxed">{item.desc}</p>
                   </div>
-                </GlassCard>
+                </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="py-32 relative overflow-hidden">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[160px] pointer-events-none" />
+        {/* CTA Section with Brand Wash & Grid */}
+        <section className="py-32 relative overflow-hidden border-t border-white/5">
+          <div className="absolute inset-0 bg-[#1c1730]" />
+          <div className="absolute inset-0 bg-radial-gradient from-[rgba(139,108,255,0.18)] via-transparent to-transparent opacity-85" />
+          <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-5" />
           
-          <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-            <GlassCard className="py-20 border-white/5 bg-black/20">
-              <StatusBadge label="Engagement" value="System Ready" className="mb-8" />
-              <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold tracking-tight text-foreground mb-8">
-                Ready to <span className="gradient-text">Get Started?</span>
-              </h2>
-              <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-12">
-                Tell us about your project and discover how Geodel can help.
-              </p>
-              <div className="flex justify-center">
-                <Button asChild size="lg" variant="neon" className="px-10 py-7 h-auto text-lg">
-                  <Link href="/contact" className="flex items-center">
-                    Initiate System Contact
-                    <ArrowRight className="ml-3 h-5 w-5" />
-                  </Link>
-                </Button>
+          <div className="relative mx-auto max-w-[1100px] px-6">
+            <div className="rounded-[24px] border border-white/18 bg-[rgba(255,255,255,0.04)] px-8 py-20 overflow-hidden text-center relative">
+              <div className="absolute inset-0 bg-radial-gradient from-[rgba(139,108,255,0.15)] via-transparent to-transparent opacity-80" />
+              <div className="relative z-10 flex flex-col items-center">
+                <StatusBadge label="Engagement" value="System Ready" className="mb-8" />
+                <h2 className="display text-white mb-8 max-w-3xl mx-auto">
+                  Ready to <em>Get Started?</em>
+                </h2>
+                <p className="lede max-w-2xl mx-auto mb-12 text-white/70">
+                  Tell us about your project and discover how Geodel can help.
+                </p>
+                <Link 
+                  href="/contact" 
+                  className="rounded-[20px] bg-[#8B6CFF] hover:bg-[#7c5eff] text-white text-base font-semibold px-8 py-4 inline-flex items-center gap-2 transition-all duration-300 shadow-md"
+                >
+                  Initiate System Contact <span className="text-base">→</span>
+                </Link>
               </div>
-            </GlassCard>
+            </div>
           </div>
         </section>
       </main>
