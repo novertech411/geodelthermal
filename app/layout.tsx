@@ -1,16 +1,23 @@
 import type { Metadata } from 'next'
-import { Inter, Geist_Mono } from 'next/font/google'
+import { Inter, JetBrains_Mono, Instrument_Serif } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
 const inter = Inter({ 
   subsets: ["latin"],
-  variable: '--font-inter'
+  variable: '--font-sans'
 })
 
-const geistMono = Geist_Mono({ 
+const jetbrainsMono = JetBrains_Mono({ 
   subsets: ["latin"],
-  variable: '--font-geist-mono'
+  variable: '--font-mono'
+})
+
+const instrumentSerif = Instrument_Serif({
+  subsets: ["latin"],
+  style: ["italic"],
+  weight: ["400"],
+  variable: '--font-serif'
 })
 
 export const metadata: Metadata = {
@@ -43,8 +50,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${geistMono.variable} bg-background`}>
-      <body className="font-sans antialiased">
+    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable} ${instrumentSerif.variable} bg-[#14101f]`}>
+      <body className="font-sans antialiased text-[#fff]">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>

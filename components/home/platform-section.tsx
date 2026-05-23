@@ -1,6 +1,4 @@
 import { Database, Cpu, Eye, FileOutput } from "lucide-react"
-import GlassCard from "@/components/GlassCard"
-import StatusBadge from "@/components/StatusBadge"
 
 const features = [
   {
@@ -11,19 +9,19 @@ const features = [
   },
   {
     icon: Cpu,
-    title: "Modeling",
+    title: "Geothermal Modeling",
     description: "Build and refine subsurface models using machine learning and geostatistical methods.",
     tag: "ML-KERNEL"
   },
   {
     icon: Eye,
-    title: "Interpretation",
+    title: "Structural Interpretation",
     description: "Visualize complex 3D structures and identify key features with interactive tools.",
     tag: "RTX-VIEW"
   },
   {
     icon: FileOutput,
-    title: "Output",
+    title: "Automated Reporting",
     description: "Generate comprehensive reports, maps, and recommendations ready for stakeholders.",
     tag: "O-PROCESS"
   },
@@ -31,76 +29,87 @@ const features = [
 
 export function PlatformSection() {
   return (
-    <section className="py-24 relative bg-background">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+    <section className="py-32 bg-[#14101f] relative">
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
       
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16">
-          <StatusBadge label="Infrastructure" value="Integrated" className="justify-center mb-4" />
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-balance">
-            <span className="text-foreground/90">One</span>{" "}
-            <span className="gradient-text">Integrated Platform</span>
+      <div className="mx-auto max-w-[1360px] px-8 relative z-10">
+        <div className="mb-16">
+          <span className="eyebrow mb-4">04 — Infrastructure</span>
+          <h2 className="h2 text-white leading-tight">
+            One unified{" "}
+            <em>data platform.</em>
           </h2>
-          <p className="mt-6 text-lg text-muted-foreground max-w-2xl mx-auto px-4 leading-relaxed">
+          <p className="lede mt-6">
             Everything you need to understand and act on subsurface data, unified in a single powerful system.
           </p>
         </div>
 
+        {/* 4-Card Overview */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((feature) => (
-            <GlassCard
+            <div
               key={feature.title}
-              className="group border-white/5 hover:border-primary/30 transition-all duration-500"
+              className="group p-[28px] bg-[rgba(255,255,255,0.04)] hover:bg-[rgba(255,255,255,0.06)] border border-white/10 rounded-[12px] transition-all duration-300 flex flex-col h-full"
             >
-              <div className="flex flex-col h-full">
-                {/* Icon */}
-                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center mb-6 border border-white/10 group-hover:from-primary/20 group-hover:to-accent/20 transition-all shadow-[0_0_15px_rgba(0,0,0,0.5)]">
-                  <feature.icon className="h-7 w-7 text-primary" />
+              {/* Card Head */}
+              <div className="flex items-center justify-between mb-8">
+                {/* 40x40 Icon Badge */}
+                <div className="w-10 h-10 rounded-lg bg-[rgba(139,108,255,0.18)] flex items-center justify-center border border-white/10">
+                  <feature.icon className="h-5 w-5 text-[#d6ccff]" />
                 </div>
-                
-                {/* Content */}
-                <h3 className="text-xl font-semibold text-foreground mb-3 tracking-tight">
-                  {feature.title}
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-6 group-hover:text-foreground/80 transition-colors">
-                  {feature.description}
-                </p>
-
-                <div className="mt-auto">
-                  <StatusBadge label="LINK" value={feature.tag} />
-                </div>
+                <span className="font-mono text-[10px] tracking-[1.5px] text-white/40 uppercase">
+                  {feature.tag}
+                </span>
               </div>
-            </GlassCard>
+              
+              {/* Content */}
+              <h3 className="text-[19px] font-medium tracking-[-0.015em] text-white mb-3">
+                {feature.title}
+              </h3>
+              <p className="text-[14.5px] text-white/55 leading-relaxed">
+                {feature.description}
+              </p>
+            </div>
           ))}
         </div>
       
         {/* Technical Showcase */}
         <div className="mt-20">
-          <GlassCard className="border-white/10 bg-black/40 p-4">
-            <div className="grid lg:grid-cols-5 gap-8 items-center">
+          <div className="border border-white/10 bg-[rgba(255,255,255,0.04)] rounded-[24px] p-[28px] md:p-[56px] shadow-2xl">
+            <div className="grid lg:grid-cols-5 gap-12 items-center">
+              {/* Image Section */}
               <div className="lg:col-span-3">
-                <div className="relative aspect-video rounded-xl overflow-hidden border border-white/5 group">
+                <div className="relative aspect-video rounded-xl overflow-hidden border border-white/10">
                   <img 
                     src="/images/geological/seismic_viz.png" 
                     alt="Seismic Data Visualization" 
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full object-cover filter saturate-[0.85]"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#14101f]/80 via-transparent to-transparent pointer-events-none" />
                   
-                  {/* Status Overlay */}
-                  <div className="absolute top-6 left-6">
-                    <StatusBadge label="MODE" value="INTERPRETATION-v4" />
+                  {/* Glowing Status badge */}
+                  <div className="absolute top-6 left-6 rounded-full border border-white/10 bg-[rgba(14,11,31,0.7)] backdrop-blur-md px-4 py-2 flex items-center gap-2 shadow-md">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#4ADE80] shadow-[0_0_8px_#4ADE80]" />
+                    <span className="font-mono text-[9px] uppercase tracking-widest text-white/60">SYS-NODE // RTX-VIEW</span>
                   </div>
                 </div>
               </div>
-              <div className="lg:col-span-2 space-y-8 pr-4">
+
+              {/* Showcase Specifications */}
+              <div className="lg:col-span-2 space-y-8">
                 <div>
-                  <h3 className="text-2xl font-bold text-foreground mb-4 tracking-tight">High-Fidelity <span className="gradient-text">Seismic Interpretation</span></h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Our platform processes raw seismic datasets into high-resolution 3D stratigraphic models. Identify fault lines, sediment distributions, and geothermal hotspots with unprecedented clarity.
+                  <h3 className="text-3xl font-bold tracking-tight text-white mb-4">
+                    High-Fidelity{" "}
+                    <span className="block mt-1">
+                      <em>Seismic Interpretation</em>
+                    </span>
+                  </h3>
+                  <p className="text-white/70 text-sm leading-relaxed">
+                    Our platform processes raw seismic datasets into high-resolution 3D stratigraphic models. Identify fault lines, sediment distributions, and geothermal hotspots with confidence.
                   </p>
                 </div>
                 
+                {/* 4 Spec Tiles */}
                 <div className="grid grid-cols-2 gap-4">
                   {[
                     { label: "RESOLUTION", value: "2.4m / Pixel" },
@@ -108,19 +117,19 @@ export function PlatformSection() {
                     { label: "PROCESSING", value: "GPU-ACCELERATED" },
                     { label: "ACCURACY", value: "CLASS-A" },
                   ].map((stat) => (
-                    <div key={stat.label} className="p-4 rounded-xl bg-white/[0.02] border border-white/5">
-                      <div className="text-[10px] font-mono text-white/30 uppercase tracking-widest mb-1">{stat.label}</div>
-                      <div className="text-sm font-bold text-foreground">{stat.value}</div>
+                    <div key={stat.label} className="p-4 rounded-lg bg-[rgba(255,255,255,0.02)] border border-white/5">
+                      <div className="text-[9px] font-mono text-white/30 uppercase tracking-[1.5px] mb-1.5">
+                        {stat.label}
+                      </div>
+                      <div className="text-sm font-semibold text-white">
+                        {stat.value}
+                      </div>
                     </div>
                   ))}
                 </div>
-                
-                <div className="pt-4">
-                  <StatusBadge label="SYSTEM_READY" value="ALL_NODES_STABLE" />
-                </div>
               </div>
             </div>
-          </GlassCard>
+          </div>
         </div>
       </div>
     </section>

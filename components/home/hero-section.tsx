@@ -1,98 +1,92 @@
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { ArrowRight, Terminal, Cpu, Globe } from "lucide-react"
-import GlassCard from "@/components/GlassCard"
-import StatusBadge from "@/components/StatusBadge"
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-32 pb-16">
-      {/* Background Grid & Effects */}
-      <div className="absolute inset-0 bg-background" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,var(--primary)/0.03_0%,transparent_80%)]" />
-
-      {/* Dynamic Background Texture (Subtle Geological Overlay) */}
-      <div className="absolute inset-0 opacity-10 pointer-events-none">
-        <img
-          src="/images/geological/hero_interpretation.png"
-          alt=""
-          className="w-full h-full object-cover mix-blend-screen"
+    <section className="relative min-h-screen w-full bg-[#14101f] flex flex-col overflow-hidden">
+      {/* Background Image & Overlays */}
+      <div className="absolute inset-0 z-0">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ 
+            backgroundImage: "url('/images/hero-2.png')",
+            backgroundPosition: "center 40%"
+          }}
         />
+        {/* Editorial wash: radial highlight + gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#14101f]/60 via-[#14101f]/10 to-[#14101f]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#14101f]/80 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-radial-gradient from-[rgba(139,108,255,0.15)] via-transparent to-transparent opacity-80" />
       </div>
 
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[120px]" />
-      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent/10 rounded-full blur-[120px]" />
+      {/* Content Container */}
+      <div className="relative z-10 w-full max-w-[1360px] mx-auto px-8 flex-1 flex flex-col justify-between pt-48 pb-12">
+        {/* Top content: prefix tag, heading, and description/buttons */}
+        <div className="flex-1 flex flex-col justify-center">
+          {/* Tagline prefix */}
+          <div className="text-[#c2b29f] font-mono text-[11px] tracking-[0.3em] uppercase mb-8">
+            01 – Subsurface Platform • V2.4
+          </div>
 
-      {/* Content */}
-      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
-        <StatusBadge label="System Status" value="Active v2.1.4" className="mb-8" />
+          {/* Main Heading using signature editorial serif italic */}
+          <h1 className="display text-white mb-16 max-w-4xl">
+            See the earth
+            <span className="block mt-3">
+              <em>before you drill it.</em>
+            </span>
+          </h1>
 
-        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-8">
-          <span className="gradient-text">Subsurface Intelligence</span>
-          <br />
-          <span className="text-foreground/90">Redefined for Scale</span>
-        </h1>
-
-        <p className="max-w-2xl text-lg sm:text-xl text-muted-foreground mb-12 leading-relaxed">
-          Geodel transforms raw geological datasets into actionable exploration intelligence. Integrated, precise, and built for the mining industry's most challenging basins.
-        </p>
-
-        <div className="flex flex-col sm:flex-row items-center gap-6 mb-20">
-          <Button asChild size="lg" variant="neon" className="px-10 py-7 h-auto text-lg">
-            <Link href="/contact">
-              Start Exploration <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
-          </Button>
-          <Button asChild variant="outline" size="lg" className="border-white/10 glass bg-white/5 px-10 py-7 h-auto text-lg">
-            <Link href="/platform">View System</Link>
-          </Button>
-        </div>
-
-        {/* Featured Monitor Asset */}
-        <div className="relative w-full max-w-6xl mx-auto group perspective-1000">
-          <div className="absolute -inset-4 bg-gradient-to-r from-primary/40 via-accent/30 to-primary/40 rounded-[2.5rem] blur-3xl opacity-10 group-hover:opacity-30 transition duration-1000" />
-
-          <div className="relative glass border border-white/20 rounded-[2.5rem] p-4 backdrop-blur-3xl shadow-[0_0_80px_rgba(var(--primary-rgb),0.1)] transition-all duration-700 group-hover:shadow-[0_0_100px_rgba(var(--primary-rgb),0.2)] group-hover:border-primary/50 group-hover:-translate-y-2">
-            <div className="absolute top-10 left-10 z-20 flex items-center gap-4">
-              <StatusBadge label="ENGINE" value="SUBSURFACE-CORE-01" />
-              <div className="flex gap-1.5">
-                <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                <span className="text-[10px] font-mono text-emerald-500/80 uppercase tracking-tighter">Live Connection</span>
-              </div>
+          {/* Row with description and buttons */}
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-10 lg:gap-16 w-full">
+            <div className="max-w-xl">
+              <p className="lede">
+                A single platform for integrating geological surveys, modeling thermal gradients, and producing exploration-ready reports — used by teams working the world's hardest basins.
+              </p>
             </div>
 
-            <div className="relative aspect-[16/9] md:aspect-[21/9] rounded-[1.8rem] overflow-hidden border border-white/10 shadow-2xl">
-              <img
-                src="/images/geological/hero.jpg"
-                alt="Geodel Subsurface Monitoring Interface"
-                className="w-full h-full object-cover grayscale-[0.1] hover:grayscale-0 transition-all duration-1000 group-hover:scale-[1.02]"
-              />
-
-              {/* Refined Overlays */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
-
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,var(--primary)/0.1,transparent_70%)] pointer-events-none" />
-
-              {/* Technical Marker Overlays */}
-              <div className="absolute bottom-8 left-8 right-8 flex justify-between items-end">
-                <div className="space-y-2">
-                  <div className="h-[2px] w-24 bg-gradient-to-r from-primary to-transparent" />
-                  <div className="text-[10px] font-mono text-white/70 tracking-[0.2em] uppercase">
-                    Spatial Analysis Unit // 01.44.2
-                  </div>
+            {/* Action buttons */}
+            <div className="flex flex-row items-center gap-4">
+              {/* Start Exploration Button */}
+              <Link 
+                href="/contact" 
+                className="group flex items-center justify-between rounded-2xl bg-white text-[#14101f] hover:bg-white/95 px-6 py-4 w-44 transition-all duration-300 shadow-[0_8px_30px_rgba(255,255,255,0.05)]"
+              >
+                <div className="flex flex-col text-left">
+                  <span className="text-[10px] uppercase tracking-wider text-[#14101f]/50 font-bold leading-none mb-1">Start</span>
+                  <span className="text-sm font-extrabold text-[#14101f] leading-none">Exploration</span>
                 </div>
-                <div className="flex items-center gap-6">
-                  <div className="hidden md:flex gap-4 text-[9px] font-mono text-white/30 tracking-widest uppercase">
-                    <span>X: 442.11</span>
-                    <span>Y: 882.04</span>
-                    <span>Z: -2,440m</span>
-                  </div>
-                  <div className="flex gap-2">
-                    <div className="w-2 h-2 rounded-full bg-primary/80 animate-pulse shadow-[0_0_8px_var(--primary)]" />
-                    <div className="w-2 h-2 rounded-full bg-primary/40 animate-pulse delay-300" />
-                  </div>
+                <span className="text-lg text-[#14101f] font-bold group-hover:translate-x-1 transition-transform">→</span>
+              </Link>
+
+              {/* Watch Demo Button */}
+              <Link 
+                href="/platform" 
+                className="group flex items-center justify-between rounded-2xl border border-white/22 bg-white/4 hover:bg-white/8 text-white px-6 py-4 w-44 transition-all duration-300 backdrop-blur-sm"
+              >
+                <div className="flex flex-col text-left">
+                  <span className="text-[10px] uppercase tracking-wider text-white/40 font-bold leading-none mb-1">Watch</span>
+                  <span className="text-sm font-extrabold text-white leading-none">demo</span>
                 </div>
-              </div>
+                {/* Spacer to match width alignment */}
+                <div className="w-1.5 h-1.5 rounded-full bg-transparent" />
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Info Row */}
+        <div className="mt-16 w-full">
+          {/* Divider line */}
+          <div className="w-full h-px bg-white/10 mb-6" />
+
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-[10px] font-mono tracking-[0.2em] text-white/40 uppercase">
+            <div>LAT 48.21°N • LON 7.06°W</div>
+            <div className="flex flex-wrap items-center gap-x-8 gap-y-2">
+              <span>SURVEY 042 / ACTIVE</span>
+              <span>DEPTH 0-8000M</span>
+              <span>CLASS A • GPU-ACCELERATED</span>
+            </div>
+            <div className="flex items-center gap-1.5 text-white/60">
+              SCROLL TO EXPLORE <span className="text-xs animate-bounce">↓</span>
             </div>
           </div>
         </div>
@@ -100,4 +94,3 @@ export function HeroSection() {
     </section>
   )
 }
-

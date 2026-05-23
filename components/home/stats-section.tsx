@@ -1,5 +1,3 @@
-import StatusBadge from "@/components/StatusBadge"
-
 const stats = [
   { label: "Basins Analyzed", value: "185+" },
   { label: "Successful Wells", value: "420k" },
@@ -9,19 +7,31 @@ const stats = [
 
 export function StatsSection() {
   return (
-    <section className="py-32 border-y border-white/5 bg-black/40 backdrop-blur-sm">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
-          {stats.map((stat) => (
-            <div key={stat.label} className="space-y-4 p-6 rounded-2xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.03] transition-colors">
-              <h3 className="text-5xl sm:text-6xl font-bold tracking-tighter text-foreground">
-                {stat.value}
-              </h3>
-              <div className="flex justify-center">
-                <StatusBadge label="METRIC" value={stat.label} />
+    <section className="py-20 border-y border-white/10 bg-[#14101f]">
+      <div className="mx-auto max-w-7xl px-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-12">
+          {stats.map((stat) => {
+            // Separate numbers from units (e.g. "1.2" and "PB") to style units in Instrument Serif italics
+            const match = stat.value.match(/^([\d.]+)(.*)$/)
+            const number = match ? match[1] : stat.value
+            const unit = match ? match[2] : ""
+
+            return (
+              <div key={stat.label} className="flex flex-col gap-3">
+                <span className="text-[10px] font-mono tracking-[0.2em] text-[#d6ccff] uppercase">
+                  {stat.label}
+                </span>
+                <h3 className="text-5xl sm:text-6xl font-medium tracking-[-0.04em] text-white">
+                  {number}
+                  {unit && (
+                    <em className="text-3xl ml-1 font-serif italic text-[#d6ccff] font-normal">
+                      {unit}
+                    </em>
+                  )}
+                </h3>
               </div>
-            </div>
-          ))}
+            )
+          })}
         </div>
       </div>
     </section>

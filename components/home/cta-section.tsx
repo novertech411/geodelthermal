@@ -1,59 +1,65 @@
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { ArrowRight } from "lucide-react"
-import GlassCard from "@/components/GlassCard"
-import StatusBadge from "@/components/StatusBadge"
 
 export function CTASection() {
   return (
-    <section className="py-24 relative overflow-hidden bg-background">
-      {/* Background Effects */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[160px] pointer-events-none" />
-      
-      <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-        <GlassCard className="text-center py-16 sm:py-20 border-white/5 relative overflow-hidden group">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,var(--primary)/0.03_0%,transparent_100%)] pointer-events-none" />
+    <section className="py-32 bg-[#14101f] relative overflow-hidden">
+      <div className="mx-auto max-w-[1360px] px-8">
+        {/* CTA Panel Container */}
+        <div 
+          className="relative rounded-[24px] border border-white/10 p-[56px] md:p-[80px_56px] text-center overflow-hidden flex flex-col items-center"
+          style={{
+            background: "radial-gradient(circle at 100% 0%, rgba(139, 108, 255, 0.18) 0%, transparent 60%), radial-gradient(circle at 0% 100%, rgba(91, 63, 224, 0.18) 0%, transparent 60%), #1c1730",
+            backgroundImage: `
+              radial-gradient(circle at 100% 0%, rgba(139, 108, 255, 0.18) 0%, transparent 60%),
+              radial-gradient(circle at 0% 100%, rgba(91, 63, 224, 0.18) 0%, transparent 60%),
+              linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px),
+              linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px)
+            `,
+            backgroundSize: "100% 100%, 100% 100%, 40px 40px, 40px 40px",
+            backgroundColor: "#1c1730"
+          }}
+        >
+          {/* Tag-pill above */}
+          <div className="tag-pill mb-8">
+            Ready to deploy — v2.4 Online
+          </div>
           
-          <div className="relative z-10 flex flex-col items-center">
-            <StatusBadge label="Ready to deploy" value="v2.1 ONLINE" className="mb-8" />
-            
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-balance">
-              <span className="text-foreground/90">Make Better</span>{" "}
-              <span className="gradient-text">Subsurface Decisions</span>
-            </h2>
-            
-            <p className="mt-8 text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto px-4 leading-relaxed">
-              Ready to transform your subsurface data into actionable intelligence? Start a conversation with our team today.
-            </p>
-            
-            <div className="mt-12">
-              <Button asChild size="lg" variant="neon" className="text-lg px-10 py-7 h-auto group/btn shadow-[0_0_30px_rgba(var(--primary-rgb),0.3)]">
-                <Link href="/contact" className="flex items-center">
-                  Get Started Now
-                  <ArrowRight className="ml-3 h-5 w-5 group-hover/btn:translate-x-1 transition-transform" />
-                </Link>
-              </Button>
-            </div>
-
-            <div className="mt-12 flex items-center justify-center gap-8 border-t border-white/5 pt-8 w-full">
-              <div className="flex flex-col items-center">
-                <span className="text-[10px] font-mono text-white/30 uppercase tracking-[0.3em] mb-1">Response Time</span>
-                <span className="text-xl font-bold text-foreground/80">{"< 24H"}</span>
-              </div>
-              <div className="w-px h-8 bg-white/10" />
-              <div className="flex flex-col items-center">
-                <span className="text-[10px] font-mono text-white/30 uppercase tracking-[0.3em] mb-1">Infrastructure</span>
-                <span className="text-xl font-bold text-foreground/80">AWS HI-PERF</span>
-              </div>
-            </div>
+          {/* Display Headline */}
+          <h2 className="h2 text-white leading-tight max-w-2xl text-center">
+            Make better{" "}
+            <span className="block sm:inline">
+              <em>subsurface decisions.</em>
+            </span>
+          </h2>
+          
+          {/* Lede Text */}
+          <p className="lede mt-6 text-center max-w-xl">
+            Ready to transform your subsurface data into actionable intelligence? Start a conversation with our team today.
+          </p>
+          
+          {/* Accent Button */}
+          <div className="mt-10">
+            <Link 
+              href="/contact" 
+              className="btn btn-accent rounded-xl px-8 py-4 text-sm font-semibold tracking-wide"
+            >
+              Get Started Now <span className="ml-2 font-sans font-bold">→</span>
+            </Link>
           </div>
 
-          {/* Corner accents */}
-          <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-primary/40" />
-          <div className="absolute top-0 right-0 w-2 h-2 border-t border-r border-primary/40" />
-          <div className="absolute bottom-0 left-0 w-2 h-2 border-b border-l border-primary/40" />
-          <div className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-primary/40" />
-        </GlassCard>
+          {/* Bottom Meta Row */}
+          <div className="mt-16 flex items-center justify-center gap-12 border-t border-white/10 pt-8 w-full max-w-lg">
+            <div className="flex flex-col items-center">
+              <span className="text-[10px] font-mono text-white/30 uppercase tracking-[2px] mb-2">Response Time</span>
+              <span className="text-lg font-medium text-white tracking-[-0.03em]">{"< 24"} <em className="font-serif italic font-normal text-sm text-[#d6ccff]">Hours</em></span>
+            </div>
+            <div className="w-px h-8 bg-white/10" />
+            <div className="flex flex-col items-center">
+              <span className="text-[10px] font-mono text-white/30 uppercase tracking-[2px] mb-2">Infrastructure</span>
+              <span className="text-lg font-medium text-white tracking-[-0.03em]">AWS HI-PERF</span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   )
