@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import Image from "next/image"
 
 const navLinks = [
   { href: "/platform", label: "Platform" },
@@ -14,6 +14,22 @@ const navLinks = [
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  // Track window scroll to switch navigation modes
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        setIsScrolled(true)
+      } else {
+        setIsScrolled(false)
+      }
+    }
+    window.addEventListener("scroll", handleScroll)
+    // Run once on load to catch initial state
+    handleScroll()
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
@@ -30,39 +46,50 @@ export function Navbar() {
   const closeMenu = () => setIsOpen(false)
 
   return (
-    <header className="fixed top-5 left-0 right-0 z-50 flex justify-center px-4 w-full">
-      <nav className="w-full max-w-[1320px] h-[60px] rounded-full border border-white/8 bg-[rgba(14,11,31,0.85)] backdrop-blur-[18px] saturate-[180%] px-6 sm:px-8 flex items-center justify-between shadow-[0_8px_32px_rgba(0,0,0,0.5)]">
+    <header
+      className={`fixed left-0 right-0 z-50 flex justify-center w-full transition-all duration-500 ease-in-out ${isScrolled ? "top-5 px-4" : "top-0 px-0"
+        }`}
+    >
+      <nav
+        className={`w-full flex items-center justify-between transition-all duration-500 ease-in-out ${isScrolled
+            ? "max-w-[1320px] h-[64px] rounded-full border border-white/8 bg-[rgba(14,11,31,0.85)] backdrop-blur-[18px] saturate-[180%] px-6 sm:px-8 shadow-[0_8px_32px_rgba(0,0,0,0.5)]"
+            : "max-w-none h-[80px] rounded-none border-b border-white/10  bg-[rgba(14,11,31,0.85)] backdrop-blur-sm px-6 sm:px-12"
+          }`}
+      >
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-3" onClick={closeMenu}>
-          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-[#8B6CFF] to-[#5B3FE0] text-white font-extrabold text-lg shadow-[0_0_15px_rgba(139,108,255,0.4)]">
-            G
+        <Link href="/" className="flex items-center gap-2" onClick={closeMenu}>
+          <Image src="/images/logo.png" alt="Logo" width={44} height={44} className="transition-all duration-500" />
+          <div className="flex flex-col">
+            <span className="text-[20px] font-bold text-white leading-none">Geodel</span>
+            <span className="text-[10px] text-white/50 tracking-wider mt-0.5">Backed by Logic AI</span>
           </div>
-          <span className="font-bold text-lg tracking-tight text-white font-sans">Geodel</span>
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-10">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-[11px] font-mono uppercase tracking-[2px] text-white/70 hover:text-white transition-colors"
+              className="text-[13px] capitalize font-medium tracking-[2px] text-white/70 hover:text-white transition-colors"
             >
               {link.label}
             </Link>
           ))}
         </div>
 
-        {/* CTA Button */}
+        {/* CTA Button in sleek technical gray */}
         <div className="hidden md:block">
-          <Button asChild className="rounded-full bg-white text-[#14101f] hover:bg-white/90 text-xs font-bold px-5 py-2.5 h-auto transition-all shadow-md">
-            <Link href="/contact">Get Started</Link>
-          </Button>
+          <Link href="/contact">
+            <button className="rounded-[20px] bg-zinc-800 hover:bg-zinc-700 text-white text-[13px] font-semibold px-6 py-3 border border-white/10 transition-all duration-300 shadow-md">
+              Get started <span className="text-sm ml-1">→</span>
+            </button>
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden p-2 text-white relative z-50"
+          className="md:hidden p-2 text-white relative z-50 bg-accent rounded-lg"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
           aria-expanded={isOpen}
@@ -73,9 +100,8 @@ export function Navbar() {
 
       {/* Mobile Navigation Overlay */}
       <div
-        className={`fixed inset-0 bg-[#14101f]/98 backdrop-blur-lg z-40 md:hidden transition-all duration-300 ${
-          isOpen ? "opacity-100 visible" : "opacity-0 invisible"
-        }`}
+        className={`fixed inset-0 bg-[#14101f]/98 backdrop-blur-lg z-40 md:hidden transition-all duration-300 ${isOpen ? "opacity-100 visible" : "opacity-0 invisible"
+          }`}
         style={{ top: "0", paddingTop: "80px" }}
       >
         <nav className="flex flex-col items-center justify-start h-full gap-8 px-6 pt-12">
@@ -89,9 +115,13 @@ export function Navbar() {
               {link.label}
             </Link>
           ))}
-          <Button asChild size="lg" className="rounded-full bg-white text-[#14101f] hover:bg-white/90 w-full max-w-xs mt-6 py-4 font-bold">
-            <Link href="/contact" onClick={closeMenu}>Get Started</Link>
-          </Button>
+          <Link
+            href="/contact"
+            onClick={closeMenu}
+            className="rounded-[20px] bg-zinc-800 hover:bg-zinc-700 text-white text-sm font-semibold py-4 w-full max-w-xs mt-6 flex items-center justify-center gap-2 transition-all duration-300 border border-white/10 shadow-md"
+          >
+            Get started <span className="text-sm">→</span>
+          </Link>
         </nav>
       </div>
     </header>

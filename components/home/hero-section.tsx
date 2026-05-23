@@ -5,9 +5,9 @@ export function HeroSection() {
     <section className="relative min-h-screen w-full bg-[#14101f] flex flex-col overflow-hidden">
       {/* Background Image & Overlays */}
       <div className="absolute inset-0 z-0">
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ 
+          style={{
             backgroundImage: "url('/images/hero-2.png')",
             backgroundPosition: "center 40%"
           }}
@@ -28,10 +28,10 @@ export function HeroSection() {
           </div>
 
           {/* Main Heading using signature editorial serif italic */}
-          <h1 className="display text-white mb-16 max-w-4xl">
+          <h1 className="display text-white mb-16 max-w-5xl">
             See the earth
-            <span className="block mt-3">
-              <em>before you drill it.</em>
+            <span className="font-semibold mt-3">
+              before you drill it.
             </span>
           </h1>
 
@@ -46,28 +46,19 @@ export function HeroSection() {
             {/* Action buttons */}
             <div className="flex flex-row items-center gap-4">
               {/* Start Exploration Button */}
-              <Link 
-                href="/contact" 
-                className="group flex items-center justify-between rounded-2xl bg-white text-[#14101f] hover:bg-white/95 px-6 py-4 w-44 transition-all duration-300 shadow-[0_8px_30px_rgba(255,255,255,0.05)]"
+              <Link
+                href="/contact"
+                className="rounded-[20px] bg-[#8B6CFF] hover:bg-[#7c5eff] text-white text-sm font-semibold px-6 py-3.5 flex items-center gap-2 transition-all duration-300 shadow-md"
               >
-                <div className="flex flex-col text-left">
-                  <span className="text-[10px] uppercase tracking-wider text-[#14101f]/50 font-bold leading-none mb-1">Start</span>
-                  <span className="text-sm font-extrabold text-[#14101f] leading-none">Exploration</span>
-                </div>
-                <span className="text-lg text-[#14101f] font-bold group-hover:translate-x-1 transition-transform">→</span>
+                Start exploration <span className="text-sm">→</span>
               </Link>
 
               {/* Watch Demo Button */}
-              <Link 
-                href="/platform" 
-                className="group flex items-center justify-between rounded-2xl border border-white/22 bg-white/4 hover:bg-white/8 text-white px-6 py-4 w-44 transition-all duration-300 backdrop-blur-sm"
+              <Link
+                href="/platform"
+                className="rounded-[20px] border border-white/22 bg-white/4 hover:bg-white/8 text-white text-sm font-semibold px-6 py-3.5 flex items-center gap-2 transition-all duration-300"
               >
-                <div className="flex flex-col text-left">
-                  <span className="text-[10px] uppercase tracking-wider text-white/40 font-bold leading-none mb-1">Watch</span>
-                  <span className="text-sm font-extrabold text-white leading-none">demo</span>
-                </div>
-                {/* Spacer to match width alignment */}
-                <div className="w-1.5 h-1.5 rounded-full bg-transparent" />
+                Watch demo
               </Link>
             </div>
           </div>

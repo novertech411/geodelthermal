@@ -1,7 +1,5 @@
 import Image from "next/image"
 import Link from "next/link"
-import GlassCard from "@/components/GlassCard"
-import StatusBadge from "@/components/StatusBadge"
 
 const sectors = [
   {
@@ -29,61 +27,62 @@ const sectors = [
 
 export function BuiltForSection() {
   return (
-    <section className="py-24 relative bg-background">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,var(--primary)/0.02_0%,transparent_70%)]" />
-      
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16">
-          <StatusBadge label="Sectors" value="Direct Application" className="justify-center mb-4" />
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-balance">
-            <span className="text-foreground/90">Built for</span>{" "}
-            <span className="gradient-text">Energy Projects</span>
+    <section className="py-32 bg-[#14101f] relative">
+      <div className="mx-auto max-w-[1360px] px-8 relative z-10">
+        
+        {/* Section Header */}
+        <div className="mb-16">
+          <span className="eyebrow mb-4">05 — Sectors</span>
+          <h2 className="h2 text-white leading-tight">
+            Built for{" "}
+            <em>energy projects.</em>
           </h2>
-          <p className="mt-6 text-lg text-muted-foreground max-w-2xl mx-auto px-4 leading-relaxed">
+          <p className="lede mt-6">
             Specialized solutions for the unique challenges of energy and resource development.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        {/* Photo Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {sectors.map((sector) => (
             <Link
               key={sector.title}
               href={sector.href}
-              className="group block h-full"
+              className="group relative aspect-[4/5] rounded-[24px] overflow-hidden border border-white/10 bg-[#1c1730] transition-all duration-[400ms] hover:-translate-y-1 shadow-xl block"
             >
-              <GlassCard className="h-full p-0 border-white/5 group-hover:border-primary/40 transition-all duration-500 overflow-hidden">
-                {/* Image */}
-                <div className="relative h-48 sm:h-56 overflow-hidden border-b border-white/10">
-                  <Image
-                    src={sector.image}
-                    alt={sector.title}
-                    fill
-                    className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-60" />
-                  <div className="absolute top-4 right-4 z-20">
-                    <StatusBadge label="ID" value={sector.sectorId} />
-                  </div>
-                </div>
+              {/* Background Image */}
+              <Image
+                src={sector.image}
+                alt={sector.title}
+                fill
+                className="object-cover filter saturate-[0.85] transition-transform duration-700 group-hover:scale-[1.04]"
+              />
+              
+              {/* Dark Fade Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#14101f] via-[#14101f]/35 to-transparent pointer-events-none" />
+
+              {/* Body content in bottom 40% */}
+              <div className="absolute inset-x-0 bottom-0 p-8 flex flex-col justify-end h-[50%] z-10">
+                {/* Mono Label */}
+                <span className="text-[10px] font-mono tracking-[0.2em] text-[#d6ccff] uppercase mb-2">
+                  SECTOR // {sector.sectorId}
+                </span>
                 
-                <div className="relative p-6">
-                  {/* Content */}
-                  <h3 className="text-xl sm:text-2xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors tracking-tight">
-                    {sector.title}
-                  </h3>
-                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    {sector.description}
-                  </p>
-                  
-                  {/* Arrow Action */}
-                  <div className="mt-6 flex items-center text-primary font-mono text-[10px] uppercase tracking-[0.2em] opacity-60 group-hover:opacity-100 transition-opacity">
-                    <span>Explore Solutions</span>
-                    <svg className="ml-2 h-3 w-3 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </div>
-                </div>
-              </GlassCard>
+                {/* 24px Title */}
+                <h3 className="text-2xl font-bold tracking-tight text-white mb-2">
+                  {sector.title}
+                </h3>
+                
+                {/* 14.5px Description */}
+                <p className="text-[14.5px] text-white/55 leading-relaxed mb-4">
+                  {sector.description}
+                </p>
+                
+                {/* Mono CTA in accent-soft */}
+                <span className="text-[11px] font-mono tracking-[0.2em] text-[#d6ccff] group-hover:text-white uppercase flex items-center gap-1 transition-colors">
+                  Explore Solutions <span className="transition-transform group-hover:translate-x-1">→</span>
+                </span>
+              </div>
             </Link>
           ))}
         </div>

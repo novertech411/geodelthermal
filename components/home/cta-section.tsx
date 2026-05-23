@@ -41,9 +41,9 @@ export function CTASection() {
           <div className="mt-10">
             <Link 
               href="/contact" 
-              className="btn btn-accent rounded-xl px-8 py-4 text-sm font-semibold tracking-wide"
+              className="rounded-[20px] bg-[#8B6CFF] hover:bg-[#7c5eff] text-white text-sm font-semibold px-8 py-4 flex items-center gap-2 transition-all duration-300 shadow-md inline-flex"
             >
-              Get Started Now <span className="ml-2 font-sans font-bold">→</span>
+              Get started now <span className="text-sm">→</span>
             </Link>
           </div>
 
