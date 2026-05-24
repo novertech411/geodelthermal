@@ -5,7 +5,6 @@ import { Footer } from "@/components/footer"
 import Link from "next/link"
 import StatusBadge from "@/components/StatusBadge"
 import { 
-  ArrowRight, 
   Flame, 
   MapPin, 
   Building,
@@ -17,51 +16,85 @@ import {
   Search,
   BarChart3,
   FileCheck,
-  Layers
+  Layers,
+  Waves,
+  ShieldAlert,
+  Compass,
+  Cpu
 } from "lucide-react"
 
 const solutions = [
   {
-    id: "geothermal",
-    code: "GEOT-01",
-    icon: Flame,
-    title: "Geothermal Development",
-    description: "Unlock the potential of geothermal energy with comprehensive subsurface characterization. From initial exploration to reservoir management, Geodel provides the intelligence needed for successful geothermal projects.",
+    id: "water-balance",
+    code: "WAT-BAL",
+    icon: Waves,
+    title: "Water Balance Intelligence",
+    subtitle: "Operational Visibility Across Water Systems",
+    description: "Geodel tracks water movement throughout mining infrastructure, providing insight into usage, recycling performance, operational demand, storage conditions, water efficiency, and resource availability.",
+    image: "/images/water_balance_solution.png",
     features: [
-      { icon: Thermometer, text: "Thermal gradient modeling" },
-      { icon: Droplets, text: "Fluid flow simulation" },
-      { icon: Mountain, text: "Reservoir characterization" },
-      { icon: BarChart3, text: "Production forecasting" },
-    ],
-    gradient: "from-orange-500/20 to-red-500/20",
-  },
-  {
-    id: "exploration",
-    code: "EXPL-02",
-    icon: MapPin,
-    title: "Subsurface Exploration",
-    description: "Support mineral and resource exploration with advanced subsurface intelligence. Integrate geophysical, geological, and geochemical data to identify high-potential targets and reduce exploration risk.",
-    features: [
-      { icon: Pickaxe, text: "Target identification" },
-      { icon: Search, text: "Anomaly detection" },
-      { icon: Layers, text: "Structural analysis" },
-      { icon: BarChart3, text: "Probability mapping" },
+      { icon: Droplets, text: "Water accounting" },
+      { icon: BarChart3, text: "Flow analytics" },
+      { icon: Search, text: "Water loss detection" },
+      { icon: Waves, text: "Recycling analysis" },
+      { icon: Cpu, text: "Water forecasting" },
+      { icon: Layers, text: "Resource monitoring" },
     ],
     gradient: "from-blue-500/20 to-cyan-500/20",
   },
   {
-    id: "site-assessment",
-    code: "SITE-03",
-    icon: Building,
-    title: "Site Assessment",
-    description: "Evaluate subsurface conditions for infrastructure, construction, and environmental projects. Understand ground conditions, identify risks, and support informed site selection and design decisions.",
+    id: "tailings",
+    code: "TAIL-INT",
+    icon: ShieldAlert,
+    title: "Tailings Intelligence",
+    subtitle: "Real-Time Tailings Hydrology",
+    description: "Geodel provides visibility into tailings water systems, seepage conditions, water storage behavior, hydrological performance, recovery conditions, and operational trends.",
+    image: "/images/tailings_monitoring.png",
     features: [
-      { icon: FileCheck, text: "Ground condition analysis" },
-      { icon: Search, text: "Hazard identification" },
-      { icon: Layers, text: "Foundation assessment" },
-      { icon: BarChart3, text: "Risk quantification" },
+      { icon: Search, text: "Tailings monitoring" },
+      { icon: BarChart3, text: "Water level analytics" },
+      { icon: Cpu, text: "Seepage forecasting" },
+      { icon: Layers, text: "Groundwater interaction" },
+      { icon: ShieldAlert, text: "Risk intelligence" },
+      { icon: Droplets, text: "Operational alerts" },
+    ],
+    gradient: "from-orange-500/20 to-red-500/20",
+  },
+  {
+    id: "groundwater",
+    code: "GRND-INT",
+    icon: Compass,
+    title: "Groundwater Intelligence",
+    subtitle: "Groundwater Analytics for Extraction Environments",
+    description: "Geodel delivers groundwater visibility across critical mineral operations through aquifer monitoring, groundwater analytics, drawdown forecasting, recharge estimation, water movement analysis, and hydrological forecasting.",
+    image: "/images/groundwater_aquifer.png",
+    features: [
+      { icon: Search, text: "Monitoring well analytics" },
+      { icon: Layers, text: "Groundwater modeling" },
+      { icon: Cpu, text: "Resource forecasting" },
+      { icon: Droplets, text: "Hydrological mapping" },
+      { icon: BarChart3, text: "Operational intelligence" },
+      { icon: Compass, text: "Long-term trend analysis" },
     ],
     gradient: "from-green-500/20 to-emerald-500/20",
+  },
+  {
+    id: "predictive",
+    code: "PRED-RES",
+    icon: Cpu,
+    title: "Predictive Resource Intelligence",
+    subtitle: "Forecasting Resource System Performance",
+    description: "Geodel combines predictive analytics and hydrological intelligence to forecast operational conditions, water-related system changes, resource availability, hydrological trends, infrastructure performance, and environmental conditions.",
+    image: "/images/predictive_resource.png",
+    features: [
+      { icon: ShieldAlert, text: "Predictive alerts" },
+      { icon: Cpu, text: "Forecast modeling" },
+      { icon: BarChart3, text: "Operational analytics" },
+      { icon: Search, text: "Resource scoring" },
+      { icon: Layers, text: "Trend intelligence" },
+      { icon: Compass, text: "AI-assisted tips" },
+    ],
+    gradient: "from-purple-500/20 to-indigo-500/20",
   },
 ]
 
@@ -80,10 +113,10 @@ export default function SolutionsPage() {
           <div className="relative z-10 mx-auto max-w-7xl px-8 text-center flex flex-col items-center justify-center">
             <StatusBadge label="Sector" value="Intelligence" className="justify-center mb-8" />
             <h1 className="display text-white max-w-4xl mx-auto mb-8 text-balance">
-              Our <em>Solutions</em>
+              Hydrological <em>Solutions</em>
             </h1>
             <p className="lede mt-6 max-w-3xl mx-auto text-white/70">
-              Specialized subsurface intelligence for the unique challenges of energy and resource development.
+              Geodel provides operational intelligence solutions that support extraction, recovery, and water system performance across critical mineral operations.
             </p>
           </div>
         </section>
@@ -102,8 +135,8 @@ export default function SolutionsPage() {
                     {/* Content */}
                     <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
                       <div className="flex items-center gap-4 mb-6">
-                        <StatusBadge label="SERVICE" value="v2.0" />
-                        <StatusBadge label="ID" value={solution.code} />
+                        <StatusBadge label={solution.subtitle} value="v2.0" />
+                        <StatusBadge label="SYS-ID" value={solution.code} />
                       </div>
                       
                       <h2 className="h2 text-white mb-6">
@@ -116,12 +149,12 @@ export default function SolutionsPage() {
                       
                       {/* Features Grid */}
                       <div className="mt-10 grid sm:grid-cols-2 gap-6">
-                        {solution.features.map((feature) => (
-                          <div key={feature.text} className="flex items-center gap-4 group">
+                        {solution.features.map((feature, fIdx) => (
+                          <div key={fIdx} className="flex items-center gap-4 group">
                             <div className="w-10 h-10 rounded-[12px] bg-[#8B6CFF]/5 flex items-center justify-center border border-[#8B6CFF]/10 group-hover:border-[#8B6CFF]/30 transition-all">
                               <feature.icon className="h-5 w-5 text-[#8B6CFF]/70 group-hover:text-[#8B6CFF] transition-colors" />
                             </div>
-                            <span className="text-white/70 group-hover:text-white transition-colors font-medium">{feature.text}</span>
+                            <span className="text-white/70 group-hover:text-white transition-colors font-medium text-sm">{feature.text}</span>
                           </div>
                         ))}
                       </div>
@@ -142,63 +175,23 @@ export default function SolutionsPage() {
                     
                     {/* Visual Card */}
                     <div className={`${index % 2 === 1 ? 'lg:order-1' : ''} relative`}>
-                      <div className="card aspect-square p-12 border-white/10 bg-black/40 overflow-hidden relative">
-                        <div className={`absolute inset-0 bg-gradient-to-br ${solution.gradient} opacity-10`} />
+                      <div className="card aspect-square p-0 border-white/10 bg-black/40 overflow-hidden relative group">
+                        <img
+                          src={solution.image}
+                          alt={solution.title}
+                          className="w-full h-full object-cover opacity-80 filter saturate-[0.85] transition-transform duration-700 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
                         
-                        {/* Abstract Visual Cluster */}
-                        <div className="relative h-full flex items-center justify-center">
-                          <div className="relative">
-                            <div className="absolute inset-0 bg-[#8B6CFF]/10 blur-[60px] rounded-full scale-150 animate-pulse-slow" />
-                            <solution.icon className="h-40 w-40 text-[#8B6CFF]/80 relative z-10" />
-                          </div>
+                        {/* Status chip overlay */}
+                        <div className="absolute bottom-6 left-6 pointer-events-none">
+                          <StatusBadge label="INTELLIGENCE" value="VISUALIZATION" />
                         </div>
-                        
-                        {/* Grid overlay */}
-                        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-5" />
                       </div>
                       {/* Technical Frame Accents */}
                       <div className="absolute -top-4 -left-4 w-12 h-12 border-t border-l border-white/10" />
                       <div className="absolute -bottom-4 -right-4 w-12 h-12 border-b border-r border-white/10" />
                     </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Why Choose Geodel Section */}
-        <section className="py-24 relative bg-black/40 border-y border-white/5">
-          <div className="mx-auto max-w-7xl px-8">
-            <div className="text-center mb-16">
-              <StatusBadge label="Benchmarking" value="Performance" className="justify-center mb-6" />
-              <h2 className="h2 text-white mb-6">
-                Why Choose <em>Geodel</em>
-              </h2>
-              <p className="mt-6 text-base text-white/70 max-w-2xl mx-auto">
-                A partner that understands subsurface complexity.
-              </p>
-            </div>
-            
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[
-                { title: "Domain Expertise", desc: "Built by geoscientists for geoscientists", code: "DOM-01" },
-                { title: "Proven Methods", desc: "Rigorous, validated approaches to analysis", code: "PRV-02" },
-                { title: "Integrated Platform", desc: "One system from data to decision", code: "INT-03" },
-                { title: "Clear Outputs", desc: "Actionable intelligence, not just data", code: "OUT-04" },
-                { title: "Rapid Delivery", desc: "Fast turnaround without compromising quality", code: "RAP-05" },
-                { title: "Collaborative", desc: "We work alongside your team", code: "COL-06" },
-              ].map((item) => (
-                <div key={item.title} className="card group border-white/5 hover:border-[#8B6CFF]/20 transition-all duration-500">
-                  <div className="flex flex-col h-full">
-                    <div className="flex justify-between items-start mb-6">
-                      <div className="w-10 h-10 rounded-[12px] bg-[#8B6CFF]/10 flex items-center justify-center border border-[#8B6CFF]/10">
-                        <CheckCircle className="h-5 w-5 text-[#8B6CFF]" />
-                      </div>
-                      <StatusBadge label="REF" value={item.code} />
-                    </div>
-                    <h3 className="text-lg font-semibold text-white tracking-tight mb-3">{item.title}</h3>
-                    <p className="text-sm text-white/60 leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
               ))}
@@ -221,7 +214,7 @@ export default function SolutionsPage() {
                   Ready to <em>Get Started?</em>
                 </h2>
                 <p className="lede max-w-2xl mx-auto mb-12 text-white/70">
-                  Tell us about your project and discover how Geodel can help.
+                  Tell us about your critical mineral operations and discover how Geodel can help optimize your water systems.
                 </p>
                 <Link 
                   href="/contact" 

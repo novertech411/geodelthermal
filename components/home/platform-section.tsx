@@ -1,29 +1,29 @@
-import { Database, Cpu, Eye, FileOutput } from "lucide-react"
+import { Droplets, ShieldAlert, Waves, Compass, Activity, Database, LineChart, FileText } from "lucide-react"
 
 const features = [
   {
-    icon: Database,
-    title: "Data Integration",
-    description: "Seamlessly combine geological surveys, well logs, seismic data, and more into a single coherent dataset.",
-    tag: "ETL-ENGINE"
+    icon: Waves,
+    title: "Water Movement",
+    description: "Continuously monitor and trace flow rates, recycling performance, and active transport lines across mine infrastructure.",
+    tag: "HYDR-FLOW"
   },
   {
-    icon: Cpu,
-    title: "Geothermal Modeling",
-    description: "Build and refine subsurface models using machine learning and geostatistical methods.",
-    tag: "ML-KERNEL"
+    icon: Droplets,
+    title: "Groundwater Behavior",
+    description: "Analyze dynamic aquifer stress, drawdown trends, and recharge indicators in extraction zones.",
+    tag: "AQUI-ANALYT"
   },
   {
-    icon: Eye,
-    title: "Structural Interpretation",
-    description: "Visualize complex 3D structures and identify key features with interactive tools.",
-    tag: "RTX-VIEW"
+    icon: ShieldAlert,
+    title: "Tailings Conditions",
+    description: "Track seepage hotspots, safety thresholds, and water storage capacities inside storage structures.",
+    tag: "TAIL-STAT"
   },
   {
-    icon: FileOutput,
-    title: "Automated Reporting",
-    description: "Generate comprehensive reports, maps, and recommendations ready for stakeholders.",
-    tag: "O-PROCESS"
+    icon: Compass,
+    title: "Water Recovery",
+    description: "Optimize recovery rates and resource consumption to maximize operational efficiency and resilience.",
+    tag: "RECOV-OPT"
   },
 ]
 
@@ -34,13 +34,13 @@ export function PlatformSection() {
       
       <div className="mx-auto max-w-[1360px] px-8 relative z-10">
         <div className="mb-16">
-          <span className="eyebrow mb-4">04 — Infrastructure</span>
+          <span className="eyebrow mb-4">04 — Platform Overview</span>
           <h2 className="h2 text-white leading-tight">
-            One unified{" "}
-            <em>data platform.</em>
+            Operational Intelligence for{" "}
+            <em>Water-Constrained Mineral Systems.</em>
           </h2>
           <p className="lede mt-6">
-            Everything you need to understand and act on subsurface data, unified in a single powerful system.
+            Geodel transforms hydrological and operational data into actionable intelligence for critical mineral infrastructure.
           </p>
         </div>
 
@@ -82,7 +82,7 @@ export function PlatformSection() {
                 <div className="relative aspect-video rounded-xl overflow-hidden border border-white/10">
                   <img 
                     src="/images/geological/seismic_viz.png" 
-                    alt="Seismic Data Visualization" 
+                    alt="Hydrological Data Visualization" 
                     className="w-full h-full object-cover filter saturate-[0.85]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#14101f]/80 via-transparent to-transparent pointer-events-none" />
@@ -90,7 +90,7 @@ export function PlatformSection() {
                   {/* Glowing Status badge */}
                   <div className="absolute top-6 left-6 rounded-full border border-white/10 bg-[rgba(14,11,31,0.7)] backdrop-blur-md px-4 py-2 flex items-center gap-2 shadow-md">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#4ADE80] shadow-[0_0_8px_#4ADE80]" />
-                    <span className="font-mono text-[9px] uppercase tracking-widest text-white/60">SYS-NODE // RTX-VIEW</span>
+                    <span className="font-mono text-[9px] uppercase tracking-widest text-white/60">SYS-NODE // HYDR-CORE</span>
                   </div>
                 </div>
               </div>
@@ -99,23 +99,23 @@ export function PlatformSection() {
               <div className="lg:col-span-2 space-y-8">
                 <div>
                   <h3 className="text-3xl font-bold tracking-tight text-white mb-4">
-                    High-Fidelity{" "}
+                    Real-Time{" "}
                     <span className="block mt-1">
-                      <em>Seismic Interpretation</em>
+                      <em>Water Analytics</em>
                     </span>
                   </h3>
                   <p className="text-white/70 text-sm leading-relaxed">
-                    Our platform processes raw seismic datasets into high-resolution 3D stratigraphic models. Identify fault lines, sediment distributions, and geothermal hotspots with confidence.
+                    Our platform processes raw telemetry, ground telemetry, and meteorological data into unified 3D flow sheets. Identify hydrological risk indicators, monitor recycling rates, and trace tailing status in real-time.
                   </p>
                 </div>
                 
                 {/* 4 Spec Tiles */}
                 <div className="grid grid-cols-2 gap-4">
                   {[
-                    { label: "RESOLUTION", value: "2.4m / Pixel" },
-                    { label: "DEPTH_RANGE", value: "0 - 8000m" },
-                    { label: "PROCESSING", value: "GPU-ACCELERATED" },
-                    { label: "ACCURACY", value: "CLASS-A" },
+                    { label: "TELEMETRY LATENCY", value: "< 1.2 seconds" },
+                    { label: "MONITORED DEPTH", value: "0 - 1500m" },
+                    { label: "INGESTION PORT", value: "REST / MQTT / EDGE" },
+                    { label: "SECURITY CLASS", value: "SOC2 TYPE II" },
                   ].map((stat) => (
                     <div key={stat.label} className="p-4 rounded-lg bg-[rgba(255,255,255,0.02)] border border-white/5">
                       <div className="text-[9px] font-mono text-white/30 uppercase tracking-[1.5px] mb-1.5">

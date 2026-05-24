@@ -5,8 +5,10 @@ import { Linkedin, Twitter } from "lucide-react"
 const navLinks = [
   { href: "/platform", label: "Platform" },
   { href: "/solutions", label: "Solutions" },
-  { href: "/reports", label: "Reports" },
-  { href: "/contact", label: "Contact" },
+  { href: "/industries", label: "Industries" },
+  { href: "/insights", label: "Insights" },
+  // { href: "/about", label: "About" },
+  // { href: "/contact", label: "Contact" },
 ]
 
 const socialLinks = [
@@ -16,23 +18,16 @@ const socialLinks = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-border/50 bg-background">
+    <footer className="border-t border-border/50 bg-[#14101f]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         <div className="flex flex-col items-center gap-8 md:flex-row md:justify-between">
           {/* Logo and Tagline */}
           <div className="flex flex-col items-center md:items-start gap-2">
             <div className="flex items-center gap-2">
-              <Image
-                src="/images/logo.jpeg"
-                alt="Geodel Logo"
-                width={40}
-                height={40}
-                className="h-10 w-10 rounded-lg"
-              />
-              <span className="font-bold text-xl text-foreground">Geodel</span>
+              <span className="font-bold text-xl text-white">Geodel</span>
             </div>
-            <p className="text-sm text-muted-foreground text-center md:text-left">
-              Subsurface Intelligence for Energy
+            <p className="text-sm text-white/50 text-center md:text-left">
+              Hydrological Intelligence for Critical Minerals
             </p>
           </div>
 

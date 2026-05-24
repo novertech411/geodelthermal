@@ -21,42 +21,53 @@ export function CTASection() {
         >
           {/* Tag-pill above */}
           <div className="tag-pill mb-8">
-            Ready to deploy — v2.4 Online
+            06 — WHY GEODEL // VISION
           </div>
           
           {/* Display Headline */}
-          <h2 className="h2 text-white leading-tight max-w-2xl text-center">
-            Make better{" "}
-            <span className="block sm:inline">
-              <em>subsurface decisions.</em>
+          <h2 className="h2 text-white leading-tight max-w-3xl text-center">
+            Building the intelligence layer{" "}
+            <span className="block mt-1">
+              for <em>critical minerals.</em>
             </span>
           </h2>
           
           {/* Lede Text */}
-          <p className="lede mt-6 text-center max-w-xl">
-            Ready to transform your subsurface data into actionable intelligence? Start a conversation with our team today.
+          <p className="lede mt-6 text-center max-w-2xl">
+            The future of mineral infrastructure depends on predictive systems, operational visibility, and hydrological intelligence. Geodel connects hydrology, mineral systems, and predictive analytics.
           </p>
           
           {/* Accent Button */}
-          <div className="mt-10">
+          <div className="mt-10 flex flex-col sm:flex-row items-center gap-4">
             <Link 
               href="/contact" 
               className="rounded-[20px] bg-[#8B6CFF] hover:bg-[#7c5eff] text-white text-sm font-semibold px-8 py-4 flex items-center gap-2 transition-all duration-300 shadow-md inline-flex"
             >
-              Get started now <span className="text-sm">→</span>
+              Schedule a Demo <span className="text-sm">→</span>
+            </Link>
+            <Link 
+              href="/contact" 
+              className="rounded-[20px] border border-white/22 bg-white/4 hover:bg-white/8 text-white text-sm font-semibold px-8 py-4 flex items-center gap-2 transition-all duration-300 inline-flex"
+            >
+              Contact Geodel
             </Link>
           </div>
 
           {/* Bottom Meta Row */}
-          <div className="mt-16 flex items-center justify-center gap-12 border-t border-white/10 pt-8 w-full max-w-lg">
-            <div className="flex flex-col items-center">
-              <span className="text-[10px] font-mono text-white/30 uppercase tracking-[2px] mb-2">Response Time</span>
-              <span className="text-lg font-medium text-white tracking-[-0.03em]">{"< 24"} <em className="italic font-normal text-sm text-[#d6ccff]">Hours</em></span>
+          <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-12 border-t border-white/10 pt-8 w-full max-w-2xl">
+            <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
+              <span className="text-[10px] font-mono text-white/30 uppercase tracking-[2px] mb-2">Systems Expertise</span>
+              <span className="text-base font-semibold text-white">Hydrology + Mineral Recovery</span>
             </div>
-            <div className="w-px h-8 bg-white/10" />
-            <div className="flex flex-col items-center">
-              <span className="text-[10px] font-mono text-white/30 uppercase tracking-[2px] mb-2">Infrastructure</span>
-              <span className="text-lg font-medium text-white tracking-[-0.03em]">AWS HI-PERF</span>
+            <div className="hidden sm:block w-px h-8 bg-white/10" />
+            <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
+              <span className="text-[10px] font-mono text-white/30 uppercase tracking-[2px] mb-2">Operational Goal</span>
+              <span className="text-base font-semibold text-white">Optimize Water Balance</span>
+            </div>
+            <div className="hidden sm:block w-px h-8 bg-white/10" />
+            <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
+              <span className="text-[10px] font-mono text-white/30 uppercase tracking-[2px] mb-2">Deployability</span>
+              <span className="text-base font-semibold text-[#d6ccff]">Edge Telemetry Ingest</span>
             </div>
           </div>
         </div>

@@ -5,8 +5,6 @@ import { Footer } from "@/components/footer"
 import StatusBadge from "@/components/StatusBadge"
 import { 
   Mail, 
-  Phone, 
-  MapPin, 
   Send,
   Linkedin,
   Twitter,
@@ -14,7 +12,10 @@ import {
   Clock,
   Settings,
   Shield,
-  Zap
+  Zap,
+  Building2,
+  MapPin,
+  FileText
 } from "lucide-react"
 
 export default function ContactPage() {
@@ -34,12 +35,12 @@ export default function ContactPage() {
           </div>
           
           <div className="relative z-10 mx-auto max-w-7xl px-8 text-center flex flex-col items-center justify-center">
-            <StatusBadge label="Communication" value="System v1.0" className="justify-center mb-8" />
+            <StatusBadge label="Communication" value="System Node" className="justify-center mb-8" />
             <h1 className="display text-white max-w-4xl mx-auto mb-8 text-balance">
-              Contact Our <em>Team</em>
+              Connect with <em>Geodel.</em>
             </h1>
             <p className="lede mt-6 max-w-3xl mx-auto text-white/70">
-              Connect with our experts to discuss your subsurface intelligence requirements and project objectives.
+              Learn how Geodel supports critical mineral operations through hydrological intelligence and operational visibility.
             </p>
           </div>
         </section>
@@ -50,17 +51,18 @@ export default function ContactPage() {
               {/* Contact Information */}
               <div className="space-y-12">
                 <div>
-                  <h2 className="h2 text-white mb-8">System Node Info</h2>
+                  <h2 className="h2 text-white mb-8">Node Inquiries</h2>
                   <div className="grid gap-6">
                     {[
-                      { icon: Mail, label: "Email Node", value: "info@geodel.io", code: "MAIL-SEC-01" },
-                      { icon: Phone, label: "Phone Node", value: "+1 (555) 000-0000", code: "PHO-SEC-02" },
-                      { icon: MapPin, label: "Geo Location", value: "San Francisco, CA", code: "GEO-SEC-03" },
+                      { label: "General Inquiries", value: "info@geodel.com", code: "GEN-01" },
+                      { label: "Partnerships", value: "partners@geodel.com", code: "PART-02" },
+                      { label: "Investor Relations", value: "investors@geodel.com", code: "INV-03" },
+                      { label: "Media", value: "media@geodel.com", code: "MED-04" },
                     ].map((item) => (
                       <div key={item.label} className="card group border-white/5 hover:border-[#8B6CFF]/20 transition-all duration-500">
                         <div className="flex items-center gap-6">
                           <div className="w-12 h-12 rounded-xl bg-white/[0.02] flex items-center justify-center border border-white/10 group-hover:bg-[#8B6CFF]/10 transition-colors">
-                            <item.icon className="h-6 w-6 text-[#8B6CFF]" />
+                            <Mail className="h-6 w-6 text-[#8B6CFF]" />
                           </div>
                           <div className="flex-1">
                             <div className="flex justify-between items-center mb-1">
@@ -98,15 +100,15 @@ export default function ContactPage() {
                 <div className="card bg-black/40 border-white/5 p-8">
                   <div className="flex items-center gap-3 mb-6">
                     <Zap className="h-5 w-5 text-[#8B6CFF]" />
-                    <span className="font-bold text-white">Operational Status</span>
+                    <span className="font-bold text-white">System Status</span>
                   </div>
                   <div className="space-y-4">
                     {[
-                      { icon: Clock, label: "Response Time", value: "< 24 Hours", status: "OK" },
-                      { icon: Settings, label: "Consultation", value: "Available", status: "ONLINE" },
-                      { icon: Shield, label: "Security", value: "End-to-End", status: "ACTIVE" },
-                    ].map((spec) => (
-                      <div key={spec.label} className="flex items-center justify-between py-3 border-b border-white/5 last:border-0">
+                      { icon: Clock, label: "Response Threshold", value: "< 24 Hours", status: "OK" },
+                      { icon: Settings, label: "Operational Hubs", value: "Lithium / Copper / Rare Earths", status: "READY" },
+                      { icon: Shield, label: "Compliance Layer", value: "SOC2 Security", status: "ACTIVE" },
+                    ].map((spec, i) => (
+                      <div key={i} className="flex items-center justify-between py-3 border-b border-white/5 last:border-0">
                         <div className="flex items-center gap-3">
                           <spec.icon className="h-4 w-4 text-white/30" />
                           <span className="text-sm text-white/70">{spec.label}</span>
@@ -129,45 +131,75 @@ export default function ContactPage() {
                       <Send className="h-6 w-6 text-[#8B6CFF]" />
                     </div>
                     <div>
-                      <h2 className="text-xl font-bold text-white tracking-tight">Initiate Contact</h2>
-                      <p className="text-xs font-mono text-white/30 uppercase tracking-widest mt-1">Ref: GEODEL-CONTACT-BETA</p>
+                      <h2 className="text-xl font-bold text-white tracking-tight">Request a Demo</h2>
+                      <p className="text-xs font-mono text-white/30 uppercase tracking-widest mt-1">Ref: GEODEL-CONTACT-V4</p>
                     </div>
                   </div>
 
                   <form className="space-y-6" onSubmit={handleSubmit}>
                     <div className="grid sm:grid-cols-2 gap-6">
                       <div className="space-y-2">
-                        <label className="text-[10px] font-mono text-white/40 uppercase tracking-widest ml-1">Identity/Name</label>
+                        <label className="text-[10px] font-mono text-white/40 uppercase tracking-widest ml-1">Name</label>
                         <input
                           type="text"
+                          required
                           className="w-full bg-white/[0.03] border border-white/10 focus:border-[#8B6CFF]/50 focus:ring-1 focus:ring-[#8B6CFF]/50 rounded-xl px-4 py-3 text-white transition-all outline-none"
-                          placeholder="Node Identifier"
+                          placeholder="Your identity"
                         />
                       </div>
                       <div className="space-y-2">
-                        <label className="text-[10px] font-mono text-white/40 uppercase tracking-widest ml-1">Email Address</label>
+                        <label className="text-[10px] font-mono text-white/40 uppercase tracking-widest ml-1">Company</label>
                         <input
-                          type="email"
+                          type="text"
+                          required
                           className="w-full bg-white/[0.03] border border-white/10 focus:border-[#8B6CFF]/50 focus:ring-1 focus:ring-[#8B6CFF]/50 rounded-xl px-4 py-3 text-white transition-all outline-none"
-                          placeholder="node@domain.io"
+                          placeholder="Mining operations"
                         />
                       </div>
                     </div>
-                    <div className="space-y-2">
-                      <label className="text-[10px] font-mono text-white/40 uppercase tracking-widest ml-1">Target Subject</label>
-                      <select className="w-full bg-white/[0.03] border border-white/10 focus:border-[#8B6CFF]/50 focus:ring-1 focus:ring-[#8B6CFF]/50 rounded-xl px-4 py-3 text-white transition-all outline-none appearance-none">
-                        <option className="bg-[#14101f]">General Inquiry</option>
-                        <option className="bg-[#14101f]">Platform Demo</option>
-                        <option className="bg-[#14101f]">Technical Support</option>
-                        <option className="bg-[#14101f]">Other</option>
-                      </select>
+
+                    <div className="grid sm:grid-cols-2 gap-6">
+                      <div className="space-y-2">
+                        <label className="text-[10px] font-mono text-white/40 uppercase tracking-widest ml-1">Industry</label>
+                        <select className="w-full bg-white/[0.03] border border-white/10 focus:border-[#8B6CFF]/50 focus:ring-1 focus:ring-[#8B6CFF]/50 rounded-xl px-4 py-3 text-white transition-all outline-none appearance-none">
+                          <option className="bg-[#14101f]">Lithium</option>
+                          <option className="bg-[#14101f]">Copper</option>
+                          <option className="bg-[#14101f]">Rare Earths</option>
+                          <option className="bg-[#14101f]">Graphite</option>
+                          <option className="bg-[#14101f]">Uranium</option>
+                          <option className="bg-[#14101f]">Other</option>
+                        </select>
+                      </div>
+                      <div className="space-y-2">
+                        <label className="text-[10px] font-mono text-white/40 uppercase tracking-widest ml-1">Email</label>
+                        <input
+                          type="email"
+                          required
+                          className="w-full bg-white/[0.03] border border-white/10 focus:border-[#8B6CFF]/50 focus:ring-1 focus:ring-[#8B6CFF]/50 rounded-xl px-4 py-3 text-white transition-all outline-none"
+                          placeholder="operator@domain.com"
+                        />
+                      </div>
                     </div>
+
                     <div className="space-y-2">
-                      <label className="text-[10px] font-mono text-white/40 uppercase tracking-widest ml-1">Intelligence / Message</label>
+                      <label className="text-[10px] font-mono text-white/40 uppercase tracking-widest ml-1">Project Location</label>
+                      <div className="relative">
+                        <input
+                          type="text"
+                          required
+                          className="w-full bg-white/[0.03] border border-white/10 focus:border-[#8B6CFF]/50 focus:ring-1 focus:ring-[#8B6CFF]/50 rounded-xl px-4 py-3 text-white transition-all outline-none"
+                          placeholder="e.g. Atacama, Chile"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="space-y-2">
+                      <label className="text-[10px] font-mono text-white/40 uppercase tracking-widest ml-1">Message</label>
                       <textarea
-                        rows={6}
+                        rows={5}
+                        required
                         className="w-full bg-white/[0.03] border border-white/10 focus:border-[#8B6CFF]/50 focus:ring-1 focus:ring-[#8B6CFF]/50 rounded-xl px-4 py-3 text-white transition-all outline-none resize-none"
-                        placeholder="Transmission data..."
+                        placeholder="Project parameters and data requirements..."
                       />
                     </div>
                     <button 

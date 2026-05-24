@@ -2,37 +2,45 @@ import Link from "next/link"
 
 const capabilities = [
   {
-    title: "Geothermal field",
-    italicTitle: "mapping.",
-    subtitle: "02 — High-resolution interpretation",
-    description: "Our proprietary engine processes raw field measurements into actionable 3D stratigraphic maps. We identify hotspots with 92% confidence by correlating thermal gradients with fluid flow dynamics.",
+    title: "Hydrology &",
+    italicTitle: "extraction.",
+    subtitle: "02 — Hydrological Infrastructure",
+    description: "Critical mineral operations rely on water systems for extraction, processing, recovery, and long-term operational continuity. Geodel delivers real-time visibility across resource-constrained sites.",
     image: "/images/geological/site_drilling.png",
     points: [
-      { name: "Thermal Gradient Analysis", desc: "Correlating deep heat flow data with structural trends." },
-      { name: "Fluid Migration Pathing", desc: "Simulating reservoir dynamics and permeability zones." },
-      { name: "Fracture Network Modeling", desc: "Generating high-fidelity discrete fracture networks." }
+      { name: "Hydrological Monitoring", desc: "Real-time telemetry tracking water flows, quality, and storage levels." },
+      { name: "Water Balance Intelligence", desc: "Integrating recycling rates and process usage to optimize water efficiency." },
+      { name: "Groundwater Analytics", desc: "Modeling aquifer behavior, recharge conditions, and drawdown trends." }
     ],
-    tag: "GEO-FIELD-v4"
+    tag: "HYDR-EXTRACT-v4"
   },
   {
-    title: "Seismic data",
-    italicTitle: "synthesis.",
-    subtitle: "03 — Deep structural insights",
-    description: "Transform complex seismic arrays into unified structural volumes. Geodel's synthesis layer removes noise and highlights stratigraphic traps that standard processing misses.",
+    title: "Tailings &",
+    italicTitle: "optimization.",
+    subtitle: "03 — Operational Security",
+    description: "Geodel delivers the intelligence infrastructure that connects hydrology, mineral systems, and operational decision-making to strengthen safety and operational continuity.",
     image: "/images/geological/volcanic_wireframe.png",
     points: [
-      { name: "Automated Fault Tracking", desc: "Identifying fault slip structures through machine learning." },
-      { name: "Velocity Model Inversion", desc: "Refining rock density estimates from wave reflections." },
-      { name: "Subsurface Target Selection", desc: "Optimizing drilling routes for geothermal or gas traps." }
+      { name: "Tailings Intelligence", desc: "Real-time monitoring of seepage, water storage, and recovery opportunities." },
+      { name: "Predictive Forecasting", desc: "AI-assisted risk modeling and hydrological stress forecasting." },
+      { name: "Resource Optimization Insights", desc: "Actionable metrics to maximize extraction and recovery performance." }
     ],
-    tag: "SEIS-SYNTH-X"
+    tag: "TAIL-OPTIM-X"
   }
 ]
 
 export function FeaturesSplitSection() {
   return (
-    <section className="py-32 bg-[#14101f] relative overflow-hidden">
+    <section className="py-32 bg-[#14101f] relative overflow-hidden border-b border-white/5">
       <div className="mx-auto max-w-[1360px] px-8">
+        {/* Eyebrow and Section Header */}
+        <div className="max-w-3xl mb-24">
+          <div className="text-[10px] font-mono text-[#8B6CFF] uppercase tracking-[0.25em] mb-4">THE FUTURE OF CRITICAL MINERALS</div>
+          <h2 className="h2 text-white leading-tight">
+            Water Intelligence Powers Modern <em>Mineral Infrastructure.</em>
+          </h2>
+        </div>
+
         <div className="space-y-48">
           {capabilities.map((cap, index) => (
             <div 
@@ -97,10 +105,10 @@ export function FeaturesSplitSection() {
                 {/* Explore capability action */}
                 <div className="pt-8">
                   <Link 
-                    href="/platform" 
+                    href="/solutions" 
                     className="group inline-flex items-center gap-2 text-xs font-mono uppercase tracking-[2px] text-[#d6ccff] hover:text-white transition-colors"
                   >
-                    Explore Capability <span className="transition-transform group-hover:translate-x-1">→</span>
+                    Explore Solutions <span className="transition-transform group-hover:translate-x-1">→</span>
                   </Link>
                 </div>
               </div>

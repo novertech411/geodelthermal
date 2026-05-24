@@ -14,8 +14,8 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Geodel - Subsurface Intelligence for Energy',
-  description: 'Geodel turns subsurface data into clear decisions. Advanced geospatial intelligence platform for energy exploration and site assessment.',
+  title: 'Geodel - Hydrological Intelligence for Critical Minerals',
+  description: 'Geodel provides real-time hydrological intelligence for critical mineral operations, enabling mining companies to monitor, predict, and optimize water systems.',
   generator: 'v0.app',
   keywords: ['subsurface intelligence', 'geospatial', 'energy', 'geothermal', 'exploration', 'site assessment'],
   icons: {

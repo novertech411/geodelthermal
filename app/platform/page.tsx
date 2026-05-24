@@ -6,19 +6,18 @@ import Link from "next/link"
 import StatusBadge from "@/components/StatusBadge"
 import { 
   ArrowRight, 
-  Layers, 
   Database, 
-  Brain, 
+  Cpu, 
+  Eye, 
+  Layers, 
+  Radio, 
   BarChart3, 
-  Zap,
-  Upload,
-  Box,
-  LineChart,
-  FileText,
-  Settings,
-  Globe,
-  Shield,
-  Workflow
+  Cloud,
+  Network,
+  Droplets,
+  Waves,
+  ShieldAlert,
+  Compass
 } from "lucide-react"
 
 export default function PlatformPage() {
@@ -40,7 +39,7 @@ export default function PlatformPage() {
               The Geodel <em>Platform</em>
             </h1>
             <p className="lede mt-6 max-w-3xl mx-auto text-white/70">
-              A unified system for subsurface intelligence. From data integration to decision support, everything you need in one powerful environment.
+              A hydrological intelligence platform for critical mineral operations. Geodel connects hydrological monitoring, operational analytics, and predictive intelligence into a unified platform designed for modern mineral infrastructure.
             </p>
             <div className="mt-12">
               <Link 
@@ -53,40 +52,52 @@ export default function PlatformPage() {
           </div>
         </section>
 
-        {/* One System Section */}
+        {/* Data Infrastructure Section */}
         <section className="py-24 relative border-t border-white/5">
           <div className="mx-auto max-w-7xl px-8">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div>
-                <StatusBadge label="Core" value="Unified Engine" className="mb-6" />
+                <StatusBadge label="Module-01" value="Data Infrastructure" className="mb-6" />
                 <h2 className="h2 text-white mb-6">
-                  One <em>System</em>
+                  Real-Time Resource <em>Monitoring</em>
                 </h2>
                 <p className="text-base text-white/70 leading-relaxed mb-8">
-                  Stop juggling multiple tools and fragmented workflows. Geodel brings together data management, modeling, analysis, and reporting into a single cohesive platform designed specifically for subsurface intelligence.
+                  Geodel integrates operational and hydrological data across mining systems in real time. We build the connection between sensor arrays and operational decision points.
                 </p>
-                <div className="flex items-center gap-4 border-t border-white/5 pt-8">
-                  <div className="flex flex-col">
-                    <span className="text-[10px] font-mono text-white/30 uppercase tracking-[0.2em] mb-1">Architecture</span>
-                    <span className="text-sm font-semibold text-white/80">Cloud-Native HPC</span>
-                  </div>
-                  <div className="w-px h-8 bg-white/10" />
-                  <div className="flex flex-col">
-                    <span className="text-[10px] font-mono text-white/30 uppercase tracking-[0.2em] mb-1">Compliance</span>
-                    <span className="text-sm font-semibold text-white/80">SOC2 Type II</span>
-                  </div>
+                
+                {/* Integration Inputs List */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {[
+                    { label: "Groundwater Sensors", desc: "Telemetry tracking aquifer levels and conditions." },
+                    { label: "Flow Monitoring", desc: "Continuous pipeline and open-channel flow rates." },
+                    { label: "Water Quality Instrumentation", desc: "Chemical profiling, pH, and sediment indicators." },
+                    { label: "Telemetry Infrastructure", desc: "Remote edge-transmission systems." },
+                    { label: "Tailings Inputs", desc: "Geomechanical and hydro-pressure sensors." },
+                    { label: "Climate & Environmental Data", desc: "Weather patterns and watershed context." },
+                  ].map((input) => (
+                    <div key={input.label} className="p-4 rounded-xl bg-white/[0.02] border border-white/5">
+                      <h4 className="text-sm font-semibold text-white mb-1">{input.label}</h4>
+                      <p className="text-xs text-white/50">{input.desc}</p>
+                    </div>
+                  ))}
                 </div>
               </div>
               <div className="relative">
-                <div className="card aspect-video p-12 flex items-center justify-center border-white/10 bg-black/40">
-                  <div className="grid grid-cols-3 gap-6 w-full">
-                    {[Database, Brain, BarChart3].map((Icon, i) => (
-                      <div key={i} className="aspect-square rounded-2xl bg-white/[0.02] flex items-center justify-center border border-white/10 shadow-[inset_0_0_20px_rgba(139,108,255,0.05)]">
-                        <Icon className="h-12 w-12 text-[#8B6CFF]" />
-                      </div>
-                    ))}
+                <div className="card aspect-square p-0 border-white/10 bg-black/40 overflow-hidden relative group">
+                  <img
+                    src="/images/groundwater_aquifer.png"
+                    alt="Real-Time Data Ingestion Stream"
+                    className="w-full h-full object-cover opacity-80 filter saturate-[0.85] transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
+                  <div className="absolute top-6 left-6 right-6 flex items-center justify-between pointer-events-none">
+                    <span className="font-mono text-xs text-[#d6ccff] bg-black/50 backdrop-blur px-2.5 py-1 rounded">INGESTION_STREAM</span>
+                    <StatusBadge label="RATE" value="1240 / SEC" />
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-[rgba(139,108,255,0.05)] to-transparent pointer-events-none" />
+                  <div className="absolute bottom-6 left-6 right-6 flex justify-between text-xs text-white/70 pointer-events-none">
+                    <span>ACTIVE INTERFACES: 6/6</span>
+                    <span>AQUIFER TELEMETRY</span>
+                  </div>
                 </div>
                 {/* Decorative Accents */}
                 <div className="absolute -top-4 -left-4 w-12 h-12 border-t border-l border-white/10" />
@@ -96,130 +107,129 @@ export default function PlatformPage() {
           </div>
         </section>
 
-        {/* Integrated Data Section */}
+        {/* Hydrological Intelligence Engine Section */}
         <section className="py-24 relative bg-black/20 border-y border-white/5">
           <div className="mx-auto max-w-7xl px-8">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div className="order-2 lg:order-1 relative">
-                <div className="card aspect-video overflow-hidden border-white/10 p-0 bg-black">
-                  <svg viewBox="0 0 400 225" className="w-full h-full opacity-80">
-                    {/* Technical Grid Overlay */}
-                    <pattern id="grid-pattern-plat" width="20" height="20" patternUnits="userSpaceOnUse">
-                      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="white" strokeWidth="0.1" strokeOpacity="0.2"/>
-                    </pattern>
-                    <rect width="100%" height="100%" fill="url(#grid-pattern-plat)" />
-                    
-                    {/* Data Layers Visualization */}
-                    {[0, 1, 2, 3, 4].map((i) => (
-                      <rect
-                        key={i}
-                        x="50"
-                        y={40 + i * 35}
-                        width="300"
-                        height="20"
-                        rx="2"
-                        className="fill-white/[0.03] stroke-white/10"
-                        strokeWidth="1"
-                      />
-                    ))}
-                    {/* Scan Line */}
-                    <rect x="50" y="40" width="300" height="1" className="fill-[#8B6CFF] shadow-[0_0_10px_#8B6CFF]">
-                      <animate transform="translateY" attributeName="y" from="40" to="200" dur="4s" repeatCount="indefinite" />
-                    </rect>
-                  </svg>
-                  <div className="absolute bottom-4 left-4">
-                    <StatusBadge label="LINK" value="ACTIVE-STREAM" />
+                <div className="card aspect-video p-0 bg-black/60 border-white/10 relative overflow-hidden group">
+                  <img
+                    src="/images/platform_dashboard.png"
+                    alt="Predictive Analytics Model"
+                    className="w-full h-full object-cover opacity-80 filter saturate-[0.85] transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
+                  <div className="absolute top-6 left-6 right-6 flex items-center justify-between pointer-events-none">
+                    <span className="font-mono text-xs text-[#d6ccff] bg-black/50 backdrop-blur px-2.5 py-1 rounded">PREDICTIVE_ENGINE</span>
+                    <StatusBadge label="ML-CORE" value="ACTIVE" />
+                  </div>
+                  <div className="absolute bottom-6 left-6 right-6 flex justify-between text-xs text-white/70 pointer-events-none">
+                    <span>ACCURACY: 96%</span>
+                    <span>MODEL: STABLE</span>
                   </div>
                 </div>
               </div>
+              
               <div className="order-1 lg:order-2">
-                <StatusBadge label="Module-01" value="Data Engine" className="mb-6" />
+                <StatusBadge label="Module-02" value="Intelligence Engine" className="mb-6" />
                 <h2 className="h2 text-white mb-6">
-                  Integrated <em>Data</em>
+                  Predictive Hydrological <em>Analytics</em>
                 </h2>
-                <p className="text-base text-white/70 leading-relaxed">
-                  Combine geological surveys, well logs, seismic data, satellite imagery, and more. Our platform normalizes and integrates diverse data sources, creating a unified foundation for analysis.
+                <p className="text-base text-white/70 leading-relaxed mb-8">
+                  Geodel’s intelligence engine continuously processes historical trends, sensor streams, and mechanical variables.
                 </p>
-                <div className="mt-8 space-y-4">
-                  <div className="flex items-center gap-3 text-sm font-mono text-white/50">
-                    <div className="w-1.5 h-1.5 rounded-full bg-[#8B6CFF]" />
-                    Multi-source Normalization
-                  </div>
-                  <div className="flex items-center gap-3 text-sm font-mono text-white/50">
-                    <div className="w-1.5 h-1.5 rounded-full bg-[#8B6CFF]" />
-                    Real-time Stream Integration
-                  </div>
+                <div className="space-y-4">
+                  {[
+                    "Groundwater movement & flow vectors",
+                    "Water balance dynamics & recycling volumes",
+                    "Tailings hydrology & seepage indicators",
+                    "Aquifer stress conditions & drawdown rates",
+                    "Resource system behavior & efficiency forecasts",
+                  ].map((item, index) => (
+                    <div key={index} className="flex items-center gap-3 text-sm text-white/75">
+                      <div className="w-1.5 h-1.5 rounded-full bg-[#8B6CFF]" />
+                      <span>{item}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Reliable Models Section */}
+        {/* Operational Intelligence Section */}
         <section className="py-24 relative">
           <div className="mx-auto max-w-7xl px-8">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div>
-                <StatusBadge label="Module-02" value="Modeling Core" className="mb-6" />
+                <StatusBadge label="Module-03" value="Operational Hub" className="mb-6" />
                 <h2 className="h2 text-white mb-6">
-                  Reliable <em>Models</em>
+                  Actionable Operational <em>Visibility</em>
                 </h2>
-                <p className="text-base text-white/70 leading-relaxed">
-                  Generate robust subsurface models using a combination of machine learning, geostatistics, and physics-based algorithms. Our modeling engine is designed for accuracy, transparency, and uncertainty quantification.
+                <p className="text-base text-white/70 leading-relaxed mb-8">
+                  The platform delivers clear, real-time insights designed for engineers, hydrologists, and site managers.
                 </p>
+                <div className="grid grid-cols-2 gap-6">
+                  {[
+                    { label: "Real-time Dashboards", desc: "Live visualization of active fluid flow systems." },
+                    { label: "Predictive Alerts", desc: "Notifications when thresholds approach critical risk values." },
+                    { label: "Operational Forecasting", desc: "Scenario models predicting water availability." },
+                    { label: "Efficiency Analytics", desc: "Tracking usage, recycle rates, and losses." },
+                  ].map((item) => (
+                    <div key={item.label} className="space-y-2">
+                      <span className="text-sm font-semibold text-white">{item.label}</span>
+                      <p className="text-xs text-white/50 leading-relaxed">{item.desc}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
+              
               <div className="relative">
-                <div className="card aspect-video p-10 bg-black/60 border-white/10 relative overflow-hidden group">
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(139,108,255,0.05)_0%,transparent_100%)]" />
-                  <div className="h-full flex flex-col gap-6 relative z-10">
-                    <div className="flex-1 rounded-2xl bg-white/[0.02] border border-white/5 flex items-center justify-center group-hover:bg-white/[0.04] transition-colors">
-                      <Box className="h-20 w-20 text-[#8B6CFF]/40 group-hover:text-[#8B6CFF]/60 transition-colors" />
-                    </div>
-                    <div className="grid grid-cols-2 gap-6">
-                      <div className="h-14 rounded-xl border border-white/5 bg-white/[0.02] flex items-center px-4">
-                        <StatusBadge label="KER" value="v4.0-ML" />
-                      </div>
-                      <div className="h-14 rounded-xl border border-white/5 bg-white/[0.02] flex items-center px-4">
-                        <StatusBadge label="STAT" value="READY" />
-                      </div>
-                    </div>
+                <div className="card aspect-video overflow-hidden border-white/10 p-0 bg-black group relative">
+                  <img
+                    src="/images/predictive_resource.png"
+                    alt="Operational Water Balance Dashboard"
+                    className="w-full h-full object-cover opacity-80 filter saturate-[0.85] transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
+                  <div className="absolute top-6 left-6 pointer-events-none">
+                    <span className="font-mono text-xs text-[#d6ccff] bg-black/50 backdrop-blur px-2.5 py-1 rounded">SYS_VISIBILITY</span>
+                  </div>
+                  <div className="absolute bottom-6 left-6 pointer-events-none">
+                    <StatusBadge label="VISUALIZATION" value="ACTIVE-SYSTEM" />
                   </div>
                 </div>
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-[#8B6CFF]/10 rounded-full blur-[100px] -z-10" />
               </div>
             </div>
           </div>
         </section>
 
-        {/* Clear Outputs Section */}
+        {/* Deployment Section */}
         <section className="py-24 relative bg-black/20 border-y border-white/5">
           <div className="mx-auto max-w-7xl px-8">
             <div className="text-center mb-16">
-              <StatusBadge label="Output" value="Deliverables" className="justify-center mb-6" />
+              <StatusBadge label="Deployment" value="Global Options" className="justify-center mb-6" />
               <h2 className="h2 text-white mb-6">
-                Clear <em>Outputs</em>
+                Built for Critical Mineral <em>Infrastructure</em>
               </h2>
               <p className="mt-6 text-base text-white/70 max-w-2xl mx-auto leading-relaxed">
-                Transform complex analysis into actionable intelligence.
+                Flexible and resilient deployment modes to support remote mining sites.
               </p>
             </div>
             
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
-                { icon: LineChart, title: "Interactive Visualizations", desc: "Explore 3D models and data in real-time", id: "VIS-01" },
-                { icon: FileText, title: "Automated Reports", desc: "Generate comprehensive documentation", id: "REP-02" },
-                { icon: BarChart3, title: "Risk Assessments", desc: "Quantified uncertainty analysis", id: "RSK-03" },
-                { icon: Zap, title: "Action Plans", desc: "Clear recommendations for next steps", id: "ACT-04" },
+                { icon: Cloud, title: "Cloud Deployments", desc: "Centralized databases, aggregate metrics, and cross-site trends." },
+                { icon: Radio, title: "Edge Monitoring", desc: "Local compute hardware operating without consistent internet connections." },
+                { icon: Network, title: "Remote Integration", desc: "Interfaces seamlessly with telemetry and legacySCADA systems." },
+                { icon: Layers, title: "Scalable Infrastructure", desc: "Designed to expand as your extraction footprint and monitoring nodes grow." },
               ].map((item) => (
                 <div key={item.title} className="card group flex flex-col justify-between border-white/5 hover:border-[#8B6CFF]/30 transition-all duration-500">
                   <div className="flex flex-col h-full">
                     <div className="w-12 h-12 rounded-xl bg-[#8B6CFF]/10 flex items-center justify-center mb-6 border border-[#8B6CFF]/20 group-hover:bg-[#8B6CFF]/20 transition-all">
                       <item.icon className="h-6 w-6 text-[#8B6CFF]" />
                     </div>
-                    <div className="flex justify-between items-start mb-3">
-                      <h3 className="text-lg font-semibold text-white tracking-tight">{item.title}</h3>
-                      <StatusBadge label="ID" value={item.id} />
-                    </div>
+                    <h3 className="text-lg font-semibold text-white tracking-tight mb-3">{item.title}</h3>
                     <p className="text-sm text-white/60 leading-relaxed group-hover:text-white/80 transition-colors">
                       {item.desc}
                     </p>
@@ -228,49 +238,6 @@ export default function PlatformPage() {
               ))}
             </div>
           </div>
-        </section>
-
-        {/* Built to Expand Section */}
-        <section className="py-24 relative overflow-hidden">
-          <div className="mx-auto max-w-7xl px-8 relative z-10">
-            <div className="text-center mb-16">
-              <StatusBadge label="Scalability" value="Universal" className="justify-center mb-6" />
-              <h2 className="h2 text-white mb-6">
-                Built to <em>Expand</em>
-              </h2>
-              <p className="mt-6 text-base text-white/70 max-w-2xl mx-auto leading-relaxed">
-                A platform that grows with your needs and the evolving energy landscape.
-              </p>
-            </div>
-            
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[
-                { icon: Globe, title: "Multi-Region Support", desc: "Deploy across global projects", tag: "GLOBAL" },
-                { icon: Shield, title: "Enterprise Security", desc: "SOC 2 compliant infrastructure", tag: "SECURE" },
-                { icon: Workflow, title: "API Integration", desc: "Connect with existing workflows", tag: "RESTFUL" },
-                { icon: Settings, title: "Custom Workflows", desc: "Tailor the platform to your needs", tag: "FLEXIBLE" },
-                { icon: Database, title: "Scalable Storage", desc: "Handle petabytes of subsurface data", tag: "PETABYTE" },
-                { icon: Brain, title: "AI Roadmap", desc: "Continuous model improvements", tag: "AI-DRIVEN" },
-              ].map((item) => (
-                <div key={item.title} className="card group border-white/10 hover:border-[#8B6CFF]/45 transition-all duration-500">
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="w-12 h-12 rounded-xl bg-[#8B6CFF]/5 flex items-center justify-center border border-[#8B6CFF]/20 group-hover:bg-[#8B6CFF]/10 transition-all">
-                      <item.icon className="h-6 w-6 text-[#8B6CFF]" />
-                    </div>
-                    <div>
-                      <h3 className="text-base font-semibold text-white tracking-tight">{item.title}</h3>
-                      <span className="font-mono text-[9px] uppercase tracking-widest text-[#8B6CFF]/60">{item.tag}</span>
-                    </div>
-                  </div>
-                  <p className="text-sm text-white/60 leading-relaxed group-hover:text-white/80 transition-colors">
-                    {item.desc}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-          {/* Depth Glow */}
-          <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#8B6CFF]/5 rounded-full blur-[140px] -z-10 pointer-events-none" />
         </section>
 
         {/* CTA Section with Brand Wash & Grid */}
@@ -288,7 +255,7 @@ export default function PlatformPage() {
                   Experience the Geodel <em>Platform</em>
                 </h2>
                 <p className="lede max-w-2xl mx-auto mb-12 text-white/70">
-                  See how Geodel can transform your subsurface workflows.
+                  See how Geodel can transform water balance and risk forecasting at your critical mineral operations.
                 </p>
                 <Link 
                   href="/contact" 

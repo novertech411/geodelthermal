@@ -8,8 +8,10 @@ import Image from "next/image"
 const navLinks = [
   { href: "/platform", label: "Platform" },
   { href: "/solutions", label: "Solutions" },
-  { href: "/reports", label: "Reports" },
-  { href: "/contact", label: "Contact" },
+  { href: "/industries", label: "Industries" },
+  { href: "/insights", label: "Insights" },
+  // { href: "/about", label: "About" },
+  // { href: "/contact", label: "Contact" },
 ]
 
 export function Navbar() {

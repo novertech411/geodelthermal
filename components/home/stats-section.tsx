@@ -1,8 +1,8 @@
 const stats = [
-  { label: "Basins Analyzed", value: "185+" },
-  { label: "Successful Wells", value: "420k" },
-  { label: "Data Processed", value: "1.2PB" },
-  { label: "Prediction Accuracy", value: "94%" }
+  { label: "Active Salars & Basins", value: "84" },
+  { label: "Avg Water Recovered", value: "92%" },
+  { label: "Telemetry Sensors Linked", value: "14k" },
+  { label: "Model Confidence", value: "96%" }
 ]
 
 export function StatsSection() {
@@ -11,7 +11,7 @@ export function StatsSection() {
       <div className="mx-auto max-w-7xl px-8">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-12">
           {stats.map((stat) => {
-            // Separate numbers from units (e.g. "1.2" and "PB") to style units in Instrument Serif italics
+            // Separate numbers from units (e.g. "92" and "%") to style units in italics
             const match = stat.value.match(/^([\d.]+)(.*)$/)
             const number = match ? match[1] : stat.value
             const unit = match ? match[2] : ""

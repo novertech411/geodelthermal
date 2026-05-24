@@ -3,47 +3,61 @@ import Link from "next/link"
 
 const sectors = [
   {
-    title: "Geothermal",
-    description: "Identify and characterize geothermal reservoirs for sustainable energy development.",
-    href: "/solutions#geothermal",
-    image: "/images/geothermal.jpg",
-    sectorId: "THRM-01"
-  },
-  {
-    title: "Exploration",
-    description: "Support mineral and resource exploration with advanced subsurface intelligence.",
-    href: "/solutions#exploration",
+    title: "Lithium",
+    description: "Hydrological intelligence for brine systems, groundwater management, and extraction infrastructure.",
+    href: "/industries#lithium",
     image: "/images/exploration.jpg",
-    sectorId: "EXPL-02"
+    sectorId: "LITH-01"
   },
   {
-    title: "Site Assessment",
-    description: "Evaluate subsurface conditions for infrastructure and construction projects.",
-    href: "/solutions#site-assessment",
+    title: "Copper",
+    description: "Water system analytics for large-scale extraction and tailings-intensive operations.",
+    href: "/industries#copper",
+    image: "/images/geothermal.jpg",
+    sectorId: "COPP-02"
+  },
+  {
+    title: "Rare Earths",
+    description: "Operational intelligence for environmentally sensitive mineral systems.",
+    href: "/industries#rare-earths",
     image: "/images/site-assessment.jpg",
-    sectorId: "SITE-03"
+    sectorId: "RARE-03"
+  },
+  {
+    title: "Graphite",
+    description: "Resource optimization and water intelligence for battery-material infrastructure.",
+    href: "/industries#graphite",
+    image: "/images/exploration.jpg",
+    sectorId: "GRPH-04"
+  },
+  {
+    title: "Uranium",
+    description: "Groundwater and hydrological monitoring for complex extraction environments.",
+    href: "/industries#uranium",
+    image: "/images/geothermal.jpg",
+    sectorId: "URAN-05"
   },
 ]
 
 export function BuiltForSection() {
   return (
-    <section className="py-32 bg-[#14101f] relative">
+    <section className="py-32 bg-[#14101f] relative border-b border-white/5">
       <div className="mx-auto max-w-[1360px] px-8 relative z-10">
         
         {/* Section Header */}
         <div className="mb-16">
-          <span className="eyebrow mb-4">05 — Sectors</span>
+          <span className="eyebrow mb-4">05 — Industries</span>
           <h2 className="h2 text-white leading-tight">
-            Built for{" "}
-            <em>energy projects.</em>
+            Supporting the{" "}
+            <em>Critical Mineral Economy.</em>
           </h2>
           <p className="lede mt-6">
-            Specialized solutions for the unique challenges of energy and resource development.
+            Geodel delivers hydrological intelligence across the mineral systems driving the future global economy.
           </p>
         </div>
 
         {/* Photo Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {sectors.map((sector) => (
             <Link
               key={sector.title}
@@ -62,7 +76,7 @@ export function BuiltForSection() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#14101f] via-[#14101f]/35 to-transparent pointer-events-none" />
 
               {/* Body content in bottom 40% */}
-              <div className="absolute inset-x-0 bottom-0 p-8 flex flex-col justify-end h-[50%] z-10">
+              <div className="absolute inset-x-0 bottom-0 p-8 flex flex-col justify-end h-[60%] z-10">
                 {/* Mono Label */}
                 <span className="text-[10px] font-mono tracking-[0.2em] text-[#d6ccff] uppercase mb-2">
                   SECTOR // {sector.sectorId}

@@ -1,3 +1,5 @@
+"use client"
+
 import Link from "next/link"
 
 export function HeroSection() {
@@ -24,14 +26,14 @@ export function HeroSection() {
         <div className="flex-1 flex flex-col justify-center">
           {/* Tagline prefix */}
           <div className="text-[#c2b29f] font-mono text-[11px] tracking-[0.3em] uppercase mb-8">
-            01 – Subsurface Platform • V2.4
+            01 – Hydrological Intelligence Node • v4.2
           </div>
 
-          {/* Main Heading using signature editorial serif italic */}
-          <h1 className="display text-white mb-16 max-w-5xl">
-            See the earth
-            <span className="font-semibold mt-3">
-              before you drill it.
+          {/* Main Heading using signature editorial display italic */}
+          <h1 className="display text-white mb-16 max-w-5xl text-balance">
+            Hydrological Intelligence
+            <span className="block mt-3">
+              for <em>critical minerals.</em>
             </span>
           </h1>
 
@@ -39,26 +41,29 @@ export function HeroSection() {
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-10 lg:gap-16 w-full">
             <div className="max-w-xl">
               <p className="lede">
-                A single platform for integrating geological surveys, modeling thermal gradients, and producing exploration-ready reports — used by teams working the world's hardest basins.
+                Geodel provides real-time hydrological intelligence for critical mineral operations, enabling mining companies to monitor, predict, and optimize the water systems that drive extraction, recovery, and operational performance.
+              </p>
+              <p className="mt-4 text-xs font-mono text-white/40 uppercase tracking-[1px]">
+                Built for lithium, copper, rare earths, graphite, uranium, and energy transition mineral infrastructure.
               </p>
             </div>
 
             {/* Action buttons */}
             <div className="flex flex-row items-center gap-4">
-              {/* Start Exploration Button */}
+              {/* Request Demo Button */}
               <Link
                 href="/contact"
                 className="rounded-[20px] bg-[#8B6CFF] hover:bg-[#7c5eff] text-white text-sm font-semibold px-6 py-3.5 flex items-center gap-2 transition-all duration-300 shadow-md"
               >
-                Start exploration <span className="text-sm">→</span>
+                Request a demo <span className="text-sm">→</span>
               </Link>
 
-              {/* Watch Demo Button */}
+              {/* Explore Platform Button */}
               <Link
                 href="/platform"
                 className="rounded-[20px] border border-white/22 bg-white/4 hover:bg-white/8 text-white text-sm font-semibold px-6 py-3.5 flex items-center gap-2 transition-all duration-300"
               >
-                Watch demo
+                Explore the platform
               </Link>
             </div>
           </div>
@@ -70,11 +75,11 @@ export function HeroSection() {
           <div className="w-full h-px bg-white/10 mb-6" />
 
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-[10px] font-mono tracking-[0.2em] text-white/40 uppercase">
-            <div>LAT 48.21°N • LON 7.06°W</div>
+            <div>LAT 23.68°S • LON 68.12°W // ATACAMA BASIN</div>
             <div className="flex flex-wrap items-center gap-x-8 gap-y-2">
-              <span>SURVEY 042 / ACTIVE</span>
-              <span>DEPTH 0-8000M</span>
-              <span>CLASS A • GPU-ACCELERATED</span>
+              <span>SURVEY 108 / ACTIVE</span>
+              <span>WATER DEPTH 0-1500M</span>
+              <span>CLASS A • REAL-TIME TELEMETRY</span>
             </div>
             <div className="flex items-center gap-1.5 text-white/60">
               SCROLL TO EXPLORE <span className="text-xs animate-bounce">↓</span>
