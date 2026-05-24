@@ -66,7 +66,7 @@ export default function InsightsPage() {
           <div className="relative z-10 mx-auto max-w-7xl px-8 text-center flex flex-col items-center justify-center">
             <StatusBadge label="Publications" value="Technical Library" className="justify-center mb-8" />
             <h1 className="display text-white max-w-5xl mx-auto mb-8 text-balance">
-              Hydrological <em>Insights</em>
+              Hydrological Insights
             </h1>
             <p className="lede mt-6 max-w-3xl mx-auto text-white/70">
               Research, operational intelligence, and technical perspectives on the future of hydrological systems in critical mineral operations.
@@ -121,7 +121,7 @@ export default function InsightsPage() {
         <section className="py-24 relative bg-black/20 border-t border-white/5">
           <div className="mx-auto max-w-7xl px-8">
             <div className="mb-12 flex justify-between items-center">
-              <h2 className="h2 text-white">Featured <em>Articles</em></h2>
+              <h2 className="h2 text-white">Featured Articles</h2>
               <StatusBadge label="CATALOG" value="4 AVAILABLE" />
             </div>
 
@@ -183,7 +183,7 @@ export default function InsightsPage() {
               <div className="relative z-10 flex flex-col items-center">
                 <StatusBadge label="Updates" value="Newsletter" className="mb-8" />
                 <h2 className="display text-white mb-8 max-w-3xl mx-auto">
-                  Stay <em>informed</em>
+                  Stay informed
                 </h2>
                 <p className="lede max-w-2xl mx-auto mb-12 text-white/70">
                   Receive our latest technical perspectives and mineral hydrology findings.

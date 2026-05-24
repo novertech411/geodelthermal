@@ -28,7 +28,7 @@ export function CTASection() {
           <h2 className="h2 text-white leading-tight max-w-3xl text-center">
             Building the intelligence layer{" "}
             <span className="block mt-1">
-              for <em>critical minerals.</em>
+              for critical minerals.
             </span>
           </h2>
           

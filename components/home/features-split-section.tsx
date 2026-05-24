@@ -37,7 +37,7 @@ export function FeaturesSplitSection() {
         <div className="max-w-3xl mb-24">
           <div className="text-[10px] font-mono text-[#8B6CFF] uppercase tracking-[0.25em] mb-4">THE FUTURE OF CRITICAL MINERALS</div>
           <h2 className="h2 text-white leading-tight">
-            Water Intelligence Powers Modern <em>Mineral Infrastructure.</em>
+            Water Intelligence Powers Modern Mineral Infrastructure.
           </h2>
         </div>
 
@@ -74,7 +74,7 @@ export function FeaturesSplitSection() {
                   {/* Signature Display Heading */}
                   <h2 className="h2 text-white leading-tight">
                     {cap.title}{" "}
-                    <em>{cap.italicTitle}</em>
+                    {cap.italicTitle}
                   </h2>
                   
                   {/* Lede style paragraph */}

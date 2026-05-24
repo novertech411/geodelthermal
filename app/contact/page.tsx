@@ -37,7 +37,7 @@ export default function ContactPage() {
           <div className="relative z-10 mx-auto max-w-7xl px-8 text-center flex flex-col items-center justify-center">
             <StatusBadge label="Communication" value="System Node" className="justify-center mb-8" />
             <h1 className="display text-white max-w-4xl mx-auto mb-8 text-balance">
-              Connect with <em>Geodel.</em>
+              Connect with Geodel.
             </h1>
             <p className="lede mt-6 max-w-3xl mx-auto text-white/70">
               Learn how Geodel supports critical mineral operations through hydrological intelligence and operational visibility.

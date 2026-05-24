@@ -31,7 +31,7 @@ const industriesList = [
     ],
     code: "LITH-NODE",
     icon: Droplets,
-    image: "/images/lithium_brine.png"
+    image: "/images/lithium_real.png"
   },
   {
     id: "copper",
@@ -47,7 +47,7 @@ const industriesList = [
     ],
     code: "COPP-NODE",
     icon: Waves,
-    image: "/images/copper_hydrology.png"
+    image: "/images/copper_real.png"
   },
   {
     id: "rare-earths",
@@ -63,7 +63,7 @@ const industriesList = [
     ],
     code: "RARE-NODE",
     icon: Compass,
-    image: "/images/rare_earths_hydrology.png"
+    image: "/images/rare_earths_real.png"
   },
   {
     id: "graphite",
@@ -79,7 +79,7 @@ const industriesList = [
     ],
     code: "GRPH-NODE",
     icon: Cpu,
-    image: "/images/graphite_processing_water.png"
+    image: "/images/graphite_real.png"
   },
   {
     id: "uranium",
@@ -95,7 +95,7 @@ const industriesList = [
     ],
     code: "URAN-NODE",
     icon: ShieldAlert,
-    image: "/images/uranium_groundwater_isolation.png"
+    image: "/images/uranium_real.png"
   },
 ]
 
@@ -114,7 +114,7 @@ export default function IndustriesPage() {
           <div className="relative z-10 mx-auto max-w-7xl px-8 text-center flex flex-col items-center justify-center">
             <StatusBadge label="Market Scope" value="Supported Sectors" className="justify-center mb-8" />
             <h1 className="display text-white max-w-5xl mx-auto mb-8 text-balance">
-              Supporting critical mineral <em>infrastructure.</em>
+              Supporting critical mineral infrastructure.
             </h1>
             <p className="lede mt-6 max-w-3xl mx-auto text-white/70">
               Geodel delivers hydrological intelligence across the mineral systems driving the future global economy.
@@ -199,7 +199,7 @@ export default function IndustriesPage() {
               <div className="relative z-10 flex flex-col items-center">
                 <StatusBadge label="Next Step" value="Contact Us" className="mb-8" />
                 <h2 className="display text-white mb-8 max-w-3xl mx-auto">
-                  Optimize your <em>water systems.</em>
+                  Optimize your water systems.
                 </h2>
                 <p className="lede max-w-2xl mx-auto mb-12 text-white/70">
                   Ready to deploy real-time monitoring across your mining systems?

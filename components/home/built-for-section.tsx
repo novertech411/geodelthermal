@@ -6,35 +6,35 @@ const sectors = [
     title: "Lithium",
     description: "Hydrological intelligence for brine systems, groundwater management, and extraction infrastructure.",
     href: "/industries#lithium",
-    image: "/images/exploration.jpg",
+    image: "/images/lithium_real.png",
     sectorId: "LITH-01"
   },
   {
     title: "Copper",
     description: "Water system analytics for large-scale extraction and tailings-intensive operations.",
     href: "/industries#copper",
-    image: "/images/geothermal.jpg",
+    image: "/images/copper_real.png",
     sectorId: "COPP-02"
   },
   {
     title: "Rare Earths",
     description: "Operational intelligence for environmentally sensitive mineral systems.",
     href: "/industries#rare-earths",
-    image: "/images/site-assessment.jpg",
+    image: "/images/rare_earths_real.png",
     sectorId: "RARE-03"
   },
   {
     title: "Graphite",
     description: "Resource optimization and water intelligence for battery-material infrastructure.",
     href: "/industries#graphite",
-    image: "/images/exploration.jpg",
+    image: "/images/graphite_real.png",
     sectorId: "GRPH-04"
   },
   {
     title: "Uranium",
     description: "Groundwater and hydrological monitoring for complex extraction environments.",
     href: "/industries#uranium",
-    image: "/images/geothermal.jpg",
+    image: "/images/uranium_real.png",
     sectorId: "URAN-05"
   },
 ]
@@ -49,7 +49,7 @@ export function BuiltForSection() {
           <span className="eyebrow mb-4">05 — Industries</span>
           <h2 className="h2 text-white leading-tight">
             Supporting the{" "}
-            <em>Critical Mineral Economy.</em>
+            Critical Mineral Economy.
           </h2>
           <p className="lede mt-6">
             Geodel delivers hydrological intelligence across the mineral systems driving the future global economy.

@@ -54,8 +54,8 @@ export function Navbar() {
     >
       <nav
         className={`w-full flex items-center justify-between transition-all duration-500 ease-in-out ${isScrolled
-            ? "max-w-[1320px] h-[64px] rounded-full border border-white/8 bg-[rgba(14,11,31,0.85)] backdrop-blur-[18px] saturate-[180%] px-6 sm:px-8 shadow-[0_8px_32px_rgba(0,0,0,0.5)]"
-            : "max-w-none h-[80px] rounded-none border-b border-white/10  bg-[rgba(14,11,31,0.85)] backdrop-blur-sm px-6 sm:px-12"
+          ? "max-w-[1320px] h-[64px] rounded-full border border-white/8 bg-[rgba(14,11,31,0.85)] backdrop-blur-[18px] saturate-[180%] px-6 sm:px-8 shadow-[0_8px_32px_rgba(0,0,0,0.5)]"
+          : "max-w-none h-[80px] rounded-none border-b border-white/10  bg-[rgba(14,11,31,0.85)] backdrop-blur-sm px-6 sm:px-12"
           }`}
       >
         {/* Logo */}
@@ -63,7 +63,7 @@ export function Navbar() {
           <Image src="/images/logo.png" alt="Logo" width={44} height={44} className="transition-all duration-500" />
           <div className="flex flex-col">
             <span className="text-[20px] font-bold text-white leading-none">Geodel</span>
-            <span className="text-[10px] text-white/50 tracking-wider mt-0.5">Backed by Logic AI</span>
+            <span className="text-[10px] text-white/50 tracking-wider mt-0.5">Backed by  <span className=" font-semibold text-[#B480FF]"> EWOR </span></span>
           </div>
         </Link>
 

@@ -37,7 +37,7 @@ export function PlatformSection() {
           <span className="eyebrow mb-4">04 — Platform Overview</span>
           <h2 className="h2 text-white leading-tight">
             Operational Intelligence for{" "}
-            <em>Water-Constrained Mineral Systems.</em>
+            Water-Constrained Mineral Systems.
           </h2>
           <p className="lede mt-6">
             Geodel transforms hydrological and operational data into actionable intelligence for critical mineral infrastructure.
@@ -101,7 +101,7 @@ export function PlatformSection() {
                   <h3 className="text-3xl font-bold tracking-tight text-white mb-4">
                     Real-Time{" "}
                     <span className="block mt-1">
-                      <em>Water Analytics</em>
+                      Water Analytics
                     </span>
                   </h3>
                   <p className="text-white/70 text-sm leading-relaxed">

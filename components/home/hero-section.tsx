@@ -33,7 +33,7 @@ export function HeroSection() {
           <h1 className="display text-white mb-16 max-w-5xl text-balance">
             Hydrological Intelligence
             <span className="block mt-3">
-              for <em>critical minerals.</em>
+              for critical minerals.
             </span>
           </h1>
 

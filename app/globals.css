@@ -102,14 +102,7 @@
     text-wrap: balance;
   }
 
-  /* Display Italics Signature Move */
-  em {
-    font-family: var(--font-sans);
-    font-style: italic;
-    font-weight: inherit;
-    color: var(--accent-soft);
-    text-transform: none !important;
-  }
+
 }
 
 @layer utilities {

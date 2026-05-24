@@ -113,7 +113,7 @@ export default function SolutionsPage() {
           <div className="relative z-10 mx-auto max-w-7xl px-8 text-center flex flex-col items-center justify-center">
             <StatusBadge label="Sector" value="Intelligence" className="justify-center mb-8" />
             <h1 className="display text-white max-w-4xl mx-auto mb-8 text-balance">
-              Hydrological <em>Solutions</em>
+              Hydrological Solutions
             </h1>
             <p className="lede mt-6 max-w-3xl mx-auto text-white/70">
               Geodel provides operational intelligence solutions that support extraction, recovery, and water system performance across critical mineral operations.
@@ -211,7 +211,7 @@ export default function SolutionsPage() {
               <div className="relative z-10 flex flex-col items-center">
                 <StatusBadge label="Engagement" value="System Ready" className="mb-8" />
                 <h2 className="display text-white mb-8 max-w-3xl mx-auto">
-                  Ready to <em>Get Started?</em>
+                  Ready to Get Started?
                 </h2>
                 <p className="lede max-w-2xl mx-auto mb-12 text-white/70">
                   Tell us about your critical mineral operations and discover how Geodel can help optimize your water systems.
