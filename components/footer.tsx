@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import { Linkedin, Twitter } from "lucide-react"
+import { Linkedin, Twitter, Instagram } from "lucide-react"
 
 const navLinks = [
   { href: "/platform", label: "Platform" },
@@ -12,8 +12,9 @@ const navLinks = [
 ]
 
 const socialLinks = [
-  { href: "#", icon: Twitter, label: "Twitter" },
-  { href: "#", icon: Linkedin, label: "LinkedIn" },
+  { href: "https://x.com/Geodelinc", icon: Twitter, label: "Twitter" },
+  { href: "https://www.instagram.com/geodelinc?igsh=", icon: Instagram, label: "Instagram" },
+  { href: "https://www.linkedin.com/company/geodel", icon: Linkedin, label: "LinkedIn" },
 ]
 
 export function Footer() {
@@ -50,6 +51,8 @@ export function Footer() {
               <Link
                 key={social.label}
                 href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-2 rounded-full bg-secondary hover:bg-secondary/80 text-muted-foreground hover:text-foreground transition-colors"
                 aria-label={social.label}
               >

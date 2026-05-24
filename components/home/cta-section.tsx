@@ -5,7 +5,7 @@ export function CTASection() {
     <section className="py-32 bg-[#14101f] relative overflow-hidden">
       <div className="mx-auto max-w-[1360px] px-8">
         {/* CTA Panel Container */}
-        <div 
+        <div
           className="relative rounded-[24px] border border-white/10 p-[56px] md:p-[80px_56px] text-center overflow-hidden flex flex-col items-center"
           style={{
             background: "radial-gradient(circle at 100% 0%, rgba(139, 108, 255, 0.18) 0%, transparent 60%), radial-gradient(circle at 0% 100%, rgba(91, 63, 224, 0.18) 0%, transparent 60%), #1c1730",
@@ -21,32 +21,32 @@ export function CTASection() {
         >
           {/* Tag-pill above */}
           <div className="tag-pill mb-8">
-            06 — WHY GEODEL // VISION
+            WHY GEODEL // VISION
           </div>
-          
+
           {/* Display Headline */}
           <h2 className="h2 text-white leading-tight max-w-3xl text-center">
             Building the intelligence layer{" "}
             <span className="block mt-1">
-              for critical minerals.
+              for <span className="text-[#d6ccff]">critical minerals.</span>
             </span>
           </h2>
-          
+
           {/* Lede Text */}
           <p className="lede mt-6 text-center max-w-2xl">
             The future of mineral infrastructure depends on predictive systems, operational visibility, and hydrological intelligence. Geodel connects hydrology, mineral systems, and predictive analytics.
           </p>
-          
+
           {/* Accent Button */}
           <div className="mt-10 flex flex-col sm:flex-row items-center gap-4">
-            <Link 
-              href="/contact" 
+            <Link
+              href="/contact"
               className="rounded-[20px] bg-[#8B6CFF] hover:bg-[#7c5eff] text-white text-sm font-semibold px-8 py-4 flex items-center gap-2 transition-all duration-300 shadow-md inline-flex"
             >
               Schedule a Demo <span className="text-sm">→</span>
             </Link>
-            <Link 
-              href="/contact" 
+            <Link
+              href="/contact"
               className="rounded-[20px] border border-white/22 bg-white/4 hover:bg-white/8 text-white text-sm font-semibold px-8 py-4 flex items-center gap-2 transition-all duration-300 inline-flex"
             >
               Contact Geodel

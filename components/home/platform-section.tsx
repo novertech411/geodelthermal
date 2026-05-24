@@ -31,13 +31,13 @@ export function PlatformSection() {
   return (
     <section className="py-32 bg-[#14101f] relative">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-      
+
       <div className="mx-auto max-w-[1360px] px-8 relative z-10">
         <div className="mb-16">
-          <span className="eyebrow mb-4">04 — Platform Overview</span>
+          <span className="eyebrow mb-4"> Platform Overview</span>
           <h2 className="h2 text-white leading-tight">
             Operational Intelligence for{" "}
-            Water-Constrained Mineral Systems.
+            <span className="text-[#d6ccff]">Water-Constrained Mineral Systems.</span>
           </h2>
           <p className="lede mt-6">
             Geodel transforms hydrological and operational data into actionable intelligence for critical mineral infrastructure.
@@ -61,7 +61,7 @@ export function PlatformSection() {
                   {feature.tag}
                 </span>
               </div>
-              
+
               {/* Content */}
               <h3 className="text-[19px] font-medium tracking-[-0.015em] text-white mb-3">
                 {feature.title}
@@ -72,7 +72,7 @@ export function PlatformSection() {
             </div>
           ))}
         </div>
-      
+
         {/* Technical Showcase */}
         <div className="mt-20">
           <div className="border border-white/10 bg-[rgba(255,255,255,0.04)] rounded-[24px] p-[28px] md:p-[56px] shadow-2xl">
@@ -80,13 +80,13 @@ export function PlatformSection() {
               {/* Image Section */}
               <div className="lg:col-span-3">
                 <div className="relative aspect-video rounded-xl overflow-hidden border border-white/10">
-                  <img 
-                    src="/images/geological/seismic_viz.png" 
-                    alt="Hydrological Data Visualization" 
+                  <img
+                    src="/images/geological/seismic_viz.png"
+                    alt="Hydrological Data Visualization"
                     className="w-full h-full object-cover filter saturate-[0.85]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#14101f]/80 via-transparent to-transparent pointer-events-none" />
-                  
+
                   {/* Glowing Status badge */}
                   <div className="absolute top-6 left-6 rounded-full border border-white/10 bg-[rgba(14,11,31,0.7)] backdrop-blur-md px-4 py-2 flex items-center gap-2 shadow-md">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#4ADE80] shadow-[0_0_8px_#4ADE80]" />
@@ -101,14 +101,14 @@ export function PlatformSection() {
                   <h3 className="text-3xl font-bold tracking-tight text-white mb-4">
                     Real-Time{" "}
                     <span className="block mt-1">
-                      Water Analytics
+                      <span className="text-[#d6ccff]">Water Analytics</span>
                     </span>
                   </h3>
                   <p className="text-white/70 text-sm leading-relaxed">
                     Our platform processes raw telemetry, ground telemetry, and meteorological data into unified 3D flow sheets. Identify hydrological risk indicators, monitor recycling rates, and trace tailing status in real-time.
                   </p>
                 </div>
-                
+
                 {/* 4 Spec Tiles */}
                 <div className="grid grid-cols-2 gap-4">
                   {[

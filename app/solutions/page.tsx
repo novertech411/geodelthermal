@@ -4,9 +4,9 @@ import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import Link from "next/link"
 import StatusBadge from "@/components/StatusBadge"
-import { 
-  Flame, 
-  MapPin, 
+import {
+  Flame,
+  MapPin,
   Building,
   CheckCircle,
   Thermometer,
@@ -51,7 +51,7 @@ const solutions = [
     description: "Geodel provides visibility into tailings water systems, seepage conditions, water storage behavior, hydrological performance, recovery conditions, and operational trends.",
     image: "/images/tailings_monitoring.png",
     features: [
-      { icon: Search, text: "Tailings monitoring" },
+      { icon: Search, text: " monitoring" },
       { icon: BarChart3, text: "Water level analytics" },
       { icon: Cpu, text: "Seepage forecasting" },
       { icon: Layers, text: "Groundwater interaction" },
@@ -106,14 +106,22 @@ export default function SolutionsPage() {
         {/* Hero Section */}
         <section className="py-32 relative overflow-hidden flex flex-col justify-center min-h-[60vh]">
           <div className="absolute inset-0 z-0">
+            <div
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+              style={{
+                backgroundImage: "url('/images/solutions_banner.png')",
+                backgroundPosition: "center 50%"
+              }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-[#14101f]/75 via-[#14101f]/10 to-[#14101f]" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#14101f]/80 via-transparent to-transparent" />
             <div className="absolute inset-0 bg-radial-gradient from-[rgba(139,108,255,0.12)] via-transparent to-transparent opacity-80" />
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#14101f]/30 to-[#14101f]" />
           </div>
-          
+
           <div className="relative z-10 mx-auto max-w-7xl px-8 text-center flex flex-col items-center justify-center">
             <StatusBadge label="Sector" value="Intelligence" className="justify-center mb-8" />
             <h1 className="display text-white max-w-4xl mx-auto mb-8 text-balance">
-              Hydrological Solutions
+              Hydrological <span className="text-[#d6ccff]">Solutions</span>
             </h1>
             <p className="lede mt-6 max-w-3xl mx-auto text-white/70">
               Geodel provides operational intelligence solutions that support extraction, recovery, and water system performance across critical mineral operations.
@@ -138,15 +146,15 @@ export default function SolutionsPage() {
                         <StatusBadge label={solution.subtitle} value="v2.0" />
                         <StatusBadge label="SYS-ID" value={solution.code} />
                       </div>
-                      
+
                       <h2 className="h2 text-white mb-6">
                         {solution.title}
                       </h2>
-                      
+
                       <p className="text-base text-white/75 leading-relaxed mb-10">
                         {solution.description}
                       </p>
-                      
+
                       {/* Features Grid */}
                       <div className="mt-10 grid sm:grid-cols-2 gap-6">
                         {solution.features.map((feature, fIdx) => (
@@ -158,10 +166,10 @@ export default function SolutionsPage() {
                           </div>
                         ))}
                       </div>
-                      
+
                       <div className="mt-12 flex items-center gap-6">
-                        <Link 
-                          href="/contact" 
+                        <Link
+                          href="/contact"
                           className="rounded-[20px] bg-[#8B6CFF] hover:bg-[#7c5eff] text-white text-sm font-semibold px-6 py-3.5 inline-flex items-center gap-2 transition-all duration-300 shadow-md"
                         >
                           Start system project <span className="text-sm">→</span>
@@ -172,7 +180,7 @@ export default function SolutionsPage() {
                         </div>
                       </div>
                     </div>
-                    
+
                     {/* Visual Card */}
                     <div className={`${index % 2 === 1 ? 'lg:order-1' : ''} relative`}>
                       <div className="card aspect-square p-0 border-white/10 bg-black/40 overflow-hidden relative group">
@@ -182,7 +190,7 @@ export default function SolutionsPage() {
                           className="w-full h-full object-cover opacity-80 filter saturate-[0.85] transition-transform duration-700 group-hover:scale-105"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
-                        
+
                         {/* Status chip overlay */}
                         <div className="absolute bottom-6 left-6 pointer-events-none">
                           <StatusBadge label="INTELLIGENCE" value="VISUALIZATION" />
@@ -204,20 +212,20 @@ export default function SolutionsPage() {
           <div className="absolute inset-0 bg-[#1c1730]" />
           <div className="absolute inset-0 bg-radial-gradient from-[rgba(139,108,255,0.18)] via-transparent to-transparent opacity-85" />
           <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-5" />
-          
+
           <div className="relative mx-auto max-w-[1100px] px-6">
             <div className="rounded-[24px] border border-white/18 bg-[rgba(255,255,255,0.04)] px-8 py-20 overflow-hidden text-center relative">
               <div className="absolute inset-0 bg-radial-gradient from-[rgba(139,108,255,0.15)] via-transparent to-transparent opacity-80" />
               <div className="relative z-10 flex flex-col items-center">
                 <StatusBadge label="Engagement" value="System Ready" className="mb-8" />
                 <h2 className="display text-white mb-8 max-w-3xl mx-auto">
-                  Ready to Get Started?
+                  Ready to <span className="text-[#d6ccff]">Get Started?</span>
                 </h2>
                 <p className="lede max-w-2xl mx-auto mb-12 text-white/70">
                   Tell us about your critical mineral operations and discover how Geodel can help optimize your water systems.
                 </p>
-                <Link 
-                  href="/contact" 
+                <Link
+                  href="/contact"
                   className="rounded-[20px] bg-[#8B6CFF] hover:bg-[#7c5eff] text-white text-base font-semibold px-8 py-4 inline-flex items-center gap-2 transition-all duration-300 shadow-md"
                 >
                   Initiate System Contact <span className="text-base">→</span>

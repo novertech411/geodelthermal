@@ -59,14 +59,22 @@ export default function InsightsPage() {
         {/* Hero Section */}
         <section className="py-32 relative overflow-hidden flex flex-col justify-center min-h-[60vh]">
           <div className="absolute inset-0 z-0">
+            <div
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+              style={{
+                backgroundImage: "url('/images/insights_banner.png')",
+                backgroundPosition: "center 50%"
+              }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-[#14101f]/75 via-[#14101f]/10 to-[#14101f]" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#14101f]/80 via-transparent to-transparent" />
             <div className="absolute inset-0 bg-radial-gradient from-[rgba(139,108,255,0.12)] via-transparent to-transparent opacity-80" />
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#14101f]/30 to-[#14101f]" />
           </div>
           
           <div className="relative z-10 mx-auto max-w-7xl px-8 text-center flex flex-col items-center justify-center">
             <StatusBadge label="Publications" value="Technical Library" className="justify-center mb-8" />
             <h1 className="display text-white max-w-5xl mx-auto mb-8 text-balance">
-              Hydrological Insights
+              Hydrological <span className="text-[#d6ccff]">Insights</span>
             </h1>
             <p className="lede mt-6 max-w-3xl mx-auto text-white/70">
               Research, operational intelligence, and technical perspectives on the future of hydrological systems in critical mineral operations.
@@ -121,7 +129,7 @@ export default function InsightsPage() {
         <section className="py-24 relative bg-black/20 border-t border-white/5">
           <div className="mx-auto max-w-7xl px-8">
             <div className="mb-12 flex justify-between items-center">
-              <h2 className="h2 text-white">Featured Articles</h2>
+              <h2 className="h2 text-white">Featured <span className="text-[#d6ccff]">Articles</span></h2>
               <StatusBadge label="CATALOG" value="4 AVAILABLE" />
             </div>
 
@@ -183,7 +191,7 @@ export default function InsightsPage() {
               <div className="relative z-10 flex flex-col items-center">
                 <StatusBadge label="Updates" value="Newsletter" className="mb-8" />
                 <h2 className="display text-white mb-8 max-w-3xl mx-auto">
-                  Stay informed
+                  Stay <span className="text-[#d6ccff]">informed</span>
                 </h2>
                 <p className="lede max-w-2xl mx-auto mb-12 text-white/70">
                   Receive our latest technical perspectives and mineral hydrology findings.

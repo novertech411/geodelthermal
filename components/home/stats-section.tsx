@@ -1,7 +1,7 @@
 const stats = [
-  { label: "Active Salars & Basins", value: "84" },
+  { label: "Active Sites & Basins", value: "3" },
   { label: "Avg Water Recovered", value: "92%" },
-  { label: "Telemetry Sensors Linked", value: "14k" },
+  { label: "Telemetry Sensors Linked", value: "4" },
   { label: "Model Confidence", value: "96%" }
 ]
 
@@ -24,7 +24,7 @@ export function StatsSection() {
                 <h3 className="text-5xl sm:text-6xl font-medium tracking-[-0.04em] text-white">
                   {number}
                   {unit && (
-                    <span className="text-3xl ml-1 text-white font-normal">
+                    <span className="text-3xl ml-1 text-[#d6ccff] font-normal">
                       {unit}
                     </span>
                   )}

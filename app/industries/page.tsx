@@ -107,14 +107,22 @@ export default function IndustriesPage() {
         {/* Hero Section */}
         <section className="py-32 relative overflow-hidden flex flex-col justify-center min-h-[60vh]">
           <div className="absolute inset-0 z-0">
+            <div
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+              style={{
+                backgroundImage: "url('/images/industries_banner.png')",
+                backgroundPosition: "center 50%"
+              }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-[#14101f]/75 via-[#14101f]/10 to-[#14101f]" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#14101f]/80 via-transparent to-transparent" />
             <div className="absolute inset-0 bg-radial-gradient from-[rgba(139,108,255,0.12)] via-transparent to-transparent opacity-80" />
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#14101f]/30 to-[#14101f]" />
           </div>
           
           <div className="relative z-10 mx-auto max-w-7xl px-8 text-center flex flex-col items-center justify-center">
             <StatusBadge label="Market Scope" value="Supported Sectors" className="justify-center mb-8" />
             <h1 className="display text-white max-w-5xl mx-auto mb-8 text-balance">
-              Supporting critical mineral infrastructure.
+              Supporting critical mineral <span className="text-[#d6ccff]">infrastructure.</span>
             </h1>
             <p className="lede mt-6 max-w-3xl mx-auto text-white/70">
               Geodel delivers hydrological intelligence across the mineral systems driving the future global economy.
@@ -199,7 +207,7 @@ export default function IndustriesPage() {
               <div className="relative z-10 flex flex-col items-center">
                 <StatusBadge label="Next Step" value="Contact Us" className="mb-8" />
                 <h2 className="display text-white mb-8 max-w-3xl mx-auto">
-                  Optimize your water systems.
+                  Optimize your <span className="text-[#d6ccff]">water systems.</span>
                 </h2>
                 <p className="lede max-w-2xl mx-auto mb-12 text-white/70">
                   Ready to deploy real-time monitoring across your mining systems?

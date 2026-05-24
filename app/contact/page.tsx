@@ -30,14 +30,22 @@ export default function ContactPage() {
         {/* Hero Section */}
         <section className="py-32 relative overflow-hidden flex flex-col justify-center min-h-[50vh]">
           <div className="absolute inset-0 z-0">
+            <div
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+              style={{
+                backgroundImage: "url('/images/contact_banner.png')",
+                backgroundPosition: "center 50%"
+              }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-[#14101f]/75 via-[#14101f]/10 to-[#14101f]" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#14101f]/80 via-transparent to-transparent" />
             <div className="absolute inset-0 bg-radial-gradient from-[rgba(139,108,255,0.12)] via-transparent to-transparent opacity-80" />
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#14101f]/30 to-[#14101f]" />
           </div>
           
           <div className="relative z-10 mx-auto max-w-7xl px-8 text-center flex flex-col items-center justify-center">
             <StatusBadge label="Communication" value="System Node" className="justify-center mb-8" />
             <h1 className="display text-white max-w-4xl mx-auto mb-8 text-balance">
-              Connect with Geodel.
+              Connect with <span className="text-[#d6ccff]">Geodel.</span>
             </h1>
             <p className="lede mt-6 max-w-3xl mx-auto text-white/70">
               Learn how Geodel supports critical mineral operations through hydrological intelligence and operational visibility.

@@ -26,14 +26,14 @@ export function HeroSection() {
         <div className="flex-1 flex flex-col justify-center">
           {/* Tagline prefix */}
           <div className="text-[#c2b29f] font-mono text-[11px] tracking-[0.3em] uppercase mb-8">
-            01 – Hydrological Intelligence Node • v4.2
+            Hydrological Intelligence Node • v4.2
           </div>
 
           {/* Main Heading using signature editorial display italic */}
           <h1 className="display text-white mb-16 max-w-5xl text-balance">
             Hydrological Intelligence
             <span className="block mt-3">
-              for critical minerals.
+              for    <span className="text-[#d6ccff]">critical minerals.</span>
             </span>
           </h1>
 

@@ -22,14 +22,22 @@ export default function AboutPage() {
         {/* Hero Section */}
         <section className="py-32 relative overflow-hidden flex flex-col justify-center min-h-[60vh]">
           <div className="absolute inset-0 z-0">
+            <div
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+              style={{
+                backgroundImage: "url('/images/about_banner.png')",
+                backgroundPosition: "center 50%"
+              }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-[#14101f]/75 via-[#14101f]/10 to-[#14101f]" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#14101f]/80 via-transparent to-transparent" />
             <div className="absolute inset-0 bg-radial-gradient from-[rgba(139,108,255,0.12)] via-transparent to-transparent opacity-80" />
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#14101f]/30 to-[#14101f]" />
           </div>
           
           <div className="relative z-10 mx-auto max-w-7xl px-8 text-center flex flex-col items-center justify-center">
             <StatusBadge label="Infrastructure" value="Intelligence Layer" className="justify-center mb-8" />
             <h1 className="display text-white max-w-5xl mx-auto mb-8 text-balance">
-              Building intelligence for critical minerals.
+              Building intelligence for <span className="text-[#d6ccff]">critical minerals.</span>
             </h1>
             <p className="lede mt-6 max-w-3xl mx-auto text-white/70">
               Geodel develops hydrological intelligence systems that support extraction, recovery, and operational visibility across critical mineral infrastructure.
@@ -44,7 +52,7 @@ export default function AboutPage() {
               <div>
                 <StatusBadge label="Purpose" value="Mission" className="mb-6" />
                 <h2 className="h2 text-white mb-6">
-                  Operational Intelligence for Resource Systems.
+                  Operational Intelligence for <span className="text-[#d6ccff]">Resource Systems.</span>
                 </h2>
                 <p className="text-base text-white/70 leading-relaxed">
                   Our mission is to provide critical mineral operations with the hydrological intelligence required to optimize water systems, strengthen operational resilience, and support long-term infrastructure performance.
@@ -71,7 +79,7 @@ export default function AboutPage() {
             <div className="text-center mb-16">
               <StatusBadge label="Competencies" value="Expertise" className="justify-center mb-6" />
               <h2 className="h2 text-white mb-6">
-                Hydrology. Mineral Systems. Operational Intelligence.
+                Hydrology. Mineral Systems. <span className="text-[#d6ccff]">Operational Intelligence.</span>
               </h2>
             </div>
             
@@ -110,7 +118,7 @@ export default function AboutPage() {
               <div className="order-1 lg:order-2">
                 <StatusBadge label="Roadmap" value="Vision" className="mb-6" />
                 <h2 className="h2 text-white mb-6">
-                  The Future of Critical Mineral Intelligence.
+                  The Future of <span className="text-[#d6ccff]">Critical Mineral Intelligence.</span>
                 </h2>
                 <p className="text-base text-white/70 leading-relaxed">
                   Geodel is building the intelligence infrastructure that connects hydrology, resource systems, operational forecasting, mineral extraction, and infrastructure resilience across the next generation of critical mineral operations.
@@ -132,7 +140,7 @@ export default function AboutPage() {
               <div className="relative z-10 flex flex-col items-center">
                 <StatusBadge label="Next Step" value="Contact Us" className="mb-8" />
                 <h2 className="display text-white mb-8 max-w-3xl mx-auto">
-                  Partner with Geodel
+                  Partner with <span className="text-[#d6ccff]">Geodel</span>
                 </h2>
                 <p className="lede max-w-2xl mx-auto mb-12 text-white/70">
                   Ready to optimize water performance and operational resilience?

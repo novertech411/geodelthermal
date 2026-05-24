@@ -43,13 +43,13 @@ export function BuiltForSection() {
   return (
     <section className="py-32 bg-[#14101f] relative border-b border-white/5">
       <div className="mx-auto max-w-[1360px] px-8 relative z-10">
-        
+
         {/* Section Header */}
         <div className="mb-16">
-          <span className="eyebrow mb-4">05 — Industries</span>
+          <span className="eyebrow mb-4">  Industries</span>
           <h2 className="h2 text-white leading-tight">
             Supporting the{" "}
-            Critical Mineral Economy.
+            <span className="text-[#d6ccff]">Critical Mineral Economy.</span>
           </h2>
           <p className="lede mt-6">
             Geodel delivers hydrological intelligence across the mineral systems driving the future global economy.
@@ -71,27 +71,27 @@ export function BuiltForSection() {
                 fill
                 className="object-cover filter saturate-[0.85] transition-transform duration-700 group-hover:scale-[1.04]"
               />
-              
+
               {/* Dark Fade Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-[#14101f] via-[#14101f]/35 to-transparent pointer-events-none" />
 
               {/* Body content in bottom 40% */}
               <div className="absolute inset-x-0 bottom-0 p-8 flex flex-col justify-end h-[60%] z-10">
                 {/* Mono Label */}
-                <span className="text-[10px] font-mono tracking-[0.2em] text-[#d6ccff] uppercase mb-2">
+                {/* <span className="text-[10px] font-mono tracking-[0.2em] text-[#d6ccff] uppercase mb-2">
                   SECTOR // {sector.sectorId}
-                </span>
-                
+                </span> */}
+
                 {/* 24px Title */}
                 <h3 className="text-2xl font-bold tracking-tight text-white mb-2">
                   {sector.title}
                 </h3>
-                
+
                 {/* 14.5px Description */}
                 <p className="text-[14.5px] text-white/55 leading-relaxed mb-4">
                   {sector.description}
                 </p>
-                
+
                 {/* Mono CTA in accent-soft */}
                 <span className="text-[11px] font-mono tracking-[0.2em] text-[#d6ccff] group-hover:text-white uppercase flex items-center gap-1 transition-colors">
                   Explore Solutions <span className="transition-transform group-hover:translate-x-1">→</span>

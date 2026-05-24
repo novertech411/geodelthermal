@@ -29,14 +29,22 @@ export default function PlatformPage() {
         <section className="py-32 relative overflow-hidden flex flex-col justify-center min-h-[70vh]">
           {/* Background image & overlays */}
           <div className="absolute inset-0 z-0">
+            <div
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+              style={{
+                backgroundImage: "url('/images/platform_banner.png')",
+                backgroundPosition: "center 50%"
+              }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-[#14101f]/75 via-[#14101f]/10 to-[#14101f]" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#14101f]/80 via-transparent to-transparent" />
             <div className="absolute inset-0 bg-radial-gradient from-[rgba(139,108,255,0.15)] via-transparent to-transparent opacity-80" />
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#14101f]/30 to-[#14101f]" />
           </div>
           
           <div className="relative z-10 mx-auto max-w-7xl px-8 text-center flex flex-col items-center justify-center">
             <StatusBadge label="Infrastructure" value="Enterprise-v4" className="justify-center mb-8" />
             <h1 className="display text-white max-w-4xl mx-auto mb-8 text-balance">
-              The Geodel Platform
+              The Geodel <span className="text-[#d6ccff]">Platform</span>
             </h1>
             <p className="lede mt-6 max-w-3xl mx-auto text-white/70">
               A hydrological intelligence platform for critical mineral operations. Geodel connects hydrological monitoring, operational analytics, and predictive intelligence into a unified platform designed for modern mineral infrastructure.
@@ -59,7 +67,7 @@ export default function PlatformPage() {
               <div>
                 <StatusBadge label="Module-01" value="Data Infrastructure" className="mb-6" />
                 <h2 className="h2 text-white mb-6">
-                  Real-Time Resource Monitoring
+                  Real-Time Resource <span className="text-[#d6ccff]">Monitoring</span>
                 </h2>
                 <p className="text-base text-white/70 leading-relaxed mb-8">
                   Geodel integrates operational and hydrological data across mining systems in real time. We build the connection between sensor arrays and operational decision points.
@@ -133,7 +141,7 @@ export default function PlatformPage() {
               <div className="order-1 lg:order-2">
                 <StatusBadge label="Module-02" value="Intelligence Engine" className="mb-6" />
                 <h2 className="h2 text-white mb-6">
-                  Predictive Hydrological Analytics
+                  Predictive Hydrological <span className="text-[#d6ccff]">Analytics</span>
                 </h2>
                 <p className="text-base text-white/70 leading-relaxed mb-8">
                   Geodel’s intelligence engine continuously processes historical trends, sensor streams, and mechanical variables.
@@ -164,7 +172,7 @@ export default function PlatformPage() {
               <div>
                 <StatusBadge label="Module-03" value="Operational Hub" className="mb-6" />
                 <h2 className="h2 text-white mb-6">
-                  Actionable Operational Visibility
+                  Actionable Operational <span className="text-[#d6ccff]">Visibility</span>
                 </h2>
                 <p className="text-base text-white/70 leading-relaxed mb-8">
                   The platform delivers clear, real-time insights designed for engineers, hydrologists, and site managers.
@@ -210,7 +218,7 @@ export default function PlatformPage() {
             <div className="text-center mb-16">
               <StatusBadge label="Deployment" value="Global Options" className="justify-center mb-6" />
               <h2 className="h2 text-white mb-6">
-                Built for Critical Mineral Infrastructure
+                Built for Critical Mineral <span className="text-[#d6ccff]">Infrastructure</span>
               </h2>
               <p className="mt-6 text-base text-white/70 max-w-2xl mx-auto leading-relaxed">
                 Flexible and resilient deployment modes to support remote mining sites.
@@ -252,7 +260,7 @@ export default function PlatformPage() {
               <div className="relative z-10 flex flex-col items-center">
                 <StatusBadge label="Next Step" value="SYSTEM ACCESS" className="mb-8" />
                 <h2 className="display text-white mb-8 max-w-3xl mx-auto">
-                  Experience the Geodel Platform
+                  Experience the Geodel <span className="text-[#d6ccff]">Platform</span>
                 </h2>
                 <p className="lede max-w-2xl mx-auto mb-12 text-white/70">
                   See how Geodel can transform water balance and risk forecasting at your critical mineral operations.

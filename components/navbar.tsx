@@ -6,12 +6,14 @@ import { Menu, X } from "lucide-react"
 import Image from "next/image"
 
 const navLinks = [
+
+  { href: "/", label: "Home" },
   { href: "/platform", label: "Platform" },
   { href: "/solutions", label: "Solutions" },
   { href: "/industries", label: "Industries" },
   { href: "/insights", label: "Insights" },
   // { href: "/about", label: "About" },
-  // { href: "/contact", label: "Contact" },
+  { href: "/contact", label: "Contact" },
 ]
 
 export function Navbar() {
@@ -82,7 +84,7 @@ export function Navbar() {
 
         {/* CTA Button in sleek technical gray */}
         <div className="hidden md:block">
-          <Link href="/contact">
+          <Link href="https://goodel-dashboard.vercel.app/login">
             <button className="rounded-[20px] bg-zinc-800 hover:bg-zinc-700 text-white text-[13px] font-semibold px-6 py-3 border border-white/10 transition-all duration-300 shadow-md">
               Get started <span className="text-sm ml-1">→</span>
             </button>
