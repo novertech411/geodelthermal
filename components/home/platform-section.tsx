@@ -29,10 +29,10 @@ const features = [
 
 export function PlatformSection() {
   return (
-    <section className="py-32 bg-[#14101f] relative">
+    <section className="py-16 sm:py-32 bg-[#14101f] relative">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
-      <div className="mx-auto max-w-[1360px] px-8 relative z-10">
+      <div className="mx-auto max-w-[1360px] px-4 sm:px-8 relative z-10">
         <div className="mb-16">
           <span className="eyebrow mb-4"> Platform Overview</span>
           <h2 className="h2 text-white leading-tight">
@@ -75,7 +75,7 @@ export function PlatformSection() {
 
         {/* Technical Showcase */}
         <div className="mt-20">
-          <div className="border border-white/10 bg-[rgba(255,255,255,0.04)] rounded-[24px] p-[28px] md:p-[56px] shadow-2xl">
+          <div className="border border-white/10 bg-[rgba(255,255,255,0.04)] rounded-[24px] p-6 sm:p-[28px] md:p-[56px] shadow-2xl">
             <div className="grid lg:grid-cols-5 gap-12 items-center">
               {/* Image Section */}
               <div className="lg:col-span-3">

@@ -26,7 +26,7 @@ export default function PlatformPage() {
       <Navbar />
       <main className="pt-20">
         {/* Hero Section */}
-        <section className="py-32 relative overflow-hidden flex flex-col justify-center min-h-[70vh]">
+        <section className="py-16 sm:py-24 md:py-32 relative overflow-hidden flex flex-col justify-center min-h-[60vh] sm:min-h-[70vh]">
           {/* Background image & overlays */}
           <div className="absolute inset-0 z-0">
             <div
@@ -41,9 +41,9 @@ export default function PlatformPage() {
             <div className="absolute inset-0 bg-radial-gradient from-[rgba(139,108,255,0.15)] via-transparent to-transparent opacity-80" />
           </div>
           
-          <div className="relative z-10 mx-auto max-w-7xl px-8 text-center flex flex-col items-center justify-center">
+          <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-8 text-center flex flex-col items-center justify-center">
             <StatusBadge label="Infrastructure" value="Enterprise-v4" className="justify-center mb-8" />
-            <h1 className="display text-white max-w-4xl mx-auto mb-8 text-balance">
+            <h1 className="display text-white w-full mb-8 text-balance">
               The Geodel <span className="text-[#d6ccff]">Platform</span>
             </h1>
             <p className="lede mt-6 max-w-3xl mx-auto text-white/70">
@@ -62,7 +62,7 @@ export default function PlatformPage() {
 
         {/* Data Infrastructure Section */}
         <section className="py-24 relative border-t border-white/5">
-          <div className="mx-auto max-w-7xl px-8">
+          <div className="mx-auto max-w-7xl px-4 sm:px-8">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div>
                 <StatusBadge label="Module-01" value="Data Infrastructure" className="mb-6" />
@@ -117,7 +117,7 @@ export default function PlatformPage() {
 
         {/* Hydrological Intelligence Engine Section */}
         <section className="py-24 relative bg-black/20 border-y border-white/5">
-          <div className="mx-auto max-w-7xl px-8">
+          <div className="mx-auto max-w-7xl px-4 sm:px-8">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div className="order-2 lg:order-1 relative">
                 <div className="card aspect-video p-0 bg-black/60 border-white/10 relative overflow-hidden group">
@@ -167,7 +167,7 @@ export default function PlatformPage() {
 
         {/* Operational Intelligence Section */}
         <section className="py-24 relative">
-          <div className="mx-auto max-w-7xl px-8">
+          <div className="mx-auto max-w-7xl px-4 sm:px-8">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div>
                 <StatusBadge label="Module-03" value="Operational Hub" className="mb-6" />
@@ -214,7 +214,7 @@ export default function PlatformPage() {
 
         {/* Deployment Section */}
         <section className="py-24 relative bg-black/20 border-y border-white/5">
-          <div className="mx-auto max-w-7xl px-8">
+          <div className="mx-auto max-w-7xl px-4 sm:px-8">
             <div className="text-center mb-16">
               <StatusBadge label="Deployment" value="Global Options" className="justify-center mb-6" />
               <h2 className="h2 text-white mb-6">
@@ -255,11 +255,11 @@ export default function PlatformPage() {
           <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-5" />
           
           <div className="relative mx-auto max-w-[1100px] px-6">
-            <div className="rounded-[24px] border border-white/18 bg-[rgba(255,255,255,0.04)] px-8 py-20 overflow-hidden text-center relative">
+            <div className="rounded-[24px] border border-white/18 bg-[rgba(255,255,255,0.04)] px-4 sm:px-8 py-10 sm:py-16 md:py-20 overflow-hidden text-center relative">
               <div className="absolute inset-0 bg-radial-gradient from-[rgba(139,108,255,0.15)] via-transparent to-transparent opacity-80" />
               <div className="relative z-10 flex flex-col items-center">
                 <StatusBadge label="Next Step" value="SYSTEM ACCESS" className="mb-8" />
-                <h2 className="display text-white mb-8 max-w-3xl mx-auto">
+                <h2 className="display text-white w-full mb-8">
                   Experience the Geodel <span className="text-[#d6ccff]">Platform</span>
                 </h2>
                 <p className="lede max-w-2xl mx-auto mb-12 text-white/70">

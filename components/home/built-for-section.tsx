@@ -41,8 +41,8 @@ const sectors = [
 
 export function BuiltForSection() {
   return (
-    <section className="py-32 bg-[#14101f] relative border-b border-white/5">
-      <div className="mx-auto max-w-[1360px] px-8 relative z-10">
+    <section className="py-16 sm:py-32 bg-[#14101f] relative border-b border-white/5">
+      <div className="mx-auto max-w-[1360px] px-4 sm:px-8 relative z-10">
 
         {/* Section Header */}
         <div className="mb-16">

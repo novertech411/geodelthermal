@@ -6,7 +6,7 @@ export function CTASection() {
       <div className="mx-auto max-w-[1360px] px-8">
         {/* CTA Panel Container */}
         <div
-          className="relative rounded-[24px] border border-white/10 p-[56px] md:p-[80px_56px] text-center overflow-hidden flex flex-col items-center"
+          className="relative rounded-[24px] border border-white/10 p-6 sm:p-[40px] md:p-[56px] text-center overflow-hidden flex flex-col items-center"
           style={{
             background: "radial-gradient(circle at 100% 0%, rgba(139, 108, 255, 0.18) 0%, transparent 60%), radial-gradient(circle at 0% 100%, rgba(91, 63, 224, 0.18) 0%, transparent 60%), #1c1730",
             backgroundImage: `

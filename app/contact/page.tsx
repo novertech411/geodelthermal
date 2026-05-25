@@ -28,7 +28,7 @@ export default function ContactPage() {
       <Navbar />
       <main className="pt-20">
         {/* Hero Section */}
-        <section className="py-32 relative overflow-hidden flex flex-col justify-center min-h-[50vh]">
+        <section className="py-16 sm:py-24 md:py-32 relative overflow-hidden flex flex-col justify-center min-h-[40vh] sm:min-h-[50vh]">
           <div className="absolute inset-0 z-0">
             <div
               className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -42,9 +42,9 @@ export default function ContactPage() {
             <div className="absolute inset-0 bg-radial-gradient from-[rgba(139,108,255,0.12)] via-transparent to-transparent opacity-80" />
           </div>
           
-          <div className="relative z-10 mx-auto max-w-7xl px-8 text-center flex flex-col items-center justify-center">
+          <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-8 text-center flex flex-col items-center justify-center">
             <StatusBadge label="Communication" value="System Node" className="justify-center mb-8" />
-            <h1 className="display text-white max-w-4xl mx-auto mb-8 text-balance">
+            <h1 className="display text-white w-full mb-8 text-balance">
               Connect with <span className="text-[#d6ccff]">Geodel.</span>
             </h1>
             <p className="lede mt-6 max-w-3xl mx-auto text-white/70">
@@ -54,8 +54,8 @@ export default function ContactPage() {
         </section>
 
         <section className="py-24 relative">
-          <div className="mx-auto max-w-7xl px-8">
-            <div className="grid lg:grid-cols-2 gap-20">
+          <div className="mx-auto max-w-7xl px-4 sm:px-8">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
               {/* Contact Information */}
               <div className="space-y-12">
                 <div>
@@ -133,7 +133,7 @@ export default function ContactPage() {
 
               {/* Contact Form */}
               <div className="relative">
-                <div className="card bg-black/60 border-white/10 p-10 shadow-[0_0_50px_rgba(139,108,255,0.03)]">
+                <div className="card bg-black/60 border-white/10 p-6 sm:p-10 shadow-[0_0_50px_rgba(139,108,255,0.03)]">
                   <div className="flex items-center gap-4 mb-10">
                     <div className="w-12 h-12 rounded-xl bg-white/[0.02] flex items-center justify-center border border-white/10">
                       <Send className="h-6 w-6 text-[#8B6CFF]" />

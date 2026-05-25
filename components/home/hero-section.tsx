@@ -21,39 +21,39 @@ export function HeroSection() {
       </div>
 
       {/* Content Container */}
-      <div className="relative z-10 w-full max-w-[1360px] mx-auto px-8 flex-1 flex flex-col justify-between pt-48 pb-12">
+      <div className="relative z-10 w-full max-w-[1360px] mx-auto px-4 sm:px-8 flex-1 flex flex-col justify-between pt-28 sm:pt-40 md:pt-48 pb-8 sm:pb-12">
         {/* Top content: prefix tag, heading, and description/buttons */}
         <div className="flex-1 flex flex-col justify-center">
           {/* Tagline prefix */}
-          <div className="text-[#c2b29f] font-mono text-[11px] tracking-[0.3em] uppercase mb-8">
+          <div className="text-[#c2b29f] font-mono text-[9px] sm:text-[11px] tracking-[0.25em] sm:tracking-[0.3em] uppercase mb-4 sm:mb-8">
             Hydrological Intelligence Node • v4.2
           </div>
 
           {/* Main Heading using signature editorial display italic */}
-          <h1 className="display text-white mb-16 max-w-5xl text-balance">
+          <h1 className="display text-white mb-6 sm:mb-12 w-full text-balance">
             Hydrological Intelligence
-            <span className="block mt-3">
-              for    <span className="text-[#d6ccff]">critical minerals.</span>
+            <span className="block mt-1 sm:mt-3">
+              for <span className="text-[#d6ccff]">critical minerals.</span>
             </span>
           </h1>
 
           {/* Row with description and buttons */}
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-10 lg:gap-16 w-full">
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 lg:gap-16 w-full">
             <div className="max-w-xl">
               <p className="lede">
                 Geodel provides real-time hydrological intelligence for critical mineral operations, enabling mining companies to monitor, predict, and optimize the water systems that drive extraction, recovery, and operational performance.
               </p>
-              <p className="mt-4 text-xs font-mono text-white/40 uppercase tracking-[1px]">
+              <p className="mt-3 text-[11px] sm:text-xs font-mono text-white/40 uppercase tracking-[1px] hidden sm:block">
                 Built for lithium, copper, rare earths, graphite, uranium, and energy transition mineral infrastructure.
               </p>
             </div>
 
             {/* Action buttons */}
-            <div className="flex flex-row items-center gap-4">
+            <div className="flex flex-wrap items-center gap-3">
               {/* Request Demo Button */}
               <Link
                 href="/contact"
-                className="rounded-[20px] bg-[#8B6CFF] hover:bg-[#7c5eff] text-white text-sm font-semibold px-6 py-3.5 flex items-center gap-2 transition-all duration-300 shadow-md"
+                className="rounded-[20px] bg-[#8B6CFF] hover:bg-[#7c5eff] text-white text-sm font-semibold px-5 py-3 flex items-center gap-2 transition-all duration-300 shadow-md"
               >
                 Request a demo <span className="text-sm">→</span>
               </Link>
@@ -61,7 +61,7 @@ export function HeroSection() {
               {/* Explore Platform Button */}
               <Link
                 href="/platform"
-                className="rounded-[20px] border border-white/22 bg-white/4 hover:bg-white/8 text-white text-sm font-semibold px-6 py-3.5 flex items-center gap-2 transition-all duration-300"
+                className="rounded-[20px] border border-white/22 bg-white/4 hover:bg-white/8 text-white text-sm font-semibold px-5 py-3 flex items-center gap-2 transition-all duration-300"
               >
                 Explore the platform
               </Link>
@@ -70,13 +70,13 @@ export function HeroSection() {
         </div>
 
         {/* Bottom Info Row */}
-        <div className="mt-16 w-full">
+        <div className="mt-10 sm:mt-16 w-full">
           {/* Divider line */}
-          <div className="w-full h-px bg-white/10 mb-6" />
+          <div className="w-full h-px bg-white/10 mb-4 sm:mb-6" />
 
-          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-[10px] font-mono tracking-[0.2em] text-white/40 uppercase">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-[10px] font-mono tracking-[0.2em] text-white/40 uppercase">
             <div>LAT 23.68°S • LON 68.12°W // ATACAMA BASIN</div>
-            <div className="flex flex-wrap items-center gap-x-8 gap-y-2">
+            <div className="hidden md:flex items-center gap-x-8">
               <span>SURVEY 108 / ACTIVE</span>
               <span>WATER DEPTH 0-1500M</span>
               <span>CLASS A • REAL-TIME TELEMETRY</span>

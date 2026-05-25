@@ -105,7 +105,7 @@ export default function IndustriesPage() {
       <Navbar />
       <main className="pt-20">
         {/* Hero Section */}
-        <section className="py-32 relative overflow-hidden flex flex-col justify-center min-h-[60vh]">
+        <section className="py-16 sm:py-24 md:py-32 relative overflow-hidden flex flex-col justify-center min-h-[50vh] sm:min-h-[60vh]">
           <div className="absolute inset-0 z-0">
             <div
               className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -119,9 +119,9 @@ export default function IndustriesPage() {
             <div className="absolute inset-0 bg-radial-gradient from-[rgba(139,108,255,0.12)] via-transparent to-transparent opacity-80" />
           </div>
           
-          <div className="relative z-10 mx-auto max-w-7xl px-8 text-center flex flex-col items-center justify-center">
+          <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-8 text-center flex flex-col items-center justify-center">
             <StatusBadge label="Market Scope" value="Supported Sectors" className="justify-center mb-8" />
-            <h1 className="display text-white max-w-5xl mx-auto mb-8 text-balance">
+            <h1 className="display text-white w-full mb-8 text-balance">
               Supporting critical mineral <span className="text-[#d6ccff]">infrastructure.</span>
             </h1>
             <p className="lede mt-6 max-w-3xl mx-auto text-white/70">
@@ -132,15 +132,15 @@ export default function IndustriesPage() {
 
         {/* Industries Details */}
         <section className="py-24 relative border-t border-white/5">
-          <div className="mx-auto max-w-7xl px-8">
-            <div className="space-y-32">
+          <div className="mx-auto max-w-7xl px-4 sm:px-8">
+            <div className="space-y-16 sm:space-y-24 md:space-y-32">
               {industriesList.map((ind, index) => (
                 <div
                   key={ind.id}
                   id={ind.id}
                   className="scroll-mt-32"
                 >
-                  <div className={`grid lg:grid-cols-2 gap-20 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
+                  <div className={`grid lg:grid-cols-2 gap-10 lg:gap-20 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
                     {/* Content */}
                     <div>
                       <div className="flex items-center gap-4 mb-6">
@@ -202,11 +202,11 @@ export default function IndustriesPage() {
           <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-5" />
           
           <div className="relative mx-auto max-w-[1100px] px-6">
-            <div className="rounded-[24px] border border-white/18 bg-[rgba(255,255,255,0.04)] px-8 py-20 overflow-hidden text-center relative">
+            <div className="rounded-[24px] border border-white/18 bg-[rgba(255,255,255,0.04)] px-4 sm:px-8 py-10 sm:py-16 md:py-20 overflow-hidden text-center relative">
               <div className="absolute inset-0 bg-radial-gradient from-[rgba(139,108,255,0.15)] via-transparent to-transparent opacity-80" />
               <div className="relative z-10 flex flex-col items-center">
                 <StatusBadge label="Next Step" value="Contact Us" className="mb-8" />
-                <h2 className="display text-white mb-8 max-w-3xl mx-auto">
+                <h2 className="display text-white w-full mb-8">
                   Optimize your <span className="text-[#d6ccff]">water systems.</span>
                 </h2>
                 <p className="lede max-w-2xl mx-auto mb-12 text-white/70">

@@ -36,7 +36,7 @@ export default function AboutPage() {
           
           <div className="relative z-10 mx-auto max-w-7xl px-8 text-center flex flex-col items-center justify-center">
             <StatusBadge label="Infrastructure" value="Intelligence Layer" className="justify-center mb-8" />
-            <h1 className="display text-white max-w-5xl mx-auto mb-8 text-balance">
+            <h1 className="display text-white w-full mb-8 text-balance">
               Building intelligence for <span className="text-[#d6ccff]">critical minerals.</span>
             </h1>
             <p className="lede mt-6 max-w-3xl mx-auto text-white/70">
@@ -139,7 +139,7 @@ export default function AboutPage() {
               <div className="absolute inset-0 bg-radial-gradient from-[rgba(139,108,255,0.15)] via-transparent to-transparent opacity-80" />
               <div className="relative z-10 flex flex-col items-center">
                 <StatusBadge label="Next Step" value="Contact Us" className="mb-8" />
-                <h2 className="display text-white mb-8 max-w-3xl mx-auto">
+                <h2 className="display text-white w-full mb-8">
                   Partner with <span className="text-[#d6ccff]">Geodel</span>
                 </h2>
                 <p className="lede max-w-2xl mx-auto mb-12 text-white/70">

@@ -51,13 +51,13 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed left-0 right-0 z-50 flex justify-center w-full transition-all duration-500 ease-in-out ${isScrolled ? "top-5 px-4" : "top-0 px-0"
+      className={`fixed left-0 right-0 z-50 flex justify-center w-full transition-all duration-500 ease-in-out ${isScrolled ? "top-5 px-3 sm:px-4" : "top-0 px-0"
         }`}
     >
       <nav
         className={`w-full flex items-center justify-between transition-all duration-500 ease-in-out ${isScrolled
-          ? "max-w-[1320px] h-[64px] rounded-full border border-white/8 bg-[rgba(14,11,31,0.85)] backdrop-blur-[18px] saturate-[180%] px-6 sm:px-8 shadow-[0_8px_32px_rgba(0,0,0,0.5)]"
-          : "max-w-none h-[80px] rounded-none border-b border-white/10  bg-[rgba(14,11,31,0.85)] backdrop-blur-sm px-6 sm:px-12"
+          ? "max-w-[1320px] h-[64px] rounded-full border border-white/8 bg-[rgba(14,11,31,0.85)] backdrop-blur-[18px] saturate-[180%] px-4 sm:px-8 shadow-[0_8px_32px_rgba(0,0,0,0.5)]"
+          : "max-w-none h-[70px] sm:h-[80px] rounded-none border-b border-white/10  bg-[rgba(14,11,31,0.85)] backdrop-blur-sm px-4 sm:px-8 lg:px-12"
           }`}
       >
         {/* Logo */}
@@ -93,7 +93,7 @@ export function Navbar() {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden p-2 text-white relative z-50 bg-accent rounded-lg"
+          className="md:hidden flex items-center justify-center p-2 text-white relative z-50 bg-[#8B6CFF] rounded-lg w-9 h-9"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
           aria-expanded={isOpen}
@@ -104,16 +104,15 @@ export function Navbar() {
 
       {/* Mobile Navigation Overlay */}
       <div
-        className={`fixed inset-0 bg-[#14101f]/98 backdrop-blur-lg z-40 md:hidden transition-all duration-300 ${isOpen ? "opacity-100 visible" : "opacity-0 invisible"
+        className={`fixed inset-0 bg-[#14101f] z-40 md:hidden transition-all duration-300 ${isOpen ? "opacity-100 visible" : "opacity-0 invisible"
           }`}
-        style={{ top: "0", paddingTop: "80px" }}
       >
-        <nav className="flex flex-col items-center justify-start h-full gap-8 px-6 pt-12">
+        <nav className="flex flex-col items-center justify-center h-full gap-8 px-6">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-xl font-medium text-white/80 hover:text-white transition-colors"
+              className="text-2xl font-medium text-white/80 hover:text-white transition-colors"
               onClick={closeMenu}
             >
               {link.label}
@@ -122,7 +121,7 @@ export function Navbar() {
           <Link
             href="/contact"
             onClick={closeMenu}
-            className="rounded-[20px] bg-zinc-800 hover:bg-zinc-700 text-white text-sm font-semibold py-4 w-full max-w-xs mt-6 flex items-center justify-center gap-2 transition-all duration-300 border border-white/10 shadow-md"
+            className="mt-4 rounded-[20px] bg-[#8B6CFF] hover:bg-[#7c5eff] text-white text-sm font-semibold py-4 w-full max-w-xs flex items-center justify-center gap-2 transition-all duration-300 shadow-md"
           >
             Get started <span className="text-sm">→</span>
           </Link>

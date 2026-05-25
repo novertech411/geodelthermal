@@ -57,7 +57,7 @@ export default function InsightsPage() {
       <Navbar />
       <main className="pt-20">
         {/* Hero Section */}
-        <section className="py-32 relative overflow-hidden flex flex-col justify-center min-h-[60vh]">
+        <section className="py-16 sm:py-24 md:py-32 relative overflow-hidden flex flex-col justify-center min-h-[50vh] sm:min-h-[60vh]">
           <div className="absolute inset-0 z-0">
             <div
               className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -71,9 +71,9 @@ export default function InsightsPage() {
             <div className="absolute inset-0 bg-radial-gradient from-[rgba(139,108,255,0.12)] via-transparent to-transparent opacity-80" />
           </div>
           
-          <div className="relative z-10 mx-auto max-w-7xl px-8 text-center flex flex-col items-center justify-center">
+          <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-8 text-center flex flex-col items-center justify-center">
             <StatusBadge label="Publications" value="Technical Library" className="justify-center mb-8" />
-            <h1 className="display text-white max-w-5xl mx-auto mb-8 text-balance">
+            <h1 className="display text-white w-full mb-8 text-balance">
               Hydrological <span className="text-[#d6ccff]">Insights</span>
             </h1>
             <p className="lede mt-6 max-w-3xl mx-auto text-white/70">
@@ -84,7 +84,7 @@ export default function InsightsPage() {
 
         {/* Featured Briefing */}
         <section className="py-12 bg-gradient-to-b from-[#14101f] to-black/20 relative border-t border-white/5">
-          <div className="mx-auto max-w-7xl px-8">
+          <div className="mx-auto max-w-7xl px-4 sm:px-8">
             <div className="card p-0 overflow-hidden border-white/10 bg-black/40 group">
               <div className="grid lg:grid-cols-5 gap-0 items-stretch">
                 <div className="lg:col-span-3 relative aspect-video lg:aspect-auto">
@@ -95,7 +95,7 @@ export default function InsightsPage() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-black/80 via-transparent to-transparent pointer-events-none" />
                 </div>
-                <div className="lg:col-span-2 p-10 md:p-12 flex flex-col justify-between">
+                <div className="lg:col-span-2 p-6 sm:p-10 md:p-12 flex flex-col justify-between">
                   <div className="space-y-6">
                     <div className="flex items-center justify-between">
                       <span className="text-[10px] font-mono tracking-widest text-[#8B6CFF] bg-[#8B6CFF]/10 px-3 py-1 rounded border border-[#8B6CFF]/20">
@@ -127,7 +127,7 @@ export default function InsightsPage() {
 
         {/* Featured Articles Grid */}
         <section className="py-24 relative bg-black/20 border-t border-white/5">
-          <div className="mx-auto max-w-7xl px-8">
+          <div className="mx-auto max-w-7xl px-4 sm:px-8">
             <div className="mb-12 flex justify-between items-center">
               <h2 className="h2 text-white">Featured <span className="text-[#d6ccff]">Articles</span></h2>
               <StatusBadge label="CATALOG" value="4 AVAILABLE" />
@@ -186,11 +186,11 @@ export default function InsightsPage() {
           <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-5" />
           
           <div className="relative mx-auto max-w-[1100px] px-6">
-            <div className="rounded-[24px] border border-white/18 bg-[rgba(255,255,255,0.04)] px-8 py-20 overflow-hidden text-center relative">
+            <div className="rounded-[24px] border border-white/18 bg-[rgba(255,255,255,0.04)] px-4 sm:px-8 py-10 sm:py-16 md:py-20 overflow-hidden text-center relative">
               <div className="absolute inset-0 bg-radial-gradient from-[rgba(139,108,255,0.15)] via-transparent to-transparent opacity-80" />
               <div className="relative z-10 flex flex-col items-center">
                 <StatusBadge label="Updates" value="Newsletter" className="mb-8" />
-                <h2 className="display text-white mb-8 max-w-3xl mx-auto">
+                <h2 className="display text-white w-full mb-8">
                   Stay <span className="text-[#d6ccff]">informed</span>
                 </h2>
                 <p className="lede max-w-2xl mx-auto mb-12 text-white/70">

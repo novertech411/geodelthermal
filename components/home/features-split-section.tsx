@@ -31,8 +31,8 @@ const capabilities = [
 
 export function FeaturesSplitSection() {
   return (
-    <section className="py-32 bg-[#14101f] relative overflow-hidden border-b border-white/5">
-      <div className="mx-auto max-w-[1360px] px-8">
+    <section className="py-16 sm:py-32 bg-[#14101f] relative overflow-hidden border-b border-white/5">
+      <div className="mx-auto max-w-[1360px] px-4 sm:px-8">
         {/* Eyebrow and Section Header */}
         <div className="max-w-3xl mb-24">
           <div className="text-[10px] font-mono text-[#8B6CFF] uppercase tracking-[0.25em] mb-4">THE FUTURE OF CRITICAL MINERALS</div>
@@ -41,7 +41,7 @@ export function FeaturesSplitSection() {
           </h2>
         </div>
 
-        <div className="space-y-48">
+        <div className="space-y-16 sm:space-y-32 lg:space-y-48">
           {capabilities.map((cap, index) => (
             <div
               key={cap.title}
