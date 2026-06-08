@@ -213,7 +213,7 @@ export default function IndustriesPage() {
                   Ready to deploy real-time monitoring across your mining systems?
                 </p>
                 <Link 
-                  href="/contact" 
+                  href="https://goodel-dashboard.vercel.app/login" 
                   className="rounded-[20px] bg-[#8B6CFF] hover:bg-[#7c5eff] text-white text-base font-semibold px-8 py-4 inline-flex items-center gap-2 transition-all duration-300 shadow-md"
                 >
                   Request System Access <span className="text-base">→</span>

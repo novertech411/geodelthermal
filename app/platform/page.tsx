@@ -51,7 +51,7 @@ export default function PlatformPage() {
             </p>
             <div className="mt-12">
               <Link 
-                href="/contact" 
+                href="https://calendly.com/geodel543/30min" 
                 className="rounded-[20px] bg-[#8B6CFF] hover:bg-[#7c5eff] text-white text-base font-semibold px-8 py-4 inline-flex items-center gap-2 transition-all duration-300 shadow-md"
               >
                 Request system demo <span className="text-base">→</span>
@@ -266,7 +266,7 @@ export default function PlatformPage() {
                   See how Geodel can transform water balance and risk forecasting at your critical mineral operations.
                 </p>
                 <Link 
-                  href="/contact" 
+                  href="https://calendly.com/geodel543/30min" 
                   className="rounded-[20px] bg-[#8B6CFF] hover:bg-[#7c5eff] text-white text-base font-semibold px-8 py-4 inline-flex items-center gap-2 transition-all duration-300 shadow-md"
                 >
                   Schedule a System Demo <span className="text-base">→</span>

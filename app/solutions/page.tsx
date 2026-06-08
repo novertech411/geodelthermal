@@ -169,7 +169,7 @@ export default function SolutionsPage() {
 
                       <div className="mt-12 flex items-center gap-6">
                         <Link
-                          href="/contact"
+                          href="https://goodel-dashboard.vercel.app/login"
                           className="rounded-[20px] bg-[#8B6CFF] hover:bg-[#7c5eff] text-white text-sm font-semibold px-6 py-3.5 inline-flex items-center gap-2 transition-all duration-300 shadow-md"
                         >
                           Start system project <span className="text-sm">→</span>
@@ -225,7 +225,7 @@ export default function SolutionsPage() {
                   Tell us about your critical mineral operations and discover how Geodel can help optimize your water systems.
                 </p>
                 <Link
-                  href="/contact"
+                  href="https://calendly.com/geodel543/30min"
                   className="rounded-[20px] bg-[#8B6CFF] hover:bg-[#7c5eff] text-white text-base font-semibold px-8 py-4 inline-flex items-center gap-2 transition-all duration-300 shadow-md"
                 >
                   Initiate System Contact <span className="text-base">→</span>

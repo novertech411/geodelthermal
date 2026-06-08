@@ -119,7 +119,7 @@ export function Navbar() {
             </Link>
           ))}
           <Link
-            href="/contact"
+            href="https://goodel-dashboard.vercel.app/login"
             onClick={closeMenu}
             className="mt-4 rounded-[20px] bg-[#8B6CFF] hover:bg-[#7c5eff] text-white text-sm font-semibold py-4 w-full max-w-xs flex items-center justify-center gap-2 transition-all duration-300 shadow-md"
           >

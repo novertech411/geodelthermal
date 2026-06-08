@@ -52,7 +52,7 @@ export function HeroSection() {
             <div className="flex flex-wrap items-center gap-3">
               {/* Request Demo Button */}
               <Link
-                href="/contact"
+                href="https://calendly.com/geodel543/30min"
                 className="rounded-[20px] bg-[#8B6CFF] hover:bg-[#7c5eff] text-white text-sm font-semibold px-5 py-3 flex items-center gap-2 transition-all duration-300 shadow-md"
               >
                 Request a demo <span className="text-sm">→</span>
@@ -60,7 +60,7 @@ export function HeroSection() {
 
               {/* Explore Platform Button */}
               <Link
-                href="/platform"
+                href="https://goodel-dashboard.vercel.app/login"
                 className="rounded-[20px] border border-white/22 bg-white/4 hover:bg-white/8 text-white text-sm font-semibold px-5 py-3 flex items-center gap-2 transition-all duration-300"
               >
                 Explore the platform

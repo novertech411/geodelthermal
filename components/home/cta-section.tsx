@@ -40,13 +40,13 @@ export function CTASection() {
           {/* Accent Button */}
           <div className="mt-10 flex flex-col sm:flex-row items-center gap-4">
             <Link
-              href="/contact"
+              href="https://calendly.com/geodel543/30min"
               className="rounded-[20px] bg-[#8B6CFF] hover:bg-[#7c5eff] text-white text-sm font-semibold px-8 py-4 flex items-center gap-2 transition-all duration-300 shadow-md inline-flex"
             >
               Schedule a Demo <span className="text-sm">→</span>
             </Link>
             <Link
-              href="/contact"
+              href="https://calendly.com/geodel543/30min"
               className="rounded-[20px] border border-white/22 bg-white/4 hover:bg-white/8 text-white text-sm font-semibold px-8 py-4 flex items-center gap-2 transition-all duration-300 inline-flex"
             >
               Contact Geodel

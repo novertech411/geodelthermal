@@ -146,7 +146,7 @@ export default function AboutPage() {
                   Ready to optimize water performance and operational resilience?
                 </p>
                 <Link 
-                  href="/contact" 
+                  href="https://calendly.com/geodel543/30min" 
                   className="rounded-[20px] bg-[#8B6CFF] hover:bg-[#7c5eff] text-white text-base font-semibold px-8 py-4 inline-flex items-center gap-2 transition-all duration-300 shadow-md"
                 >
                   Initiate System Contact <span className="text-base">→</span>
