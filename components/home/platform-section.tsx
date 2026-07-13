@@ -34,7 +34,7 @@ export function PlatformSection() {
 
       <div className="mx-auto max-w-[1360px] px-4 sm:px-8 relative z-10">
         <div className="mb-16">
-          <span className="eyebrow mb-4"> Platform Overview</span>
+
           <h2 className="h2 text-white leading-tight">
             Operational Intelligence for{" "}
             <span className="text-[#d6ccff]">Water-Constrained Mineral Systems.</span>
@@ -57,9 +57,9 @@ export function PlatformSection() {
                 <div className="w-10 h-10 rounded-lg bg-[rgba(139,108,255,0.18)] flex items-center justify-center border border-white/10">
                   <feature.icon className="h-5 w-5 text-[#d6ccff]" />
                 </div>
-                <span className="font-mono text-[10px] tracking-[1.5px] text-white/40 uppercase">
+                {/* <span className="font-mono text-[10px] tracking-[1.5px] text-white/40 uppercase">
                   {feature.tag}
-                </span>
+                </span> */}
               </div>
 
               {/* Content */}

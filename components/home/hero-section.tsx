@@ -26,7 +26,7 @@ export function HeroSection() {
         <div className="flex-1 flex flex-col justify-center">
           {/* Tagline prefix */}
           <div className="text-[#c2b29f] font-mono text-[9px] sm:text-[11px] tracking-[0.25em] sm:tracking-[0.3em] uppercase mb-4 sm:mb-8">
-            Hydrological Intelligence Node • v4.2
+
           </div>
 
           {/* Main Heading using signature editorial display italic */}
@@ -75,15 +75,9 @@ export function HeroSection() {
           <div className="w-full h-px bg-white/10 mb-4 sm:mb-6" />
 
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-[10px] font-mono tracking-[0.2em] text-white/40 uppercase">
-            <div>LAT 23.68°S • LON 68.12°W // ATACAMA BASIN</div>
-            <div className="hidden md:flex items-center gap-x-8">
-              <span>SURVEY 108 / ACTIVE</span>
-              <span>WATER DEPTH 0-1500M</span>
-              <span>CLASS A • REAL-TIME TELEMETRY</span>
-            </div>
-            <div className="flex items-center gap-1.5 text-white/60">
-              SCROLL TO EXPLORE <span className="text-xs animate-bounce">↓</span>
-            </div>
+
+
+
           </div>
         </div>
       </div>

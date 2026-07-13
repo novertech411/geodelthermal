@@ -60,7 +60,7 @@ export function FeaturesSplitSection() {
                   {/* Floating Media Caption Chip */}
                   <div className="absolute bottom-6 left-6 rounded-full border border-white/10 bg-[rgba(14,11,31,0.7)] backdrop-blur-md px-4 py-2 flex items-center gap-2 shadow-lg">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#4ADE80] shadow-[0_0_8px_#4ADE80]" />
-                    <span className="font-mono text-[9px] uppercase tracking-widest text-white/60">NODE // {cap.tag}</span>
+                    {/* <span className="font-mono text-[9px] uppercase tracking-widest text-white/60">NODE // {cap.tag}</span> */}
                   </div>
                 </div>
               </div>
