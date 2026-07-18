@@ -6,7 +6,7 @@ const capabilities = [
     italicTitle: "extraction.",
     subtitle: " Hydrological Infrastructure",
     description: "Critical mineral operations rely on water systems for extraction, processing, recovery, and long-term operational continuity. Geodel delivers real-time visibility across resource-constrained sites.",
-    image: "/images/geological/site_drilling.png",
+    image: "/images/geological/site_drilling.jpeg",
     points: [
       { name: "Hydrological Monitoring", desc: "Real-time telemetry tracking water flows, quality, and storage levels." },
       { name: "Water Balance Intelligence", desc: "Integrating recycling rates and process usage to optimize water efficiency." },
