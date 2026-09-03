@@ -13,6 +13,7 @@ import {
   ChevronLeft,
   ArrowRight,
   ArrowUpRight,
+  Zap,
   Activity,
   Layers,
   Wrench,
@@ -20,7 +21,7 @@ import {
   Compass,
 } from "lucide-react"
 
-// Services Data for Accordion Section
+// Services Data for Accordion Section (Adapted to "From the borehole to the building" Geothermal Stack)
 const stackServicesData = [
   {
     id: "01",
@@ -79,7 +80,7 @@ const stackServicesData = [
   },
 ]
 
-// Portfolio Case Studies Data
+// Portfolio Case Studies Data (Reflecting Geodel Infrastructure Deployments)
 const portfolioProjects = [
   {
     title: "Philadelphia Urban Campus Thermal Grid",
@@ -148,6 +149,7 @@ const clientLogos = [
 
 export default function HomePage() {
   const [activeAccordion, setActiveAccordion] = useState<string>("01")
+  const [isYearly, setIsYearly] = useState(false)
   const [testimonialIdx, setTestimonialIdx] = useState(0)
 
   const handlePrevTestimonial = () => {
@@ -160,17 +162,15 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-white text-[#14101f] selection:bg-[#8B6CFF] selection:text-white font-sans overflow-x-hidden">
-      {/* HERO SECTION - Optimized High Performance Background */}
+      {/* HERO SECTION - Full-Bleed Clean Landscape */}
       <section className="relative w-full min-h-[92vh] lg:min-h-screen flex flex-col justify-between bg-[#0c0a14] overflow-hidden">
-        {/* Background Image with Responsive Sizes & High Quality Compression */}
+        {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/newhero.png"
             alt="Geodel Geothermal Drilling and Subsurface Infrastructure"
             fill
             priority
-            quality={85}
-            sizes="100vw"
             className="object-cover object-center scale-105 transition-transform duration-1000"
           />
           {/* Subtle Dark Shade Overlay for Text Readability */}
@@ -186,8 +186,8 @@ export default function HomePage() {
         <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 sm:px-12 lg:px-16 pt-36 sm:pt-44 pb-20 flex-1 flex flex-col justify-center">
           <div className="max-w-4xl space-y-6">
             {/* Major Text 1: Big Headline */}
-            <h1 className="text-5xl sm:text-7xl lg:text-8xl font-semibold tracking-tight text-white leading-[1.03]">
-              We're Building What's Next in Geothermal.
+            <h1 className="text-8xl sm:text-7xl lg:text-8xl font-semibold tracking-tight text-white leading-[1.03]">
+            Geodel<br></br> Geothermal.
             </h1>
 
             {/* Major Text 2: Subtitle Description */}
@@ -358,8 +358,6 @@ export default function HomePage() {
                             src={item.image}
                             alt={item.title}
                             fill
-                            quality={80}
-                            sizes="(max-width: 1024px) 100vw, 40vw"
                             className="object-cover"
                           />
                         </div>
@@ -421,8 +419,6 @@ export default function HomePage() {
                 src="/images/geothermal/philly_network.png"
                 alt="Philadelphia Thermal Network Graphic Cutaway"
                 fill
-                quality={80}
-                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
@@ -458,8 +454,6 @@ export default function HomePage() {
                   src={project.image}
                   alt={project.title}
                   fill
-                  quality={80}
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
@@ -518,8 +512,6 @@ export default function HomePage() {
                 src="/images/geothermal/workforce.png"
                 alt="Geodel Technicians and University Researchers in Philadelphia"
                 fill
-                quality={80}
-                sizes="(max-width: 1024px) 100vw, 45vw"
                 className="object-cover"
               />
             </div>
@@ -560,8 +552,6 @@ export default function HomePage() {
                 src={testimonials[testimonialIdx].avatar}
                 alt={testimonials[testimonialIdx].name}
                 fill
-                quality={80}
-                sizes="(max-width: 1024px) 100vw, 33vw"
                 className="object-cover"
               />
             </div>
@@ -581,8 +571,6 @@ export default function HomePage() {
                     src={testimonials[testimonialIdx].avatar}
                     alt={testimonials[testimonialIdx].name}
                     fill
-                    quality={80}
-                    sizes="48px"
                     className="object-cover"
                   />
                 </div>
@@ -599,7 +587,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* SECTION 7: Final CTA Section */}
+        {/* SECTION 7: Final CTA Section (The future of heating and cooling may already be beneath us.) */}
         <section className="rounded-[32px] bg-gradient-to-r from-[#14101f] via-[#1C0F42] to-[#14101f] text-white p-10 sm:p-16 lg:p-20 text-center space-y-8 shadow-2xl relative overflow-hidden border border-white/10">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#8B6CFF]/20 blur-[140px] pointer-events-none rounded-full" />
 

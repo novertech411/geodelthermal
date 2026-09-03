@@ -21,10 +21,10 @@ export function Navbar() {
         {/* Left: Brand Logo */}
         <Link href="#" className="flex items-center gap-2.5 group">
           <div className="w-8 h-8 flex items-center justify-center text-white">
-            <Image src="/images/newlogo.png" alt="Geodel Logo" width={28} height={28} className="object-contain" />
+            <Image src="/images/logo.png" alt="Geodel Logo" width={28} height={28} className="object-contain" />
           </div>
           <span className="text-xl sm:text-2xl font-bold text-white tracking-tight">
-            Geodel
+            eodel
           </span>
         </Link>
 
