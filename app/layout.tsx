@@ -14,13 +14,12 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Geodel - Hydrological Intelligence for Critical Minerals',
-  description: 'Geodel provides real-time hydrological intelligence for critical mineral operations, enabling mining companies to monitor, predict, and optimize water systems.',
+  title: 'Geodel Geothermal | Building the Next Generation of Geothermal Infrastructure',
+  description: 'Geodel is developing better ways to drill, exchange, store and use thermal energy beneath our buildings. Starting in Pennsylvania and expanding across the East Coast.',
   generator: 'v0.app',
-  keywords: ['subsurface intelligence', 'geospatial', 'energy', 'geothermal', 'exploration', 'site assessment'],
+  keywords: ['geothermal energy', 'borehole drilling', 'thermal networks', 'heat pumps', 'subsurface intelligence', 'thermal storage', 'Philadelphia', 'workforce development'],
   icons: {
     icon: [
-
       {
         url: '/icon.png',
         type: 'image/svg+xml',

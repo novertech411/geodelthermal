@@ -1,235 +1,136 @@
 "use client"
 
-import { Navbar } from "@/components/navbar"
-import { Footer } from "@/components/footer"
-import StatusBadge from "@/components/StatusBadge"
-import { 
-  Mail, 
-  Send,
-  Linkedin,
-  Twitter,
-  Globe,
-  Clock,
-  Settings,
-  Shield,
-  Zap,
-  Building2,
-  MapPin,
-  FileText
-} from "lucide-react"
+import { Navbar } from '@/components/navbar'
+import { Footer } from '@/components/footer'
+import { MapPin, Mail, Send } from 'lucide-react'
 
 export default function ContactPage() {
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-  }
-
   return (
-    <div className="min-h-screen bg-[#14101f]">
+    <div className="min-h-screen bg-[#14101f] text-white selection:bg-[#8B6CFF] selection:text-white">
       <Navbar />
-      <main className="pt-20">
-        {/* Hero Section */}
-        <section className="py-16 sm:py-24 md:py-32 relative overflow-hidden flex flex-col justify-center min-h-[40vh] sm:min-h-[50vh]">
-          <div className="absolute inset-0 z-0">
-            <div
-              className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-              style={{
-                backgroundImage: "url('/images/contact_banner.png')",
-                backgroundPosition: "center 50%"
-              }}
-            />
-            <div className="absolute inset-0 bg-gradient-to-b from-[#14101f]/75 via-[#14101f]/10 to-[#14101f]" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#14101f]/80 via-transparent to-transparent" />
-            <div className="absolute inset-0 bg-radial-gradient from-[rgba(139,108,255,0.12)] via-transparent to-transparent opacity-80" />
-          </div>
-          
-          <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-8 text-center flex flex-col items-center justify-center">
-            <StatusBadge label="Communication" value="System Node" className="justify-center mb-8" />
-            <h1 className="display text-white w-full mb-8 text-balance">
-              Connect with <span className="text-[#d6ccff]">Geodel.</span>
-            </h1>
-            <p className="lede mt-6 max-w-3xl mx-auto text-white/70">
-              Learn how Geodel supports critical mineral operations through hydrological intelligence and operational visibility.
-            </p>
-          </div>
-        </section>
 
-        <section className="py-24 relative">
-          <div className="mx-auto max-w-7xl px-4 sm:px-8">
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
-              {/* Contact Information */}
-              <div className="space-y-12">
-                <div>
-                  <h2 className="h2 text-white mb-8">Node Inquiries</h2>
-                  <div className="grid gap-6">
-                    {[
-                      { label: "General Inquiries", value: "info@geodel.com", code: "GEN-01" },
-                      { label: "Partnerships", value: "partners@geodel.com", code: "PART-02" },
-                      { label: "Investor Relations", value: "investors@geodel.com", code: "INV-03" },
-                      { label: "Media", value: "media@geodel.com", code: "MED-04" },
-                    ].map((item) => (
-                      <div key={item.label} className="card group border-white/5 hover:border-[#8B6CFF]/20 transition-all duration-500">
-                        <div className="flex items-center gap-6">
-                          <div className="w-12 h-12 rounded-xl bg-white/[0.02] flex items-center justify-center border border-white/10 group-hover:bg-[#8B6CFF]/10 transition-colors">
-                            <Mail className="h-6 w-6 text-[#8B6CFF]" />
-                          </div>
-                          <div className="flex-1">
-                            <div className="flex justify-between items-center mb-1">
-                              <span className="text-[10px] font-mono text-white/30 uppercase tracking-widest">{item.label}</span>
-                              <StatusBadge label="NODE" value={item.code} />
-                            </div>
-                            <p className="text-base font-semibold text-white tracking-tight">{item.value}</p>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
+      <section className="pt-32 pb-16 md:pt-40 md:pb-24 border-b border-white/10 relative overflow-hidden">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-[#8B6CFF]/15 blur-[160px] rounded-full pointer-events-none" />
+
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            {/* Left Info Column */}
+            <div className="lg:col-span-5 space-y-8">
+              <div className="space-y-4">
+                <div className="text-xs font-mono uppercase tracking-[3px] text-[#D6CCFF]">
+                  BUILD WITH US • PARTNERSHIP & PILOTS
+                </div>
+                <h1 className="text-4xl sm:text-5xl font-extrabold text-white leading-tight">
+                  Let's put geothermal to work.
+                </h1>
+                <p className="text-base sm:text-lg text-white/75 leading-relaxed">
+                  Whether you are a city official, university administrator, real estate developer, utility leader, driller, or manufacturer — we want to connect.
+                </p>
+              </div>
+
+              {/* Office Details */}
+              <div className="space-y-6 pt-4 border-t border-white/10">
+                <div className="flex items-start gap-4">
+                  <div className="p-3 rounded-xl bg-white/5 border border-white/10 text-[#8B6CFF]">
+                    <MapPin className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-bold text-white uppercase tracking-wider">Philadelphia Office</h4>
+                    <p className="text-sm text-white/70">Philadelphia, Pennsylvania, USA</p>
+                    <p className="text-xs text-[#D6CCFF] font-mono mt-1">Starting in PA • Scaling across East Coast & U.S.</p>
                   </div>
                 </div>
 
-                <div>
-                  <h3 className="text-lg font-bold text-white mb-6 tracking-tight">Digital Presence</h3>
-                  <div className="flex gap-4">
-                    {[
-                      { icon: Linkedin, label: "LinkedIn" },
-                      { icon: Twitter, label: "Twitter" },
-                      { icon: Globe, label: "Website" },
-                    ].map((platform) => (
-                      <button 
-                        key={platform.label} 
-                        className="w-12 h-12 rounded-xl border border-white/10 hover:bg-[#8B6CFF]/5 hover:border-[#8B6CFF]/30 transition-all group flex items-center justify-center"
-                        title={platform.label}
-                      >
-                        <platform.icon className="h-5 w-5 text-white/60 group-hover:text-[#8B6CFF] transition-colors" />
-                      </button>
-                    ))}
+                <div className="flex items-start gap-4">
+                  <div className="p-3 rounded-xl bg-white/5 border border-white/10 text-[#8B6CFF]">
+                    <Mail className="w-5 h-5" />
                   </div>
-                </div>
-
-                {/* System Specs Mock */}
-                <div className="card bg-black/40 border-white/5 p-8">
-                  <div className="flex items-center gap-3 mb-6">
-                    <Zap className="h-5 w-5 text-[#8B6CFF]" />
-                    <span className="font-bold text-white">System Status</span>
-                  </div>
-                  <div className="space-y-4">
-                    {[
-                      { icon: Clock, label: "Response Threshold", value: "< 24 Hours", status: "OK" },
-                      { icon: Settings, label: "Operational Hubs", value: "Lithium / Copper / Rare Earths", status: "READY" },
-                      { icon: Shield, label: "Compliance Layer", value: "SOC2 Security", status: "ACTIVE" },
-                    ].map((spec, i) => (
-                      <div key={i} className="flex items-center justify-between py-3 border-b border-white/5 last:border-0">
-                        <div className="flex items-center gap-3">
-                          <spec.icon className="h-4 w-4 text-white/30" />
-                          <span className="text-sm text-white/70">{spec.label}</span>
-                        </div>
-                        <div className="flex items-center gap-4">
-                          <span className="text-sm font-semibold text-white">{spec.value}</span>
-                          <span className="text-[10px] font-mono text-[#8B6CFF] bg-[#8B6CFF]/10 px-2 py-0.5 rounded border border-[#8B6CFF]/20">{spec.status}</span>
-                        </div>
-                      </div>
-                    ))}
+                  <div>
+                    <h4 className="text-sm font-bold text-white uppercase tracking-wider">Inquiries & Pilots</h4>
+                    <p className="text-sm text-white/70">contact@geodel.io</p>
                   </div>
                 </div>
               </div>
 
-              {/* Contact Form */}
-              <div className="relative">
-                <div className="card bg-black/60 border-white/10 p-6 sm:p-10 shadow-[0_0_50px_rgba(139,108,255,0.03)]">
-                  <div className="flex items-center gap-4 mb-10">
-                    <div className="w-12 h-12 rounded-xl bg-white/[0.02] flex items-center justify-center border border-white/10">
-                      <Send className="h-6 w-6 text-[#8B6CFF]" />
-                    </div>
-                    <div>
-                      <h2 className="text-xl font-bold text-white tracking-tight">Request a Demo</h2>
-                      <p className="text-xs font-mono text-white/30 uppercase tracking-widest mt-1">Ref: GEODEL-CONTACT-V4</p>
-                    </div>
-                  </div>
-
-                  <form className="space-y-6" onSubmit={handleSubmit}>
-                    <div className="grid sm:grid-cols-2 gap-6">
-                      <div className="space-y-2">
-                        <label className="text-[10px] font-mono text-white/40 uppercase tracking-widest ml-1">Name</label>
-                        <input
-                          type="text"
-                          required
-                          className="w-full bg-white/[0.03] border border-white/10 focus:border-[#8B6CFF]/50 focus:ring-1 focus:ring-[#8B6CFF]/50 rounded-xl px-4 py-3 text-white transition-all outline-none"
-                          placeholder="Your identity"
-                        />
-                      </div>
-                      <div className="space-y-2">
-                        <label className="text-[10px] font-mono text-white/40 uppercase tracking-widest ml-1">Company</label>
-                        <input
-                          type="text"
-                          required
-                          className="w-full bg-white/[0.03] border border-white/10 focus:border-[#8B6CFF]/50 focus:ring-1 focus:ring-[#8B6CFF]/50 rounded-xl px-4 py-3 text-white transition-all outline-none"
-                          placeholder="Mining operations"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="grid sm:grid-cols-2 gap-6">
-                      <div className="space-y-2">
-                        <label className="text-[10px] font-mono text-white/40 uppercase tracking-widest ml-1">Industry</label>
-                        <select className="w-full bg-white/[0.03] border border-white/10 focus:border-[#8B6CFF]/50 focus:ring-1 focus:ring-[#8B6CFF]/50 rounded-xl px-4 py-3 text-white transition-all outline-none appearance-none">
-                          <option className="bg-[#14101f]">Lithium</option>
-                          <option className="bg-[#14101f]">Copper</option>
-                          <option className="bg-[#14101f]">Rare Earths</option>
-                          <option className="bg-[#14101f]">Graphite</option>
-                          <option className="bg-[#14101f]">Uranium</option>
-                          <option className="bg-[#14101f]">Other</option>
-                        </select>
-                      </div>
-                      <div className="space-y-2">
-                        <label className="text-[10px] font-mono text-white/40 uppercase tracking-widest ml-1">Email</label>
-                        <input
-                          type="email"
-                          required
-                          className="w-full bg-white/[0.03] border border-white/10 focus:border-[#8B6CFF]/50 focus:ring-1 focus:ring-[#8B6CFF]/50 rounded-xl px-4 py-3 text-white transition-all outline-none"
-                          placeholder="operator@domain.com"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="space-y-2">
-                      <label className="text-[10px] font-mono text-white/40 uppercase tracking-widest ml-1">Project Location</label>
-                      <div className="relative">
-                        <input
-                          type="text"
-                          required
-                          className="w-full bg-white/[0.03] border border-white/10 focus:border-[#8B6CFF]/50 focus:ring-1 focus:ring-[#8B6CFF]/50 rounded-xl px-4 py-3 text-white transition-all outline-none"
-                          placeholder="e.g. Atacama, Chile"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="space-y-2">
-                      <label className="text-[10px] font-mono text-white/40 uppercase tracking-widest ml-1">Message</label>
-                      <textarea
-                        rows={5}
-                        required
-                        className="w-full bg-white/[0.03] border border-white/10 focus:border-[#8B6CFF]/50 focus:ring-1 focus:ring-[#8B6CFF]/50 rounded-xl px-4 py-3 text-white transition-all outline-none resize-none"
-                        placeholder="Project parameters and data requirements..."
-                      />
-                    </div>
-                    <button 
-                      type="submit" 
-                      className="w-full rounded-[20px] bg-[#8B6CFF] hover:bg-[#7c5eff] text-white text-base font-semibold py-4 flex items-center justify-center gap-2 transition-all duration-300 shadow-[0_0_20px_rgba(139,108,255,0.3)]"
-                    >
-                      Transmit signal <Send className="h-5 w-5" />
-                    </button>
-                    <div className="flex justify-center pt-4">
-                      <StatusBadge label="VERIFICATION" value="READY-TO-SEND" />
-                    </div>
-                  </form>
-                </div>
-                
-                {/* Visual Accent */}
-                <div className="absolute -top-6 -right-6 w-24 h-24 bg-[#8B6CFF]/20 rounded-full blur-3xl pointer-events-none" />
-                <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-[#8B6CFF]/20 rounded-full blur-3xl pointer-events-none" />
+              {/* Persistent Language Tag */}
+              <div className="p-5 rounded-2xl bg-white/[0.03] border border-white/10 space-y-1">
+                <span className="text-xs font-mono text-[#D6CCFF] font-bold uppercase">PERSISTENT LANGUAGE</span>
+                <p className="text-sm font-bold text-white">We started underground.</p>
+                <p className="text-xs text-white/60">The future of heating and cooling is under our feet.</p>
               </div>
             </div>
+
+            {/* Right Interactive Form Column */}
+            <div className="lg:col-span-7 bg-white/[0.03] border border-white/10 rounded-2xl p-6 sm:p-10 space-y-6">
+              <div className="space-y-1">
+                <h3 className="text-2xl font-bold text-white">Start a Conversation</h3>
+                <p className="text-xs sm:text-sm text-white/60">Fill out your project details and partner track below.</p>
+              </div>
+
+              <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-xs font-mono uppercase text-white/70 mb-1.5">First & Last Name</label>
+                    <input
+                      type="text"
+                      placeholder="Jane Doe"
+                      className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 text-sm focus:outline-none focus:border-[#8B6CFF] transition-colors"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-mono uppercase text-white/70 mb-1.5">Email Address</label>
+                    <input
+                      type="email"
+                      placeholder="jane@organization.com"
+                      className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 text-sm focus:outline-none focus:border-[#8B6CFF] transition-colors"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-xs font-mono uppercase text-white/70 mb-1.5">Organization / Entity</label>
+                    <input
+                      type="text"
+                      placeholder="University / Agency / Firm"
+                      className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 text-sm focus:outline-none focus:border-[#8B6CFF] transition-colors"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-mono uppercase text-white/70 mb-1.5">Partner Track</label>
+                    <select className="w-full px-4 py-3 rounded-xl bg-[#1c1730] border border-white/10 text-white text-sm focus:outline-none focus:border-[#8B6CFF] transition-colors">
+                      <option value="cities">Cities + Public Agencies</option>
+                      <option value="universities">Universities</option>
+                      <option value="utilities">Utilities</option>
+                      <option value="developers">Developers + Building Owners</option>
+                      <option value="contractors">Drilling + HVAC Companies</option>
+                      <option value="manufacturers">Manufacturers</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-xs font-mono uppercase text-white/70 mb-1.5">Project Scope / Inquiry Details</label>
+                  <textarea
+                    rows={4}
+                    placeholder="Describe your site, campus, fleet, or technology inquiry..."
+                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 text-sm focus:outline-none focus:border-[#8B6CFF] transition-colors resize-none"
+                  ></textarea>
+                </div>
+
+                <button
+                  type="submit"
+                  className="w-full py-4 rounded-xl bg-[#8B6CFF] hover:bg-[#7a5be0] text-white text-sm font-extrabold transition-all shadow-xl flex items-center justify-center gap-2 group cursor-pointer"
+                >
+                  SUBMIT INQUIRY
+                  <Send className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                </button>
+              </form>
+            </div>
           </div>
-        </section>
-      </main>
+        </div>
+      </section>
+
       <Footer />
     </div>
   )

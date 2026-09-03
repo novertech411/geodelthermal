@@ -1,130 +1,106 @@
 "use client"
 
 import Link from "next/link"
-import { useState, useEffect } from "react"
-import { Menu, X } from "lucide-react"
+import { useState } from "react"
+import { Menu, X, ArrowRight } from "lucide-react"
 import Image from "next/image"
 
 const navLinks = [
-
-  { href: "/", label: "Home" },
-  { href: "/platform", label: "Platform" },
-  { href: "/solutions", label: "Solutions" },
-  { href: "/industries", label: "Industries" },
-  { href: "/insights", label: "Insights" },
-  // { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
+  { href: "#technology", label: "Technology" },
+  { href: "#thermal-networks", label: "Thermal Networks" },
+  { href: "#field-lab", label: "Field Lab" },
+  { href: "#about", label: "About" },
 ]
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(false)
-
-  // Track window scroll to switch navigation modes
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setIsScrolled(true)
-      } else {
-        setIsScrolled(false)
-      }
-    }
-    window.addEventListener("scroll", handleScroll)
-    // Run once on load to catch initial state
-    handleScroll()
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
-
-  // Prevent body scroll when mobile menu is open
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden"
-    } else {
-      document.body.style.overflow = "unset"
-    }
-    return () => {
-      document.body.style.overflow = "unset"
-    }
-  }, [isOpen])
-
-  const closeMenu = () => setIsOpen(false)
 
   return (
-    <header
-      className={`fixed left-0 right-0 z-50 flex justify-center w-full transition-all duration-500 ease-in-out ${isScrolled ? "top-5 px-3 sm:px-4" : "top-0 px-0"
-        }`}
-    >
-      <nav
-        className={`w-full flex items-center justify-between transition-all duration-500 ease-in-out ${isScrolled
-          ? "max-w-[1320px] h-[64px] rounded-full border border-white/8 bg-[rgba(14,11,31,0.85)] backdrop-blur-[18px] saturate-[180%] px-4 sm:px-8 shadow-[0_8px_32px_rgba(0,0,0,0.5)]"
-          : "max-w-none h-[70px] sm:h-[80px] rounded-none border-b border-white/10  bg-[rgba(14,11,31,0.85)] backdrop-blur-sm px-4 sm:px-8 lg:px-12"
-          }`}
-      >
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-2" onClick={closeMenu}>
-          <Image src="/images/logo.png" alt="Logo" width={44} height={44} className="transition-all duration-500" />
-          <div className="flex flex-col">
-            <span className="text-[20px] font-bold text-white leading-none">Geodel</span>
-            <span className="text-[10px] text-white/50 tracking-wider mt-0.5">Backed by  <span className=" font-semibold text-[#B480FF]"> EWOR </span></span>
+    <header className="absolute top-0 left-0 right-0 z-50 w-full px-6 sm:px-12 lg:px-16 pt-6 sm:pt-8">
+      <div className="max-w-[1400px] mx-auto flex items-center justify-between">
+        {/* Left: Brand Logo */}
+        <Link href="#" className="flex items-center gap-2.5 group">
+          <div className="w-8 h-8 flex items-center justify-center text-white">
+            <Image src="/images/newlogo.png" alt="Geodel Logo" width={28} height={28} className="object-contain" />
           </div>
+          <span className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+            Geodel
+          </span>
         </Link>
 
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-10">
+        {/* Center: Clean Primary Navigation Links */}
+        <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <Link
-              key={link.href}
+            <a
+              key={link.label}
               href={link.href}
-              className="text-[13px] capitalize font-medium tracking-[2px] text-white/70 hover:text-white transition-colors"
+              className="text-sm font-medium text-white/90 hover:text-white transition-colors"
             >
               {link.label}
-            </Link>
+            </a>
           ))}
         </div>
 
-        {/* CTA Button in sleek technical gray */}
-        <div className="hidden md:block">
-          <Link href="https://goodel-dashboard.vercel.app/login">
-            <button className="rounded-[20px] bg-zinc-800 hover:bg-zinc-700 text-white text-[13px] font-semibold px-6 py-3 border border-white/10 transition-all duration-300 shadow-md">
-              Get started <span className="text-sm ml-1">→</span>
-            </button>
-          </Link>
+        {/* Right: Book a Demo CTA Button */}
+        <div className="hidden md:flex items-center gap-3">
+          <a
+            href="https://calendly.com/geodel543/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-5 py-2.5 rounded-full bg-white/15 hover:bg-white/25 border border-white/30 text-white font-semibold text-sm transition-all flex items-center gap-2 backdrop-blur-md hover:scale-105 shadow-md"
+          >
+            Book a Demo <ArrowRight className="w-4 h-4" />
+          </a>
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Toggle */}
         <button
-          className="md:hidden flex items-center justify-center p-2 text-white relative z-50 bg-[#8B6CFF] rounded-lg w-9 h-9"
+          className="md:hidden flex items-center justify-center p-2 text-white bg-white/15 backdrop-blur-md rounded-md w-10 h-10 border border-white/25"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
-          aria-expanded={isOpen}
         >
           {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
-      </nav>
+      </div>
 
-      {/* Mobile Navigation Overlay */}
+      {/* Mobile Navigation Drawer */}
       <div
-        className={`fixed inset-0 bg-[#14101f] z-40 md:hidden transition-all duration-300 ${isOpen ? "opacity-100 visible" : "opacity-0 invisible"
-          }`}
+        className={`fixed inset-0 bg-[#0c0915] z-[999] md:hidden transition-all duration-300 ${
+          isOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
+        }`}
       >
-        <nav className="flex flex-col items-center justify-center h-full gap-8 px-6">
+        <div className="p-6 flex justify-between items-center border-b border-white/10">
+          <a href="#" className="flex items-center gap-2" onClick={() => setIsOpen(false)}>
+            <Image src="/images/newlogo.png" alt="Geodel Logo" width={24} height={24} className="object-contain" />
+            <span className="text-xl font-bold text-white">Geodel</span>
+          </a>
+          <button onClick={() => setIsOpen(false)} className="text-white p-2">
+            <X className="w-6 h-6" />
+          </button>
+        </div>
+
+        <nav className="flex flex-col p-8 gap-6">
           {navLinks.map((link) => (
-            <Link
-              key={link.href}
+            <a
+              key={link.label}
               href={link.href}
-              className="text-2xl font-medium text-white/80 hover:text-white transition-colors"
-              onClick={closeMenu}
+              className="text-xl font-medium text-white/90 hover:text-white flex items-center justify-between"
+              onClick={() => setIsOpen(false)}
             >
-              {link.label}
-            </Link>
+              <span>{link.label}</span>
+            </a>
           ))}
-          <Link
-            href="https://goodel-dashboard.vercel.app/login"
-            onClick={closeMenu}
-            className="mt-4 rounded-[20px] bg-[#8B6CFF] hover:bg-[#7c5eff] text-white text-sm font-semibold py-4 w-full max-w-xs flex items-center justify-center gap-2 transition-all duration-300 shadow-md"
-          >
-            Get started <span className="text-sm">→</span>
-          </Link>
+          <div className="pt-6 border-t border-white/10">
+            <a
+              href="https://calendly.com/geodel543/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setIsOpen(false)}
+              className="w-full py-3.5 rounded-full bg-white text-[#14101f] font-bold flex items-center justify-center gap-2 shadow-lg"
+            >
+              Book a Demo <ArrowRight className="w-4 h-4" />
+            </a>
+          </div>
         </nav>
       </div>
     </header>
