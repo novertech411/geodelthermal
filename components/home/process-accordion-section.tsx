@@ -7,7 +7,7 @@ import { Reveal } from "@/components/reveal"
 const steps = [
   {
     label: "Subsurface survey & site characterisation",
-    body: "Geophysics, hydrogeology and existing well data build a model of the ground before capital is committed — geology, groundwater and thermal conductivity.",
+    body: "Geophysics, hydrogeology and existing well data build a model of the ground before capital is committedgeology, groundwater and thermal conductivity.",
   },
   {
     label: "Borefield & loop design",
@@ -39,7 +39,7 @@ export function ProcessAccordionSection() {
             From first survey to a working thermal network
           </h2>
           <p className="mt-[18px] mb-[34px] text-[13.5px] leading-[1.65] text-[#9A968E] max-w-[420px]">
-            A staged process designed to take uncertainty — and cost — out of the ground before capital is
+            A staged process designed to take uncertaintyand costout of the ground before capital is
             committed.
           </p>
           <div>

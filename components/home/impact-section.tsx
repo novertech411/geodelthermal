@@ -67,7 +67,7 @@ export function ImpactSection() {
           </div>
           <p className="m-0 text-[12.5px] leading-[1.65] text-[#6B7280] max-w-[460px]">
             Tons of CO₂ targeted for avoidance annually once pilot borefields and connected heat pumps reach full
-            operation across Philadelphia.* Every ton comes out of heating and cooling — the largest single load in
+            operation across Philadelphia.* Every ton comes out of heating and coolingthe largest single load in
             most buildings.
           </p>
         </Reveal>

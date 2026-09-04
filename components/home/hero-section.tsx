@@ -92,7 +92,7 @@ export function HeroSection() {
             Power your buildings with the ground beneath them.
           </h1>
           <p className="mt-6 max-w-[460px] text-[15px] leading-[1.6] text-white/[0.74]">
-            We design, drill and operate building-scale geothermal heating and cooling — from subsurface survey to
+            We design, drill and operate building-scale geothermal heating and coolingfrom subsurface survey to
             shared thermal networks. Built for dense American cities, starting in Philadelphia.
           </p>
           <div className="flex flex-wrap gap-3 mt-[30px]">

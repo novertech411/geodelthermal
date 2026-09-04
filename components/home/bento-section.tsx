@@ -14,7 +14,7 @@ export function BentoSection() {
         <Reveal delay={80}>
           <p className="m-0 text-lg sm:text-[21px] leading-[1.5] text-[#9A968E] text-pretty">
             <span className="text-[#0B1211]">
-              Geodel works the full geothermal stack — subsurface intelligence, drilling, ground exchange, thermal
+              Geodel works the full geothermal stacksubsurface intelligence, drilling, ground exchange, thermal
               storage and network operations.
             </span>{" "}
             The physics is proven; deployment is the problem. Every system we design is engineered for repeatability
@@ -89,7 +89,7 @@ export function BentoSection() {
         </Reveal>
       </div>
       <div className="mt-3.5 text-[11.5px] text-[#ABA7A0]">
-        * Design targets from modelling and pilot instrumentation — confirm before publishing.
+        * Design targets from modelling and pilot instrumentationconfirm before publishing.
       </div>
     </section>
   )

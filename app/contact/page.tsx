@@ -17,7 +17,7 @@ export default function ContactPage() {
             <Reveal as="div" className="lg:col-span-5 space-y-8">
               <div className="space-y-4">
                 <div className="text-xs font-medium text-white/50">
-                  Build with us — partnership & pilots
+                  Build with uspartnership & pilots
                 </div>
                 <h1 className="font-[family-name:var(--font-poppins)] font-semibold text-4xl sm:text-5xl tracking-[-0.035em] text-white leading-tight text-balance">
                   Let's put geothermal to work.
@@ -36,7 +36,7 @@ export default function ContactPage() {
                   <div>
                     <h4 className="text-sm font-semibold text-white">Philadelphia Office</h4>
                     <p className="text-sm text-white/[0.7]">Philadelphia, Pennsylvania, USA</p>
-                    <p className="text-xs text-[#A78BFA] mt-1">Starting in PA — scaling across East Coast & U.S.</p>
+                    <p className="text-xs text-[#A78BFA] mt-1">Starting in PAscaling across East Coast & U.S.</p>
                   </div>
                 </div>
 

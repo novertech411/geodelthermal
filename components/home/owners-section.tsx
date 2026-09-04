@@ -20,7 +20,7 @@ export function OwnersSection() {
               See what the ground under your building is worth.
             </h3>
             <p className="mt-3.5 text-[13.5px] leading-[1.65] text-[#5B5470] max-w-[480px]">
-              We model geology, thermal conductivity and building load before anyone puts a rig on site — so
+              We model geology, thermal conductivity and building load before anyone puts a rig on siteso
               borefield size, drilling risk and payback are known numbers rather than assumptions.
             </p>
             <Link
@@ -36,7 +36,7 @@ export function OwnersSection() {
               See how a shared loop changes a whole block.
             </h3>
             <p className="mt-3.5 text-[13.5px] leading-[1.65] text-[#5B5470] max-w-[480px]">
-              Field deployments across campus, multifamily and municipal buildings in Philadelphia — each
+              Field deployments across campus, multifamily and municipal buildings in Philadelphiaeach
               instrumented, reported, and designed to connect into a neighbourhood thermal network.
             </p>
             <Link

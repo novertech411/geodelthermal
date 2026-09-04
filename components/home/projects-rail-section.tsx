@@ -57,7 +57,7 @@ export function ProjectsRailSection() {
             Measurable heat.
           </h2>
           <p className="m-0 max-w-[300px] text-[12.5px] leading-[1.6] text-white/[0.55]">
-            Field deployments across dense commercial, academic and municipal buildings — each one instrumented and
+            Field deployments across dense commercial, academic and municipal buildingseach one instrumented and
             reported.
           </p>
         </Reveal>

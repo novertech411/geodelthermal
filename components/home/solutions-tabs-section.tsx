@@ -10,7 +10,7 @@ const tabs = [
     label: "Universities & campuses",
     title: "Universities & campuses",
     blurb:
-      "Dense clusters of buildings with year-round simultaneous heating and cooling loads — the strongest case for a shared borefield. We characterise the ground first, then size one loop field to serve many buildings.",
+      "Dense clusters of buildings with year-round simultaneous heating and cooling loadsthe strongest case for a shared borefield. We characterise the ground first, then size one loop field to serve many buildings.",
     img: "/images/geothermal/workforce.png",
   },
   {

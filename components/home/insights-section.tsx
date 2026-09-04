@@ -55,7 +55,7 @@ export function InsightsSection() {
         ))}
       </div>
       <div className="mt-4 text-[11.5px] text-[#ABA7A0]">
-        Placeholder posts — swap in real articles or drop this block.
+        Placeholder postsswap in real articles or drop this block.
       </div>
     </section>
   )
