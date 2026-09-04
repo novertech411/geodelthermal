@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter, JetBrains_Mono } from 'next/font/google'
+import { Inter, JetBrains_Mono, Poppins } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
@@ -11,6 +11,12 @@ const inter = Inter({
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   variable: '--font-mono'
+})
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: '--font-poppins'
 })
 
 export const metadata: Metadata = {
@@ -35,8 +41,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable} bg-[#14101f]`}>
-      <body className="font-sans antialiased text-[#fff]">
+    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable} ${poppins.variable} bg-[#F7F6F3]`}>
+      <body className="font-sans antialiased text-[#0B1211]">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>

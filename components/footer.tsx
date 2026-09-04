@@ -7,10 +7,11 @@ import { Linkedin, Twitter, Instagram, MapPin, ArrowRight, Check } from "lucide-
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "#about", label: "About Us" },
-  { href: "#services", label: "Services" },
-  { href: "#solutions", label: "Solutions" },
-  { href: "#pricing", label: "Pricing" },
+  { href: "/about", label: "About" },
+  { href: "/technology", label: "Technology" },
+  { href: "/thermal-networks", label: "Thermal Networks" },
+  { href: "/field-lab", label: "Field Lab" },
+  { href: "/contact", label: "Contact" },
 ]
 
 const socialLinks = [
@@ -33,31 +34,23 @@ export function Footer() {
   }
 
   return (
-    <footer className="mt-16 w-full rounded-t-[32px] bg-[#14101f] border-t border-white/10 text-white py-16 px-4 sm:px-8 lg:px-12 relative overflow-hidden">
-      {/* Background Glow */}
-      <div className="absolute top-0 right-1/4 w-[500px] h-[300px] bg-[#8B6CFF]/10 blur-[120px] rounded-full pointer-events-none" />
-
-      <div className="mx-auto max-w-7xl relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 pb-14 border-b border-white/10">
+    <footer className="mt-16 w-full bg-[#0B1211] text-white pt-[78px] pb-[22px] px-[clamp(16px,4vw,34px)]">
+      <div className="mx-auto max-w-[1200px]">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 pb-14 border-b border-white/[0.14]">
           {/* Column 1: Brand Info & Newsletter */}
           <div className="lg:col-span-6 space-y-6">
-            <div className="flex items-center gap-3">
-              <div className="relative w-10 h-10 rounded-full bg-[#8B6CFF]/20 border border-[#8B6CFF]/40 flex items-center justify-center">
-                <Image src="/images/logo.png" alt="Enerza Geodel Logo" width={30} height={30} className="object-contain" />
-              </div>
-              <div>
-                <span className="font-extrabold text-2xl text-white tracking-tight">Enerza</span>
-                <span className="ml-2 text-xs font-mono uppercase text-[#D6CCFF] px-2 py-0.5 rounded bg-[#8B6CFF]/20 border border-[#8B6CFF]/30">GEODEL</span>
-              </div>
-            </div>
+            <Link href="/" className="flex items-center gap-2.5 font-[family-name:var(--font-poppins)] font-semibold text-2xl tracking-[-0.02em] text-white w-fit">
+              <Image src="/images/newlogo.png" alt="Geodel" width={28} height={28} className="object-contain" />
+              Geodel
+            </Link>
 
-            <p className="text-white/70 text-base max-w-md leading-relaxed">
-              Pioneering intelligent solar & underground geothermal infrastructure. Delivering reliable, affordable, and sustainable thermal power across American cities and institutions.
+            <p className="text-[12.5px] leading-[1.6] text-white/[0.55] max-w-[400px]">
+              Pioneering intelligent solar and underground geothermal infrastructure. Delivering reliable, affordable and sustainable thermal power across American cities and institutions.
             </p>
 
             {/* Newsletter Input */}
             <div className="pt-2 max-w-md">
-              <p className="text-xs font-mono uppercase tracking-[2px] text-[#D6CCFF] mb-2 font-semibold">Stay Updated With Enerza</p>
+              <p className="text-[10px] font-semibold tracking-[.12em] uppercase text-white/[0.42] mb-2">Stay updated with Geodel</p>
               <form onSubmit={handleSubscribe} className="relative flex items-center">
                 <input
                   type="email"
@@ -65,11 +58,11 @@ export function Footer() {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your work email..."
                   required
-                  className="w-full h-12 rounded-full bg-white/5 border border-white/15 px-5 pr-36 text-sm text-white placeholder:text-white/40 focus:outline-none focus:border-[#8B6CFF] transition-colors"
+                  className="w-full h-12 rounded-full bg-white/[0.05] border border-white/[0.14] px-5 pr-36 text-sm text-white placeholder:text-white/40 focus:outline-none focus:border-[#A78BFA] transition-colors"
                 />
                 <button
                   type="submit"
-                  className="absolute right-1.5 h-9 px-5 rounded-full bg-[#8B6CFF] hover:bg-[#7a5be0] text-white font-bold text-xs flex items-center gap-1.5 hover:scale-105 transition-all shadow-[0_0_15px_rgba(139,108,255,0.4)]"
+                  className="absolute right-1.5 h-9 px-5 rounded-full bg-[#6D3BD4] hover:bg-[#5628B8] text-white font-semibold text-xs flex items-center gap-1.5 transition-colors"
                 >
                   {subscribed ? (
                     <>Subscribed <Check className="w-3.5 h-3.5" /></>
@@ -82,39 +75,35 @@ export function Footer() {
           </div>
 
           {/* Column 2: Quick Links */}
-          <div className="lg:col-span-3 space-y-4">
-            <h4 className="text-xs font-mono uppercase tracking-[2px] text-white/50">Sitemap</h4>
-            <ul className="space-y-2.5">
-              {navLinks.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-white/70 hover:text-[#D6CCFF] transition-colors flex items-center gap-2 group"
-                  >
-                    <span className="w-1.5 h-1.5 rounded-full bg-white/30 group-hover:bg-[#8B6CFF] transition-colors" />
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+          <div className="lg:col-span-3 flex flex-col gap-3">
+            <div className="text-[10px] font-semibold tracking-[.12em] uppercase text-white/[0.42]">Sitemap</div>
+            {navLinks.map((link) => (
+              <Link
+                key={link.label}
+                href={link.href}
+                className="text-[12.5px] text-white/[0.78] hover:text-[#A78BFA] transition-colors w-fit focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#A78BFA] focus-visible:outline-offset-2"
+              >
+                › {link.label}
+              </Link>
+            ))}
           </div>
 
           {/* Column 3: Contact & Socials */}
-          <div className="lg:col-span-3 space-y-4">
-            <h4 className="text-xs font-mono uppercase tracking-[2px] text-white/50">Location & Socials</h4>
-            <div className="flex items-start gap-2.5 text-xs text-white/70 font-mono">
-              <MapPin className="w-4 h-4 text-[#8B6CFF] shrink-0 mt-0.5" />
+          <div className="lg:col-span-3 flex flex-col gap-4">
+            <div className="text-[10px] font-semibold tracking-[.12em] uppercase text-white/[0.42]">Location & Socials</div>
+            <div className="flex items-start gap-2.5 text-[12.5px] text-white/[0.78]">
+              <MapPin className="w-4 h-4 text-[#A78BFA] shrink-0 mt-0.5" />
               <span>Philadelphia, Pennsylvania<br />United States</span>
             </div>
 
-            <div className="pt-3 flex items-center gap-3">
+            <div className="flex items-center gap-2.5">
               {socialLinks.map((social) => (
                 <Link
                   key={social.label}
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 rounded-full bg-white/5 border border-white/10 text-white/70 hover:text-[#D6CCFF] hover:bg-white/10 hover:border-[#8B6CFF]/40 transition-all"
+                  className="flex w-[30px] h-[30px] rounded-full bg-white/[0.12] items-center justify-center text-white/[0.78] hover:bg-[#A78BFA] hover:text-[#0B1211] transition-colors"
                   aria-label={social.label}
                 >
                   <social.icon className="h-4 w-4" />
@@ -125,9 +114,9 @@ export function Footer() {
         </div>
 
         {/* Bottom Baseline Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/40">
-          <p>&copy; {new Date().getFullYear()} Enerza Geodel Inc. All rights reserved.</p>
-          <p className="font-mono text-[11px] tracking-wider text-white/50">INTELLIGENT ENERGY INFRASTRUCTURE</p>
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11.5px] text-white/[0.55]">
+          <p>&copy; {new Date().getFullYear()} Geodel Inc. All rights reserved.</p>
+          <p className="text-[10px] font-semibold tracking-[.12em] uppercase text-white/[0.42]">Intelligent energy infrastructure</p>
         </div>
       </div>
     </footer>
