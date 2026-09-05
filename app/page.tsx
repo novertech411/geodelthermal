@@ -8,7 +8,7 @@ import { InsightsSection } from "@/components/home/insights-section"
 import { OwnersSection } from "@/components/home/owners-section"
 import { TestimonialSection } from "@/components/home/testimonial-section"
 import { ClosingCtaSection } from "@/components/home/closing-cta-section"
-import { HomepageFooter } from "@/components/home/homepage-footer"
+import { SiteFooter } from "@/components/ui/site-footer"
 
 export default function HomePage() {
   return (
@@ -23,7 +23,7 @@ export default function HomePage() {
       <OwnersSection />
       <TestimonialSection />
       <ClosingCtaSection />
-      <HomepageFooter />
+      <SiteFooter />
     </div>
   )
 }

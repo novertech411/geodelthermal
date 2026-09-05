@@ -3,6 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
+import { SiteHeader } from "@/components/ui/site-header"
 
 const heroCards = [
   {
@@ -20,13 +21,6 @@ const heroCards = [
     blurb: "Balancing summer heat rejection against winter demand.",
     img: "/images/groundwater_aquifer.png",
   },
-]
-
-const navLinks = [
-  { href: "#technology", label: "Technology", active: true },
-  { href: "#networks", label: "Thermal Networks" },
-  { href: "#projects", label: "Field Lab" },
-  { href: "#impact", label: "About" },
 ]
 
 export function HeroSection() {
@@ -51,45 +45,14 @@ export function HeroSection() {
         }}
       />
 
-      {/* Header */}
-      <header className="relative z-10 flex items-center justify-between gap-8 px-[clamp(16px,4vw,34px)] py-[26px]">
-        <Link
-          href="/"
-          className="flex items-center gap-0.5 text-white font-[family-name:var(--font-poppins)] font-semibold text-[19px] tracking-[-0.02em] rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-white/70 focus-visible:outline-offset-2"
-        >
-          <Image src="/images/logo.png" alt="Geodel" width={26} height={26} className="object-contain" />
-          eodel
-        </Link>
-
-        <nav className="hidden md:flex items-center gap-1 p-[5px] rounded-full bg-white/10 backdrop-blur-[14px] border border-white/[0.14]">
-          {navLinks.map((l) => (
-            <a
-              key={l.label}
-              href={l.href}
-              className={`px-4 py-[9px] rounded-full text-[13.5px] font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-white/70 focus-visible:outline-offset-2 ${
-                l.active ? "bg-[#F7F6F3] text-[#0B1211]" : "text-white/[0.82] hover:text-white hover:bg-white/[0.12]"
-              }`}
-            >
-              {l.label}
-            </a>
-          ))}
-        </nav>
-
-        <a
-          href="https://calendly.com/geodel543/30min"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="px-[22px] py-3 rounded-full bg-[#6D3BD4] text-white text-[13.5px] font-semibold hover:bg-[#5628B8] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-white/70 focus-visible:outline-offset-2"
-        >
-          Book a Demo
-        </a>
-      </header>
+      <SiteHeader />
 
       {/* Bottom row */}
       <div className="relative z-10 mt-auto grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_340px] items-end gap-8 lg:gap-12 px-[clamp(16px,4vw,34px)] pb-[clamp(20px,4vw,34px)]">
         <div className="max-w-[640px]">
-          <h1 className="m-0 font-[family-name:var(--font-poppins)] font-semibold text-[40px] sm:text-[52px] lg:text-[64px] leading-[1.04] tracking-[-0.035em] text-white text-balance">
-            Power your buildings with the ground beneath them.
+          <h1 className="m-0 font-[family-name:var(--font-poppins)] font-semibold text-[40px] sm:text-[52px] lg:text-[84px] leading-[1.04] tracking-[-0.035em] text-white text-balance">
+            Geodel <br/>
+Geothermal
           </h1>
           <p className="mt-6 max-w-[460px] text-[15px] leading-[1.6] text-white/[0.74]">
             We design, drill and operate building-scale geothermal heating and coolingfrom subsurface survey to

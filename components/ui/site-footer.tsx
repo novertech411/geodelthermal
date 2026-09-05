@@ -2,24 +2,24 @@ import Link from "next/link"
 import Image from "next/image"
 
 const mainPages = [
-  { href: "#technology", label: "Technology" },
-  { href: "#networks", label: "Thermal networks" },
-  { href: "#projects", label: "Field lab" },
-  { href: "#impact", label: "Impact" },
+  { href: "/technology", label: "Technology" },
+  { href: "/thermal-networks", label: "Thermal networks" },
+  { href: "/field-lab", label: "Field lab" },
+  { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ]
 
 const platformLinks = [
-  { href: "#technology", label: "Subsurface intelligence" },
-  { href: "#technology", label: "Drilling" },
-  { href: "#technology", label: "Ground exchange" },
-  { href: "#technology", label: "Thermal storage" },
+  { href: "/technology", label: "Subsurface intelligence" },
+  { href: "/technology", label: "Drilling" },
+  { href: "/technology", label: "Ground exchange" },
+  { href: "/technology", label: "Thermal storage" },
 ]
 
 const companyLinks = [
-  { href: "#impact", label: "About us" },
+  { href: "/about", label: "About us" },
   { href: "/contact", label: "Careers" },
-  { href: "#networks", label: "Insights" },
+  { href: "/thermal-networks", label: "Insights" },
   { href: "https://calendly.com/geodel543/30min", label: "Book a demo" },
 ]
 
@@ -30,16 +30,19 @@ const socials = [
   { href: "https://www.youtube.com/@geodelinc", label: "yt" },
 ]
 
-export function HomepageFooter() {
+export function SiteFooter() {
   return (
     <footer className="relative bg-[#0B1211] text-white pt-[78px] overflow-hidden">
       <div className="max-w-[1200px] mx-auto px-[clamp(16px,4vw,34px)]">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[minmax(0,1.5fr)_repeat(3,minmax(0,.8fr))] gap-10 lg:gap-12">
           <div>
-            <div className="flex items-center gap-0.5 font-[family-name:var(--font-poppins)] font-semibold text-2xl tracking-[-0.02em] text-white">
+            <Link
+              href="/"
+              className="flex items-center gap-0.5 font-[family-name:var(--font-poppins)] font-semibold text-2xl tracking-[-0.02em] text-white w-fit"
+            >
               <Image src="/images/logo.png" alt="Geodel" width={30} height={30} className="object-contain" />
               eodel
-            </div>
+            </Link>
             <p className="mt-5 text-[12.5px] leading-[1.6] text-white/[0.55] max-w-[300px]">
               We build intelligent underground energy infrastructure for American cities.
             </p>
@@ -109,7 +112,7 @@ export function HomepageFooter() {
               Terms and conditions
             </Link>
           </div>
-          <span>Copyright 2026 © Enerza Geodel Inc.</span>
+          <span>&copy; {new Date().getFullYear()} Geodel Inc. All rights reserved.</span>
         </div>
 
         <div className="hidden sm:flex items-center justify-center gap-[10px] mt-9 pb-[22px]">

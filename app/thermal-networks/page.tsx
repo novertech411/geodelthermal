@@ -2,8 +2,8 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { Navbar } from "@/components/navbar"
-import { Footer } from "@/components/footer"
+import { SiteHeader } from "@/components/ui/site-header"
+import { SiteFooter } from "@/components/ui/site-footer"
 import { Reveal } from "@/components/reveal"
 import { CheckCircle2, ArrowRight, Building, GraduationCap, Hospital, Home, Compass } from "lucide-react"
 
@@ -46,7 +46,7 @@ export default function ThermalNetworksPage() {
           />
         </div>
 
-        <Navbar />
+        <SiteHeader />
 
         <div className="relative z-10 max-w-[1200px] mx-auto px-[clamp(16px,4vw,34px)] pt-36 pb-16 w-full space-y-4">
           <span className="text-xs font-medium text-white/50">District energy utility</span>
@@ -144,7 +144,7 @@ export default function ThermalNetworksPage() {
         </section>
       </main>
 
-      <Footer />
+      <SiteFooter />
     </div>
   )
 }

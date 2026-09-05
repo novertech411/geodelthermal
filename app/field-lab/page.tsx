@@ -2,8 +2,8 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { Navbar } from "@/components/navbar"
-import { Footer } from "@/components/footer"
+import { SiteHeader } from "@/components/ui/site-header"
+import { SiteFooter } from "@/components/ui/site-footer"
 import { Reveal } from "@/components/reveal"
 import { ArrowRight, CheckCircle2, GraduationCap, Wrench, Compass, Layers } from "lucide-react"
 
@@ -38,7 +38,7 @@ export default function FieldLabPage() {
           />
         </div>
 
-        <Navbar />
+        <SiteHeader />
 
         <div className="relative z-10 max-w-[1200px] mx-auto px-[clamp(16px,4vw,34px)] pt-36 pb-16 w-full space-y-4">
           <span className="text-xs font-medium text-white/50">Workforce & field testing</span>
@@ -171,7 +171,7 @@ export default function FieldLabPage() {
         </section>
       </main>
 
-      <Footer />
+      <SiteFooter />
     </div>
   )
 }

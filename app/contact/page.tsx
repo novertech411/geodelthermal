@@ -1,14 +1,14 @@
 "use client"
 
-import { Navbar } from '@/components/navbar'
-import { Footer } from '@/components/footer'
+import { SiteHeader } from "@/components/ui/site-header"
+import { SiteFooter } from "@/components/ui/site-footer"
 import { Reveal } from '@/components/reveal'
 import { MapPin, Mail, Send } from 'lucide-react'
 
 export default function ContactPage() {
   return (
     <div className="min-h-screen bg-[#0B1211] text-white selection:bg-[#6D3BD4] selection:text-white">
-      <Navbar />
+      <SiteHeader />
 
       <section className="pt-32 pb-16 md:pt-40 md:pb-24 border-b border-white/10 relative overflow-hidden">
         <div className="mx-auto max-w-[1200px] px-[clamp(16px,4vw,34px)] relative z-10">
@@ -130,7 +130,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <Footer />
+      <SiteFooter />
     </div>
   )
 }

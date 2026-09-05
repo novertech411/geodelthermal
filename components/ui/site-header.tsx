@@ -1,10 +1,10 @@
 "use client"
 
 import Link from "next/link"
-import { useState } from "react"
-import { Menu, X } from "lucide-react"
 import Image from "next/image"
+import { useState } from "react"
 import { usePathname } from "next/navigation"
+import { Menu, X } from "lucide-react"
 
 const navLinks = [
   { href: "/technology", label: "Technology" },
@@ -13,7 +13,7 @@ const navLinks = [
   { href: "/about", label: "About" },
 ]
 
-export function Navbar() {
+export function SiteHeader() {
   const [isOpen, setIsOpen] = useState(false)
   const pathname = usePathname()
 
@@ -23,10 +23,10 @@ export function Navbar() {
         {/* Left: Brand */}
         <Link
           href="/"
-          className="flex items-center gap-2.5 text-white font-[family-name:var(--font-poppins)] font-semibold text-[19px] tracking-[-0.02em] rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-white/70 focus-visible:outline-offset-2"
+          className="flex items-center gap-0.5 text-white font-[family-name:var(--font-poppins)] font-semibold text-[19px] tracking-[-0.02em] rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-white/70 focus-visible:outline-offset-2"
         >
           <Image src="/images/logo.png" alt="Geodel" width={26} height={26} className="object-contain" />
-          Geodel
+          eodel
         </Link>
 
         {/* Center: Nav pill */}
@@ -76,11 +76,11 @@ export function Navbar() {
         <div className="p-6 flex justify-between items-center border-b border-white/10">
           <Link
             href="/"
-            className="flex items-center gap-2.5 font-[family-name:var(--font-poppins)] font-semibold text-xl text-white tracking-[-0.02em]"
+            className="flex items-center gap-0.5 font-[family-name:var(--font-poppins)] font-semibold text-xl text-white tracking-[-0.02em]"
             onClick={() => setIsOpen(false)}
           >
-            <Image src="/images/newlogo.png" alt="Geodel" width={24} height={24} className="object-contain" />
-            Geodel
+            <Image src="/images/logo.png" alt="Geodel" width={24} height={24} className="object-contain" />
+            eodel
           </Link>
           <button onClick={() => setIsOpen(false)} className="text-white p-2" aria-label="Close menu">
             <X className="w-6 h-6" />
